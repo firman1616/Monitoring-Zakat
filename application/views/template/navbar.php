@@ -34,6 +34,8 @@
           </ul>
         </li>
         <li><a href="<?= site_url('admin/Penerima') ?>"><i class="fa fa-users"></i> <span>Penerima Zakat</span></a></li>
+        <li><a href="<?= site_url('admin/Donatur') ?>"><i class="fa  fa-user-plus"></i> <span>Data Donatur</span></a></li>
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-gears"></i>

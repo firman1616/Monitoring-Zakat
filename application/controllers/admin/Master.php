@@ -129,7 +129,7 @@ class Master extends CI_Controller {
 			$image = $this->M_data->get_data_by_id('tbl_master_kwitansi',array('id_kwitansi' => 1));
 			$path = './assets/img/';
 			foreach ($image->result() as $row){
-					unlink($path.$row->nama_foto);
+					unlink($path.$row->lgoo_organisasi);
 			}
 			$this->load->library('upload');
 			$nmfile = "logo_".time(); //nama file saya beri nama langsung dan diikuti fungsi time
@@ -162,7 +162,7 @@ class Master extends CI_Controller {
 						//pesan yang muncul jika terdapat error dimasukkan pada session flashdata
 						$this->session->set_flashdata('gagal', 'Diupdate');
 						
-						redirect('admin/setting/master_kwitansi'); //jika gagal maka akan ditampilkan form upload
+						redirect('admin/Master/kwitansi'); //jika gagal maka akan ditampilkan form upload
 					}
 			}
 		}else {
@@ -178,7 +178,7 @@ class Master extends CI_Controller {
 			$this->M_data->update_data('tbl_master_kwitansi',$data,$where);
 			$this->session->set_flashdata('data', 'Diperbarui');
 			//$this->session->set_flashdata("success", "<center><b>Update Data Success</b></center>");
-			redirect('admin/setting/master_kwitansi');
+			redirect('admin/Master/kwitansi');
 		}
 	}
 }

@@ -40,6 +40,7 @@ foreach ($get_data->result() as $row) {
           </div>
         </div>
         <div class="box-body">
+        <form action="<?= base_url('admin/Master/update_master/'.$row->id_kwitansi) ?>" method="post">
             <div class="form-group">
                 <label for="exampleInputEmail1">Logo</label>
                 <input type="file" class="form-control" id="filefoto" name="filefoto">
@@ -59,10 +60,11 @@ foreach ($get_data->result() as $row) {
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Kota Oranisasi</label>
-                <input type="text" class="form-control" id="kota" name="kota" value="<?= $e ?>">
+                <input type="text" class="form-control" id="kota" name="kota_organisasi" value="<?= $e ?>">
             </div>
 
             <button type="submit" class="btn btn-primary">Update</button>
+            </form>
         </div>
         <!-- /.box-body -->
       </div>
