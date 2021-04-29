@@ -120,7 +120,7 @@
                   <td><?= $row->berat_beras ?></td>
                   <td><?= $row->nama_petugas ?></td>
                   <td>
-                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-edit<?= $no++; ?>"><i class="fa fa-edit"></i></button>
+                    <a href="<?= base_url('admin/Zakat/v_edit/'.$row->id_zakat_fitrah) ?>" type="button" class="btn btn-warning"><i class="fa fa-edit"></i></button>
                     <a href="<?= base_url('admin/Zakat/hapus_fitrah/'.$row->id_zakat_fitrah) ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                   </td>
                 </tr>
@@ -135,63 +135,3 @@
     </section>
     <!-- /.content -->
 </div>
-
-<!-- Modal Edit -->
-<?php 
-$y=1;
-foreach ($fitrah->result() as $row) { 
-  $a = $row->alamat;
-  $k = $row->keterangan;
-  ?>
-
-<div class="modal fade" id="modal-edit<?= $y++; ?>">
-          <div class="modal-dialog">
-            <div class="modal-content">
-            <form action="<?= base_url('admin/Zakat/edit_fitrah/'.$row->id_zakat_fitrah) ?>" method="post">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Default Modal</h4>
-              </div>
-              <div class="modal-body">
-              <label for="nama">Nama Pemberi Zakat *</label>
-              <input type="text" class="form-control" id="nama_zakat" name="nama_zakat" required value="<?= $row->nama_pemberi_zakat_fitrah ?>">
-
-              <label for="nama">Uang</label>
-              <input type="number" class="form-control" id="uang" name="uang" value="<?= $row->uang ?>">
-
-              <div class="row">
-              <div class="col-md-6 col-xs-6 col-lg-6">
-                <label for="nama">Alamat</label>
-                <textarea name="alamat" id="alamat" class="form-control"><?= $a ?></textarea>
-              </div>
-              <div class="col-md-6 col-xs-6 col-lg-6">
-                <label for="nama">Keterangan</label>
-                <textarea name="keterangan" id="keterangan" class="form-control"> <?= $k ?></textarea>
-              </div>
-              </div>
-
-              <div class="row">
-              <div class="col-md-6 col-xs-6 col-lg-6">
-                <label for="nama">Tanggal</label>
-                <input name="tanggal" id="tanggal" class="form-control" value="<?= date('Y-m-d H:i:s') ?>" disabled>
-              </div>
-              <div class="col-md-6 col-xs-6 col-lg-6">
-                <label for="nama">Petugas</label>
-                <input name="petugas" id="petugas" class="form-control" disabled value="<?= $name ?>">
-              </div>
-              </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save changes</button>
-              </div>
-              </form>
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
-        <?php $no++;}
-?>
-<!-- End Modal Edit -->

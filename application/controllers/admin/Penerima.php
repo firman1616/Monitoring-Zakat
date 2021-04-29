@@ -24,4 +24,46 @@ class Penerima extends CI_Controller {
         ];
 		$this->load->view('template/conten',$data);
 	}
+
+	public function tambah_data()
+	{
+		$table = 'tbl_penerima';
+		$data = array(
+			'nama_penerima'		=> $this->input->post('nama_penerima'),
+			'ket_penerima'		=> $this->input->post('ket_penerima'),
+			'koor'				=> $this->input->post('koor')
+		);
+		$this->m_data->simpan_data($table,$data);
+		redirect('admin/Penerima');
+	}
+
+	public function edit_data($id)
+	{
+		$table = 'tbl_penerima';
+		$data = array(
+			'nama_penerima'		=> $this->input->post('nama_penerima'),
+			'ket_penerima'		=> $this->input->post('ket_penerima'),
+			'koor'				=> $this->input->post('koor')
+		);
+		$where = array('id_penerima' => $id);
+		$this->m_data->update_data($table,$data,$where);
+		redirect('admin/Penerima');
+	}
+
+	public function hapus_data($id)
+	{
+		$table = 'tbl_penerima';
+		$where =array('id_penerima' => $id);
+		$this->m_data->hapus_data($table,$where);
+		redirect('admin/Penerima');
+	}
+
+	public function update_status($id)
+	{
+		$table = 'tbl_penerima';
+		$data = array('status' => '1');
+		$where = array('id_penerima' => $id);
+		$this->m_data->update_data($table,$data,$where);
+		redirect('admin/Penerima');
+	}
 }

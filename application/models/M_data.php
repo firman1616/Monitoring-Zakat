@@ -92,4 +92,229 @@ class M_data extends CI_Model
     LEFT JOIN tbl_user_koor AS b ON koor = id_user_koor");
   }
 
+  public function total_beras()
+  {
+    return $this->db->query("SELECT SUM(total_beras) AS total FROM tbl_zakat_fitrah");
+  }
+
+  public function terjual()
+  {
+    return $this->db->query("SELECT SUM(uang) AS uang FROM tbl_zakat_fitrah");
+  }
+
+  public function total_maal()
+  {
+    return $this->db->query("SELECT SUM(nominal_zakat) AS nominal FROM tbl_zakat_maal");
+  }
+
+  public function jumlah_penerima()
+  {
+    return $this->db->query("SELECT * FROM `tbl_penerima`")->num_rows();
+  }
+
+  public function penerima_zakat_koor($id)
+  {
+    return $this->db->query("SELECT
+    *,
+    b.id_user_koor,
+    b.nama_koor,
+    b.alamat_koor,
+    c.id_ket,
+    c.nama_ket
+  FROM
+    `tbl_penerima`
+    LEFT JOIN tbl_user_koor AS b ON koor = b.id_user_koor
+    LEFT JOIN tbl_master_penerima as c ON ket_penerima = c.id_ket 
+  WHERE
+    koor = $id");
+  }
+
+  public function lap_penerima_zakat($rt)
+  {
+    return $this->db->query("SELECT
+    *,
+    b.id_user_koor,
+    b.nama_koor,
+    b.alamat_koor,
+    c.id_ket,
+    c.nama_ket,
+    d.id_master_alamat,
+    d.nama_master_alamat
+  FROM
+    `tbl_penerima`
+    LEFT JOIN tbl_user_koor AS b ON koor = b.id_user_koor
+    LEFT JOIN tbl_master_penerima as c ON ket_penerima = c.id_ket 
+    LEFT JOIN tbl_master_alamat as d ON b.alamat_koor = d.id_master_alamat 
+  WHERE
+    b.alamat_koor = $rt");
+  }
+
+  public function berat($rt)
+  {
+    return $this->db->query("SELECT
+    *,
+    b.id_user_koor,
+    b.nama_koor,
+    b.alamat_koor,
+    c.id_ket,
+    c.nama_ket,
+    d.id_master_alamat,
+    d.nama_master_alamat
+  FROM
+    `tbl_penerima`
+    LEFT JOIN tbl_user_koor AS b ON koor = b.id_user_koor
+    LEFT JOIN tbl_master_penerima as c ON ket_penerima = c.id_ket 
+    LEFT JOIN tbl_master_alamat as d ON b.alamat_koor = d.id_master_alamat 
+  WHERE
+    b.alamat_koor = $rt AND ket_penerima = 1 ")->num_rows();
+  }
+
+  public function ringan($rt)
+  {
+    return $this->db->query("SELECT
+    *,
+    b.id_user_koor,
+    b.nama_koor,
+    b.alamat_koor,
+    c.id_ket,
+    c.nama_ket,
+    d.id_master_alamat,
+    d.nama_master_alamat
+  FROM
+    `tbl_penerima`
+    LEFT JOIN tbl_user_koor AS b ON koor = b.id_user_koor
+    LEFT JOIN tbl_master_penerima as c ON ket_penerima = c.id_ket 
+    LEFT JOIN tbl_master_alamat as d ON b.alamat_koor = d.id_master_alamat 
+  WHERE
+    b.alamat_koor = $rt AND ket_penerima = 2 ")->num_rows();
+  }
+
+  public function sabilillah($rt)
+  {
+    return $this->db->query("SELECT
+    *,
+    b.id_user_koor,
+    b.nama_koor,
+    b.alamat_koor,
+    c.id_ket,
+    c.nama_ket,
+    d.id_master_alamat,
+    d.nama_master_alamat
+  FROM
+    `tbl_penerima`
+    LEFT JOIN tbl_user_koor AS b ON koor = b.id_user_koor
+    LEFT JOIN tbl_master_penerima as c ON ket_penerima = c.id_ket 
+    LEFT JOIN tbl_master_alamat as d ON b.alamat_koor = d.id_master_alamat 
+  WHERE
+    b.alamat_koor = $rt AND ket_penerima = 3 ")->num_rows();
+  }
+
+  public function penerima_zakat_rt($id)
+  {
+    return $this->db->query("SELECT
+    *,
+    b.id_user_koor,
+    b.nama_koor,
+    b.alamat_koor,
+    c.id_ket,
+    c.nama_ket
+  FROM
+    `tbl_penerima`
+    LEFT JOIN tbl_user_koor AS b ON koor = b.id_user_koor
+    LEFT JOIN tbl_master_penerima as c ON ket_penerima = c.id_ket 
+  WHERE
+    koor = $id")->num_rows();
+  }
+
+  public function penerima_zakat_rt_berat($id)
+  {
+    return $this->db->query("SELECT
+    *,
+    b.id_user_koor,
+    b.nama_koor,
+    b.alamat_koor,
+    c.id_ket,
+    c.nama_ket
+  FROM
+    `tbl_penerima`
+    LEFT JOIN tbl_user_koor AS b ON koor = b.id_user_koor
+    LEFT JOIN tbl_master_penerima as c ON ket_penerima = c.id_ket 
+  WHERE
+    koor = $id AND ket_penerima = 1")->num_rows();
+  }
+
+  public function penerima_zakat_rt_ringan($id)
+  {
+    return $this->db->query("SELECT
+    *,
+    b.id_user_koor,
+    b.nama_koor,
+    b.alamat_koor,
+    c.id_ket,
+    c.nama_ket
+  FROM
+    `tbl_penerima`
+    LEFT JOIN tbl_user_koor AS b ON koor = b.id_user_koor
+    LEFT JOIN tbl_master_penerima as c ON ket_penerima = c.id_ket 
+  WHERE
+    koor = $id AND ket_penerima = 2")->num_rows();
+  }
+
+  public function penerima_zakat_rt_sabilillah($id)
+  {
+    return $this->db->query("SELECT
+    *,
+    b.id_user_koor,
+    b.nama_koor,
+    b.alamat_koor,
+    c.id_ket,
+    c.nama_ket
+  FROM
+    `tbl_penerima`
+    LEFT JOIN tbl_user_koor AS b ON koor = b.id_user_koor
+    LEFT JOIN tbl_master_penerima as c ON ket_penerima = c.id_ket 
+  WHERE
+    koor = $id AND ket_penerima = 3")->num_rows();
+  }
+
+  public function total_zakat_maal()
+  {
+    return $this->db->query("SELECT SUM(nominal_zakat) as total FROM tbl_zakat_maal WHERE kategori_zakat = 1");
+  }
+
+  public function total_ps()
+  {
+    return $this->db->query("SELECT SUM(nominal_zakat) as total FROM tbl_zakat_maal WHERE kategori_zakat = 2");
+  }
+
+  public function total_is()
+  {
+    return $this->db->query("SELECT SUM(nominal_zakat) as total FROM tbl_zakat_maal WHERE kategori_zakat = 3");
+  }
+
+  public function total_fidyah()
+  {
+    return $this->db->query("SELECT SUM(nominal_zakat) as total FROM tbl_zakat_maal WHERE kategori_zakat = 4");
+  }
+
+  public function jumlah_berat()
+  {
+    return $this->db->query("SELECT * FROM tbl_penerima WHERE ket_penerima = 1")->num_rows();
+  }
+
+  public function jumlah_ringan()
+  {
+    return $this->db->query("SELECT * FROM tbl_penerima WHERE ket_penerima = 2")->num_rows();
+  }
+
+  public function jumlah_sabilillah()
+  {
+    return $this->db->query("SELECT * FROM tbl_penerima WHERE ket_penerima = 3")->num_rows();
+  }
+
+  public function jumlah_donatur()
+  {
+    return $this->db->query("SELECT * FROM tbl_donatur")->num_rows();
+  }
+
 }

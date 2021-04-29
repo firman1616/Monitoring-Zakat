@@ -23,9 +23,9 @@ class Login extends CI_Controller {
 		$where2 = array(
 			'username' => $username,
 			'password' => $password,
-			'level' => 2
+			'level' => 5
 			);
-		$cek2 = $this->M_data->get_data_by_id("tbl_user_petugas",$where2);
+		$cek2 = $this->M_data->get_data_by_id("tbl_user_koor",$where2);
 
 		// Manager
 		$where3 = array(
@@ -52,18 +52,20 @@ class Login extends CI_Controller {
 			redirect(base_url("admin/Dashboard"));
 		}elseif ($cek2->num_rows() > 0){
 			foreach ($cek2->result() as $row){
-				$id = $row->id_user_petugas;
-				$nama = $row->nama_petugas;
+				$id = $row->id_user_koor;
+				$nama = $row->nama_koor;
+				$panggilan = $row->panggilan_koor;
 			}
 			$data_session = array(
 				'status' 	=> true,
-				'level' 	=> 2,
-				'id'		=> $id,
-				'nama'		=> $nama
+				'level' 	=> 5,
+				'id_koor'		=> $id,
+				'nama'		=> $nama,
+				'panggilan' => $panggilan
 			);
 
 			$this->session->set_userdata($data_session);
-			redirect(base_url("user/Dashboard"));
+			redirect(base_url("koor/Dashboard"));
 		}elseif ($cek3->num_rows() > 0) {
 			foreach ($cek3->result() as $row){
 				$id = $row->id_user_petugas;
@@ -77,7 +79,7 @@ class Login extends CI_Controller {
 			);
 
 			$this->session->set_userdata($data_session);
-			redirect(base_url("manager/Dashboard"));
+			redirect(base_url("petugas/Dashboard"));
 		}else{
 			$this->session->set_flashdata('flash', 'Wrong');
 

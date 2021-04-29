@@ -63,4 +63,22 @@ class Donatur extends CI_Controller {
 		$this->m_data->hapus_data($table,$where);
 		redirect('admin/Donatur');
 	}
+
+	public function update_status($id)
+	{
+		$table = 'tbl_donatur';
+		$data = array('status' => '1');
+		$where = array('id_donatur' => $id);
+		$this->m_data->update_data($table,$data,$where);
+		redirect('admin/Donatur');
+	}
+
+	public function update_status2($id)
+	{
+		$table = 'tbl_donatur';
+		$data = array('status' => '0');
+		$where = array('id_donatur' => $id);
+		$this->m_data->update_data($table,$data,$where);
+		redirect('admin/Donatur');
+	}
 }

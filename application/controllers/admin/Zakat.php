@@ -59,6 +59,26 @@ class Zakat extends CI_Controller {
 		redirect('admin/Zakat');
 	}
 
+	public function v_edit($id)
+	{
+		$data = [
+				'name'		=> $this->session->userdata('nama'),
+				'title'     => 'Edit Zakat Fitrah',
+				'conten'    => 'conten/edit_fitrah',
+				'get_data'	=> $this->m_data->get_data_by_id('tbl_zakat_fitrah',array('id_zakat_fitrah' => $id)),
+				// 'header_css'=> array(
+				// 	'assets/template/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css',
+				// ),
+				'footer_js' => array(
+					// 'assetsp/template/bower_components/datatables.net/js/jquery.dataTables.min.js',
+					// 'assets/template/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js',
+					// 'assets/js/dataTable.js',
+					'assets/js/zakat.js'
+				)
+		];
+		$this->load->view('template/conten',$data);
+	}
+
 	public function edit_fitrah($id)
 	{
 		$table = 'tbl_zakat_fitrah';
@@ -67,6 +87,9 @@ class Zakat extends CI_Controller {
 		$post = $this->input->post();
 		$data = array(
 			'nama_pemberi_zakat_fitrah' => $post['nama_zakat'],
+			'besaran_jiwa'		=> $post['besaran_jiwa'],
+			'berat_beras'		=> $post['satuan_beras'],
+			'total_beras'		=> floatval($post['satuan_beras']) * floatval($post['besaran_jiwa']), 
 			'uang'				=> $post['uang'],
 			'alamat'			=> $post['alamat'],
 			'keterangan'		=> $post['keterangan'],

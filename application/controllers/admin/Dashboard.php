@@ -17,7 +17,15 @@ class Dashboard extends CI_Controller {
         $data = [
 			'name'		=> $this->session->userdata('nama'),
             'title'     => 'Dashboard',
-            'conten'    => 'conten/dashboard'
+            'conten'    => 'conten/dashboard',
+			'total_beras' => $this->m_data->total_beras(),
+			'terjual'	=> $this->m_data->terjual(),
+			'total_maal' => $this->m_data->total_maal(),
+			'jumlah_penerima' => $this->m_data->jumlah_penerima(),
+			'jumlah_berat'	=> $this->m_data->jumlah_berat(),
+			'jumlah_ringan'	=> $this->m_data->jumlah_ringan(),
+			'jumlah_sabilillah'	=> $this->m_data->jumlah_sabilillah(),
+			'jumlah_donatur' => $this->m_data->jumlah_donatur()
         ];
 		$this->load->view('template/conten',$data);
 	}

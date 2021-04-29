@@ -46,6 +46,7 @@
             <tbody>
                 <?php
                 $x=1;
+                $no=1;
                 foreach ($penerima->result() as $row) { ?>
                     
                 <tr>
@@ -54,8 +55,15 @@
                   <td><?= $row->nama_ket ?></td>
                   <td><?= $row->nama_koor ?></td>
                   <td>
-                      <button type="submit" class="btn btn-warning"><i class="fa fa-edit"></i></button>
-                      <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                  <?php 
+                  if ($row->status == '0') { ?>
+                    <a href="<?= base_url('admin/Penerima/update_status/'.$row->id_penerima) ?>" class="btn btn-primary"><i class="fa  fa-check-square"></i></a>
+                  <?php }else { ?>
+                    <a href="" class="btn btn-success"><i class="fa  fa-check-square"></i></a>
+                    <?php }
+                  ?>
+                      <button type="submit" class="btn btn-warning" data-toggle="modal" data-target="#modal-edit<?= $no++; ?>"><i class="fa fa-edit"></i></button>
+                      <a href="<?= base_url('admin/Penerima/hapus_data/'.$row->id_penerima) ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                   </td>
                 </tr>
                 <?php } ?>                
@@ -75,6 +83,7 @@
   <div class="modal fade" id="modal-default">
           <div class="modal-dialog">
             <div class="modal-content">
+            <form action="<?= base_url('admin/Penerima/tambah_data') ?>" method="post">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
@@ -106,10 +115,68 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
               </div>
+              </form>
             </div>
             <!-- /.modal-content -->
           </div>
           <!-- /.modal-dialog -->
         </div>
+
+<!-- Edit Data -->
+<?php 
+$y=1;
+foreach ($penerima->result() as $row) { 
+  $a = $row->ket_penerima;
+  $b = $row->koor;
+  ?>
+  <div class="modal fade" id="modal-edit<?= $y++; ?>">
+          <div class="modal-dialog">
+            <div class="modal-content">
+            <form action="<?= base_url('admin/Penerima/edit_data/'.$row->id_penerima) ?>" method="post">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Edit Data</h4>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nama Penerima</label>
+                    <input type="text" class="form-control" id="nama_penerima" name="nama_penerima" value="<?= $row->nama_penerima ?>">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ket Penerima</label>
+                    <select name="ket_penerima" id="ket_penerima" class="form-control" required>
+                        <option value="">Pilih Keterangan</option>
+                        <?php foreach ($master->result() as $row) { ?>
+                            <option <?php if ($a == $row->id_ket) {
+                              echo "selected";
+                            } ?> value="<?= $row->id_ket ?>"><?= $row->nama_ket ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Koor Penerima</label>
+                    <select name="koor" id="koor" class="form-control" required>
+                        <option value="">Pilih Koor</option>
+                        <?php foreach ($koor->result() as $row) { ?>
+                            <option <?php if ($b == $row->id_user_koor) {
+                              echo "selected";
+                            } ?> value="<?= $row->id_user_koor ?>"><?= $row->nama_koor ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+              </form>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+<?php $no++;}
+?>

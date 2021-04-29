@@ -55,9 +55,14 @@
                   <td><?php if ($row->status == 1) { ?>
                     <button disabled class="btn btn-success">Diterima</button>
                   <?php }else {?>
-                    <button type="disable" class="btn btn-danger">Belum Di Terima</button>
+                    <button disabled class="btn btn-danger">Menunggu</button>
                   <?php } ?></td>
                   <td>
+                  <?php if ($row->status == '0') { ?>
+                    <a href="<?= base_url('admin/Donatur/update_status/'.$row->id_donatur) ?>" class="btn btn-primary"><i class="fa  fa-check-square"></i></a>
+                  <?php }else { ?>
+                    <a href="<?= base_url('admin/Donatur/update_status2/'.$row->id_donatur) ?>" class="btn btn-primary"><i class="fa  fa-check-square"></i></a>
+                  <?php } ?>
                   <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-edit<?= $no++; ?>"><i class="fa fa-edit"></i></button>
                   <a href="<?= base_url('admin/Donatur/hapus_donatur/'.$row->id_donatur) ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                   </td>

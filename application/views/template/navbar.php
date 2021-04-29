@@ -63,7 +63,7 @@
             <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
           </ul>
         </li>
-        <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+        <li><a href="<?= base_url('admin/Laporan') ?>"><i class="fa fa-book"></i> <span>Laporan</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
