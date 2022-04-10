@@ -36,6 +36,8 @@ if (isset($footer_js)) {
 <?php }
 } ?>
 
+
+
 </body>
 
 </html>

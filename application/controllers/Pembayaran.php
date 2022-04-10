@@ -35,11 +35,14 @@ class Pembayaran extends CI_Controller
             'conten' => 'conten/zakat_fitrah',
             'get_fitrah' => $this->zakat->tampil_fitrah(),
             'get_fitrah_filter' => $this->zakat->tampil_fitrah_filter(),
+            'get_alamat' => $this->m_data->get_data('tbl_master_alamat'),
             'headder_css' => array(
                 'assets/template/assets/vendor/simple-datatables/style.css',
             ),
             'footer_js' => array(
                 'assets/template/assets/vendor/simple-datatables/simple-datatables.js',
+                'assets/js/zakat.js',
+                // 'assets/js/fitrah.js',
                 'assets/js/alert-zakat.js',
             ),
         ];
