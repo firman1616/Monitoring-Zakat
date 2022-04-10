@@ -4,7 +4,7 @@
         <h1>Master Pages</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="<?= base_url('Dashboard') ?>">Home</a></li>
                 <li class="breadcrumb-item active">Master</li>
             </ol>
         </nav>
@@ -33,7 +33,8 @@
                                             </div>
                                             <div class="ps-3">
                                                 <h6>Data User</h6>
-                                                <span class="text-success small pt-1 fw-bold">12</span> <span class="text-muted small pt-2 ps-1">Users</span>
+                                                <span class="text-success small pt-1 fw-bold"><?= $petugas ?></span> <span class="text-muted small pt-2 ps-1">Users Petugas</span>
+                                                <span class="text-success small pt-1 fw-bold"><?= $koor ?></span> <span class="text-muted small pt-2 ps-1">Users Koordinator</span>
 
                                             </div>
                                         </div>
@@ -48,99 +49,138 @@
                     <!-- End Sales Card -->
 
                     <!-- Revenue Card -->
-                    <div class="col-xxl-4 col-md-6">
-                        <div class="card info-card customers-card">
+                    <?php if ($akses == 1) { ?>
+                        <div class="col-xxl-4 col-md-6">
+                            <a href="<?= base_url('Master/master_alamat') ?>">
+                                <div class="card info-card customers-card">
 
-                            <div class="card-body">
-                                <h5 class="card-title">Master Alamat </h5>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Master Alamat </h5>
 
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-people"></i>
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-geo-alt-fill"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>Data Alamat</h6>
+                                                <span class="text-success small pt-1 fw-bold"><?= $alamat ?></span> <span class="text-muted small pt-2 ps-1">Alamat</span>
+
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="ps-3">
-                                        <h6>Data Alamat</h6>
-                                        <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
 
-                                    </div>
                                 </div>
-                            </div>
-
+                            </a>
                         </div>
-                    </div><!-- End Revenue Card -->
+                    <?php } ?>
+                    <!-- End Revenue Card -->
 
                     <!-- Customers Card -->
-                    <div class="col-xxl-4 col-md-6">
+                    <?php if ($akses == 1) { ?>
+                        <div class="col-xxl-4 col-md-6">
+                            <a href="<?= base_url('Master/master_akses') ?>">
+                                <div class="card info-card customers-card">
 
-                        <div class="card info-card customers-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Master Akses</h5>
 
-                            <div class="filter">
-                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                    <li class="dropdown-header text-start">
-                                        <h6>Filter</h6>
-                                    </li>
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-gear-wide-connected"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>Data Akses</h6>
+                                                <span class="text-success small pt-1 fw-bold"><?= $j_akses ?></span> <span class="text-muted small pt-2 ps-1">Akses</span>
 
-                                    <li><a class="dropdown-item" href="#">Today</a></li>
-                                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="card-body">
-                                <h5 class="card-title">Customers <span>| This Year</span></h5>
-
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-people"></i>
-                                    </div>
-                                    <div class="ps-3">
-                                        <h6>1244</h6>
-                                        <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+                                            </div>
+                                        </div>
 
                                     </div>
                                 </div>
-
-                            </div>
+                            </a>
                         </div>
+                    <?php } ?>
+                    <!-- End Customers Card -->
 
-                    </div><!-- End Customers Card -->
+                    <?php if ($akses == 1 || $akses == 2) { ?>
+                        <div class="col-xxl-4 col-md-6">
+                            <a href="<?= base_url('Master/master_jabatan') ?>">
+                                <div class="card info-card customers-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Master Jabatan </h5>
 
-                    <div class="col-xxl-4 col-md-6">
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-gear-wide-connected"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>Data Jabatan</h6>
+                                                <span class="text-success small pt-1 fw-bold"><?= $jabatan ?></span> <span class="text-muted small pt-2 ps-1">Jabatan</span>
 
-                        <div class="card info-card customers-card">
 
-                            <div class="filter">
-                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                    <li class="dropdown-header text-start">
-                                        <h6>Filter</h6>
-                                    </li>
-
-                                    <li><a class="dropdown-item" href="#">Today</a></li>
-                                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="card-body">
-                                <h5 class="card-title">Customers <span>| This Year</span></h5>
-
-                                <div class="d-flex align-items-center">
-                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-people"></i>
-                                    </div>
-                                    <div class="ps-3">
-                                        <h6>1244</h6>
-                                        <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+                                            </div>
+                                        </div>
 
                                     </div>
                                 </div>
-
-                            </div>
+                            </a>
                         </div>
+                    <?php } ?>
+                    <!-- End Customers Card -->
 
-                    </div><!-- End Customers Card -->
+                    <!-- Master Maal -->
+                    <?php if ($akses == 1 || $akses == 2) { ?>
+                        <div class="col-xxl-4 col-md-6">
+                            <a href="<?= base_url('Master/master_maal') ?>">
+                                <div class="card info-card customers-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Master Maal </h5>
+
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-gear-wide-connected"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>Data Maal</h6>
+                                                <span class="text-success small pt-1 fw-bold"><?= $maal ?></span> <span class="text-muted small pt-2 ps-1">Kategori Maal</span>
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    <?php } ?>
+                    <!-- End Master Maal -->
+
+                    <!-- Master Penerima -->
+                    <?php if ($akses == 1 || $akses == 2) { ?>
+                        <div class="col-xxl-4 col-md-6">
+                            <a href="<?= base_url('Master/master_penerima') ?>">
+                                <div class="card info-card customers-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Master Penerima </h5>
+
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-receipt-cutoff"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>Data Master Penerima</h6>
+                                                <span class="text-success small pt-1 fw-bold"><?= $penerima ?></span> <span class="text-muted small pt-2 ps-1">Kategori</span>
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    <?php } ?>
+                    <!-- End Master Penerima -->
 
 
 

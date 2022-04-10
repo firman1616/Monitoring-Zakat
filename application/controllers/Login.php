@@ -42,9 +42,16 @@ class Login extends CI_Controller
         $where4 = array(
             'username' => $username,
             'password' => $password,
+            'level' => 4
+        );
+        $cek4 = $this->M_data->get_data_by_id("tbl_user_petugas", $where4);
+
+        $where5 = array(
+            'username' => $username,
+            'password' => $password,
             'level' => 5
         );
-        $cek4 = $this->M_data->get_data_by_id("tbl_user_koor", $where4);
+        $cek5 = $this->M_data->get_data_by_id("tbl_user_koor", $where5);
 
         if ($cek1->num_rows() > 0) {
             foreach ($cek1->result() as $row) {
@@ -92,6 +99,20 @@ class Login extends CI_Controller
             redirect(base_url("Dashboard"));
         } elseif ($cek4->num_rows() > 0) {
             foreach ($cek4->result() as $row) {
+                $id = $row->id_user_petugas;
+                $nama = $row->nama_petugas;
+            }
+            $data_session = array(
+                'status'     => true,
+                'level'     => 4,
+                'id'        => $id,
+                'nama'        => $nama
+            );
+
+            $this->session->set_userdata($data_session);
+            redirect(base_url("Dashboard"));
+        } elseif ($cek5->num_rows() > 0) {
+            foreach ($cek5->result() as $row) {
                 $id = $row->id_user_koor;
                 $nama = $row->nama_koor;
                 $panggilan = $row->panggilan_koor;

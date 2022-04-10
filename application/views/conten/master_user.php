@@ -17,7 +17,7 @@
     <section class="section">
         <div class="row">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body table-responsive">
                     <h5 class="card-title">User Petugas</h5>
                     <table class="table datatable">
                         <thead>
@@ -59,7 +59,7 @@
     <section class="section">
         <div class="row">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body table-responsive">
                     <h5 class="card-title">User Koordinator</h5>
                     <table class="table table-striped">
                         <thead>

@@ -21,7 +21,14 @@ class Master extends CI_Controller
             'akses' => $this->session->userdata('level'),
             'name' => $this->session->userdata('nama'),
             'title' => 'Master Page',
-            'conten' => 'conten/master'
+            'conten' => 'conten/master',
+            'petugas' => $this->master->jumlah_user_petugas(),
+            'koor' => $this->master->jumlah_user_koor(),
+            'alamat' => $this->master->jumlah_alamat(),
+            'j_akses' => $this->master->jumlah_akses(),
+            'jabatan' => $this->master->jumlah_jabatan(),
+            'maal' => $this->master->jumlah_maal(),
+            'penerima' => $this->master->jumlah_penerima(),
         ];
         $this->load->view('template/conten', $data);
     }
@@ -32,6 +39,7 @@ class Master extends CI_Controller
         //     redirect(base_url("login"));
         // }
         $data = [
+            'akses' => $this->session->userdata('level'),
             'name' => $this->session->userdata('nama'),
             'title' => 'Master User',
             'conten' => 'conten/master_user',
@@ -129,5 +137,205 @@ class Master extends CI_Controller
         $this->m_data->hapus_data($table, $where);
         $this->session->set_flashdata('user', 'Dihapus');
         redirect('Master/master_user');
+    }
+
+    public function master_alamat()
+    {
+        $data = [
+            'akses' => $this->session->userdata('level'),
+            'name' => $this->session->userdata('nama'),
+            'title' => 'Master Alamat',
+            'conten' => 'conten/master_alamat',
+            'master_alamat' => $this->m_data->get_data('tbl_master_alamat'),
+            'headder_css' => array(
+                // 'assets/template/assets/vendor/simple-datatables/style.css',
+            ),
+            'footer_js' => array(
+                // 'assets/template/assets/vendor/simple-datatables/simple-datatables.js',
+                // 'assets/js/alert-master.js',
+            ),
+        ];
+        $this->load->view('template/conten', $data);
+    }
+
+    public function tambah_alamat()
+    {
+        $table = 'tbl_master_alamat';
+        $data = [
+            'nama_master_alamat' => $this->input->post('nama_alamat'),
+        ];
+        $this->m_data->simpan_data($table, $data);
+        redirect('Master/master_alamat');
+    }
+
+    public function update_alamat($id)
+    {
+        $table = 'tbl_master_alamat';
+        $data = [
+            'nama_master_alamat' => $this->input->post('nama_alamat'),
+        ];
+        $where = ['id_master_alamat' => $id];
+        $this->m_data->update_data($table, $data, $where);
+        redirect('Master/master_alamat');
+    }
+
+    public function master_akses()
+    {
+        $data = [
+            'akses' => $this->session->userdata('level'),
+            'name' => $this->session->userdata('nama'),
+            'title' => 'Master Akses',
+            'conten' => 'conten/master_akses',
+            'master_akses' => $this->m_data->get_data('tbl_master_akses'),
+            'headder_css' => array(
+                // 'assets/template/assets/vendor/simple-datatables/style.css',
+            ),
+            'footer_js' => array(
+                // 'assets/template/assets/vendor/simple-datatables/simple-datatables.js',
+                // 'assets/js/alert-master.js',
+            ),
+        ];
+        $this->load->view('template/conten', $data);
+    }
+
+    public function tambah_akses()
+    {
+        $table = 'tbl_master_akses';
+        $data = [
+            'nama_akses' => $this->input->post('nama_akses'),
+        ];
+        $this->m_data->simpan_data($table, $data);
+        redirect('Master/master_akses');
+    }
+
+    public function update_akses($id)
+    {
+        $table = 'tbl_master_akses';
+        $data = [
+            'nama_akses' => $this->input->post('nama_akses'),
+        ];
+        $where = ['id_akses' => $id];
+        $this->m_data->update_data($table, $data, $where);
+        redirect('Master/master_akses');
+    }
+
+    public function master_jabatan()
+    {
+        $data = [
+            'akses' => $this->session->userdata('level'),
+            'name' => $this->session->userdata('nama'),
+            'title' => 'Master jabatan',
+            'conten' => 'conten/master_jabatan',
+            'master_jabatan' => $this->m_data->get_data('tbl_master_jabatan'),
+            'headder_css' => array(
+                // 'assets/template/assets/vendor/simple-datatables/style.css',
+            ),
+            'footer_js' => array(
+                // 'assets/template/assets/vendor/simple-datatables/simple-datatables.js',
+                // 'assets/js/alert-master.js',
+            ),
+        ];
+        $this->load->view('template/conten', $data);
+    }
+
+    public function tambah_jabatan()
+    {
+        $table = 'tbl_master_jabatan';
+        $data = [
+            'nama_jabatan' => $this->input->post('nama_jabatan'),
+        ];
+        $this->m_data->simpan_data($table, $data);
+        redirect('Master/master_jabatan');
+    }
+
+    public function update_jabatan($id)
+    {
+        $table = 'tbl_master_jabatan';
+        $data = [
+            'nama_jabatan' => $this->input->post('nama_jabatan'),
+        ];
+        $where = ['id_jabatan' => $id];
+        $this->m_data->update_data($table, $data, $where);
+        redirect('Master/master_jabatan');
+    }
+
+    public function master_maal()
+    {
+        $data = [
+            'akses' => $this->session->userdata('level'),
+            'name' => $this->session->userdata('nama'),
+            'title' => 'Master Maal',
+            'conten' => 'conten/master_maal',
+            'master_maal' => $this->m_data->get_data('tbl_master_maal'),
+            'headder_css' => array(
+                // 'assets/template/assets/vendor/simple-datatables/style.css',
+            ),
+            'footer_js' => array(
+                // 'assets/template/assets/vendor/simple-datatables/simple-datatables.js',
+                // 'assets/js/alert-master.js',
+            ),
+        ];
+        $this->load->view('template/conten', $data);
+    }
+
+    public function tambah_maal()
+    {
+        $table = 'tbl_master_maal';
+        $data = [
+            'nama_maal' => $this->input->post('nama_maal'),
+        ];
+        $this->m_data->simpan_data($table, $data);
+        redirect('Master/master_maal');
+    }
+
+    public function update_maal($id)
+    {
+        $table = 'tbl_master_maal';
+        $data = [
+            'nama_maal' => $this->input->post('nama_maal'),
+        ];
+        $where = ['id_master_maal' => $id];
+        $this->m_data->update_data($table, $data, $where);
+        redirect('Master/master_maal');
+    }
+
+    public function master_penerima()
+    {
+        $data = [
+            'akses' => $this->session->userdata('level'),
+            'name' => $this->session->userdata('nama'),
+            'title' => 'Master penerima',
+            'conten' => 'conten/master_penerima',
+            'master_penerima' => $this->m_data->get_data('tbl_master_penerima'),
+            'headder_css' => array(
+                // 'assets/template/assets/vendor/simple-datatables/style.css',
+            ),
+            'footer_js' => array(
+                // 'assets/template/assets/vendor/simple-datatables/simple-datatables.js',
+                // 'assets/js/alert-master.js',
+            ),
+        ];
+        $this->load->view('template/conten', $data);
+    }
+
+    public function tambah_penerima()
+    {
+        $table = 'tbl_master_penerima';
+        $data = [
+            'nama_ket' => $this->input->post('nama_penerima'),
+        ];
+        $this->m_data->simpan_data($table, $data);
+        redirect('Master/master_penerima');
+    }
+
+    public function update_penerima($id)
+    {
+        $table = 'tbl_master_penerima';
+        $data = [
+            'nama_ket' => $this->input->post('nama_penerima'),
+        ];
+        $where = ['id_ket' => $id];
+        $this->m_data->update_data($table, $data, $where);
+        redirect('Master/master_penerima');
     }
 }
