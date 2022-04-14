@@ -74,7 +74,7 @@ foreach ($master_jabatan->result() as $row) { ?>
     <div class="modal fade" id="basicModal<?= $y++; ?>" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="<?= site_url('Master/update_jabatan/' . $row->id_jabatan) ?>" method="post">
+                <form action="<?= site_url('Master/update_jabatan/' . $row->id_master_jabatan) ?>" method="post">
                     <div class="modal-header">
                         <h5 class="modal-title">Edit Data</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

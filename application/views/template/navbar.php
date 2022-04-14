@@ -10,7 +10,7 @@
             </a>
         </li>
 
-        <?php if ($akses == 1 || $akses == 2 || $akses == 4) { ?>
+        <?php if ($akses == 1 || $akses == 2 || $akses == 4 || $akses == 5) { ?>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<?= base_url('Pembayaran') ?>">
                     <i class="bi bi-credit-card-fill"></i>

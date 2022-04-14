@@ -112,7 +112,7 @@ class Master extends CI_Controller
             'nama_koor' => $this->input->post('nama_user'),
             'username' => $this->input->post('username'),
             'password' => md5($this->input->post('password')),
-            'level' => 5,
+            'level' => 7,
             'alamat_koor' => $this->input->post('alamat'),
         ];
         $where = ['id_user_koor' => $id];
@@ -254,7 +254,7 @@ class Master extends CI_Controller
         $data = [
             'nama_jabatan' => $this->input->post('nama_jabatan'),
         ];
-        $where = ['id_jabatan' => $id];
+        $where = ['id_master_jabatan' => $id];
         $this->m_data->update_data($table, $data, $where);
         redirect('Master/master_jabatan');
     }

@@ -37,7 +37,7 @@ class M_zakat extends CI_Model
         FROM tbl_zakat_fitrah as a
         JOIN tbl_master_alamat as b ON a.alamat = b.id_master_alamat
         JOIN tbl_user_petugas as c ON a.petugas = c.id_user_petugas
-        WHERE a.tanggal = YEAR(NOW())
+        WHERE YEAR(a.tanggal) = YEAR(CURDATE())
         ");
     }
 }

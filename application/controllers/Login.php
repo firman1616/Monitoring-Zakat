@@ -51,7 +51,14 @@ class Login extends CI_Controller
             'password' => $password,
             'level' => 5
         );
-        $cek5 = $this->M_data->get_data_by_id("tbl_user_koor", $where5);
+        $cek5 = $this->M_data->get_data_by_id("tbl_user_petugas", $where5);
+
+        $where7 = array(
+            'username' => $username,
+            'password' => $password,
+            'level' => 7
+        );
+        $cek7 = $this->M_data->get_data_by_id("tbl_user_koor", $where7);
 
         if ($cek1->num_rows() > 0) {
             foreach ($cek1->result() as $row) {
@@ -76,7 +83,7 @@ class Login extends CI_Controller
             $data_session = array(
                 'status'     => true,
                 'level'     => 2,
-                'id_koor'        => $id,
+                'id'     => $id,
                 'nama'        => $nama,
                 // 'panggilan' => $panggilan
             );
@@ -113,13 +120,27 @@ class Login extends CI_Controller
             redirect(base_url("Dashboard"));
         } elseif ($cek5->num_rows() > 0) {
             foreach ($cek5->result() as $row) {
+                $id = $row->id_user_petugas;
+                $nama = $row->nama_petugas;
+            }
+            $data_session = array(
+                'status'     => true,
+                'level'     => 5,
+                'id'        => $id,
+                'nama'        => $nama
+            );
+
+            $this->session->set_userdata($data_session);
+            redirect(base_url("Dashboard"));
+        } elseif ($cek7->num_rows() > 0) {
+            foreach ($cek7->result() as $row) {
                 $id = $row->id_user_koor;
                 $nama = $row->nama_koor;
                 $panggilan = $row->panggilan_koor;
             }
             $data_session = array(
                 'status'     => true,
-                'level'      => 5,
+                'level'      => 7,
                 'id'         => $id,
                 'nama'       => $nama,
                 'panggilan' => $panggilan

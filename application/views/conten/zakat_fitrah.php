@@ -9,7 +9,7 @@
             </ol>
         </nav>
     </div><!-- End Page Title -->
-
+    <div class="flash-fitrah" data-flashdata="<?= $this->session->flashdata('fitrah') ?>"></div>
     <section class="section">
 
 
@@ -59,9 +59,9 @@
                                                     <td><?= $row->total_beras ?></td>
                                                     <td><?= $row->nama_petugas ?></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-warning" title="Edit Data"><i class="bi bi-pencil-square"></i></button>
+                                                        <a href="<?= site_url('Pembayaran/v_edit_fitrah/' . $row->id_zakat_fitrah) ?>" class="btn btn-warning" title="Edit Data"><i class="bi bi-pencil-square"></i></a>
                                                         <?php if ($akses == 1 || $akses == 2) { ?>
-                                                            <a href="" class="btn btn-danger" title="Hapus Data"><i class="bi bi-trash-fill"></i></a>
+                                                            <a href="<?= site_url('Pembayaran/hapus_zakat_fitrah/' . $row->id_zakat_fitrah) ?>" class="btn btn-danger hapus-fitrah" title="Hapus Data User"><i class="bi bi-trash2-fill"></i></a>
                                                         <?php } ?>
 
                                                     </td>
@@ -76,7 +76,7 @@
                                                     <td><?= $row->total_beras ?></td>
                                                     <td><?= $row->nama_petugas ?></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-warning" title="Edit Data"><i class="bi bi-pencil-square"></i></button>
+                                                        <a href="<?= site_url('Pembayaran/v_edit_fitrah/' . $row->id_zakat_fitrah) ?>" class="btn btn-warning" title="Edit Data"><i class="bi bi-pencil-square"></i></a>
                                                         <?php if ($akses == 1 || $akses == 2) { ?>
                                                             <a href="" class="btn btn-danger" title="Hapus Data"><i class="bi bi-trash-fill"></i></a>
                                                         <?php } ?>
@@ -93,7 +93,7 @@
                         <!-- Tambah Data -->
                         <div class="tab-pane fade" id="profile-justified" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="card-body ">
-                                <form action="" method="post">
+                                <form action="<?= site_url('Pembayaran/tambah_zakat_fitrah') ?>" method="post">
                                     <div class="col-12">
                                         <label class="form-label">Nama Pemberi Zakat <small style="color: red;">*</small></label>
                                         <input type="text" class="form-control" id="nama_pemberi" name="nama_pemberi" required placeholder="ex. Sutaji">
@@ -105,11 +105,11 @@
                                         </div>
                                         <div class="col-4">
                                             <label class="form-label">Berat Beras <small style="color: red;">*</small></label>
-                                            <input type="number" class="form-control" id="satuan_beras" name="satuan_beras" onkeyup="sum();" required placeholder="ex. 2.3, 2.8, 3">
+                                            <input type="text" class="form-control" id="satuan_beras" name="satuan_beras" onkeyup="sum();" required placeholder="ex. 2.3">
                                         </div>
                                         <div class="col-4">
                                             <label class="form-label">Total Beras</label>
-                                            <input type="number" class="form-control" id="total" name="total" readonly>
+                                            <input type="text" class="form-control" id="total" name="total" readonly>
                                         </div>
                                     </div>
                                     <div class="row">
