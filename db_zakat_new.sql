@@ -11,7 +11,7 @@
  Target Server Version : 50733
  File Encoding         : 65001
 
- Date: 15/04/2022 02:47:33
+ Date: 17/04/2022 12:31:25
 */
 
 SET NAMES utf8mb4;
@@ -51,7 +51,7 @@ CREATE TABLE `tbl_master_akses`  (
   `id_akses` int(255) NOT NULL AUTO_INCREMENT,
   `nama_akses` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_akses`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_master_akses
@@ -62,6 +62,7 @@ INSERT INTO `tbl_master_akses` VALUES (3, 'Sekretaris');
 INSERT INTO `tbl_master_akses` VALUES (4, 'Bendahara');
 INSERT INTO `tbl_master_akses` VALUES (5, 'Petugas');
 INSERT INTO `tbl_master_akses` VALUES (6, 'User');
+INSERT INTO `tbl_master_akses` VALUES (7, 'Koordinator');
 
 -- ----------------------------
 -- Table structure for tbl_master_alamat
@@ -205,44 +206,44 @@ CREATE TABLE `tbl_penerima`  (
   `koor` int(11) NULL DEFAULT NULL,
   `status` int(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id_penerima`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 393 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 395 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_penerima
 -- ----------------------------
-INSERT INTO `tbl_penerima` VALUES (1, 'Sumarso', 1, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (2, 'Bu Yani', 3, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (4, 'Bu Saropah', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (6, 'Bpk Jayadi (Sanimas)', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (8, 'Bu Jenjem', 1, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (9, 'Eka', 1, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (10, 'Bpk Suli', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (12, 'Bpk Samsul', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (13, 'Futihatus', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (14, 'Bu Zubaidah', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (15, 'Bu Kasiah', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (16, 'Bu Julaika', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (17, 'Bpk Sumarsono', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (18, 'Bpk Yono', 1, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (19, 'Bpk Marianto ', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (20, 'Bpk Sahid ', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (21, 'Bpk Surati', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (22, 'Bu Sunar', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (24, 'Bpk Sari (Suroso) /sri utami', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (25, 'Bpk Soemedi', 3, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (26, 'Bu Fida (Qodir)', 3, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (27, 'Bpk Hada’ (Bu Titin)', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (28, 'Bpk Jaiman', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (29, 'Bpk Paidi', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (31, 'Bu Siti', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (32, 'Bpk Joko', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (33, 'Rita', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (36, 'Choirul (Dian)', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (37, 'ibu diana', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (38, 'Mad Bukhori', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (39, 'Bu Khomsatun', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (41, 'Bpk Qodir', 3, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (42, 'bu juaria', 2, 1, 1);
+INSERT INTO `tbl_penerima` VALUES (1, 'Sumarso', 1, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (2, 'Bu Yani', 3, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (4, 'Bu Saropah', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (6, 'Bpk Jayadi (Sanimas)', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (8, 'Bu Jenjem', 1, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (9, 'Eka', 1, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (10, 'Bpk Suli', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (12, 'Bpk Samsul', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (13, 'Futihatus', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (14, 'Bu Zubaidah', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (15, 'Bu Kasiah', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (16, 'Bu Julaika', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (17, 'Bpk Sumarsono', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (18, 'Bpk Yono', 1, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (19, 'Bpk Marianto ', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (20, 'Bpk Sahid ', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (21, 'Bpk Surati', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (22, 'Bu Sunar', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (24, 'Bpk Sari (Suroso) /sri utami', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (25, 'Bpk Soemedi', 3, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (26, 'Bu Fida (Qodir)', 3, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (27, 'Bpk Hada’ (Bu Titin)', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (28, 'Bpk Jaiman', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (29, 'Bpk Paidi', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (31, 'Bu Siti', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (32, 'Bpk Joko', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (33, 'Rita', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (36, 'Choirul (Dian)', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (37, 'ibu diana', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (38, 'Mad Bukhori', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (39, 'Bu Khomsatun', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (41, 'Bpk Qodir', 3, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (42, 'bu juaria', 2, 1, 0);
 INSERT INTO `tbl_penerima` VALUES (46, 'Agus Salim', 3, 2, 0);
 INSERT INTO `tbl_penerima` VALUES (47, 'Abd. Rosyid', 3, 2, 0);
 INSERT INTO `tbl_penerima` VALUES (48, 'M. Isa', 1, 2, 0);
@@ -315,44 +316,44 @@ INSERT INTO `tbl_penerima` VALUES (215, 'Bu Lek Alif ?', 2, 6, 0);
 INSERT INTO `tbl_penerima` VALUES (216, 'Sulika', 1, 6, 0);
 INSERT INTO `tbl_penerima` VALUES (217, 'Tas\'an', 2, 6, 0);
 INSERT INTO `tbl_penerima` VALUES (218, 'Ibu Dinda', 1, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (220, 'bpk untung', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (221, 'dul hadi', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (222, 'sulton', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (223, 'bu nurul', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (224, 'bpk buri', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (225, 'irtanto', 2, 1, 1);
+INSERT INTO `tbl_penerima` VALUES (220, 'bpk untung', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (221, 'dul hadi', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (222, 'sulton', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (223, 'bu nurul', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (224, 'bpk buri', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (225, 'irtanto', 2, 1, 0);
 INSERT INTO `tbl_penerima` VALUES (226, 'Jaswadi', 2, 4, 0);
 INSERT INTO `tbl_penerima` VALUES (227, 'Dani', 1, 4, 0);
 INSERT INTO `tbl_penerima` VALUES (228, 'Tutik', 1, 4, 0);
 INSERT INTO `tbl_penerima` VALUES (230, 'Bu Tin (Khundoli)', 1, 4, 0);
 INSERT INTO `tbl_penerima` VALUES (231, 'Mut (gorengan)', 1, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (232, 'Abdul Kahar', 1, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (234, 'Ning Susiati', 2, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (235, 'Muslimah', 1, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (236, 'Sholeh', 2, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (238, 'Ninik', 1, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (239, 'Tutik', 2, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (241, 'Asiah', 1, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (242, 'Sariyah', 1, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (246, 'Naimun', 2, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (251, 'Zainuri', 2, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (254, 'Eko', 1, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (255, 'Ali Ibrahim', 2, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (256, 'Ali Fathani', 1, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (257, 'Fathana', 1, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (258, 'Ali Mustaqim', 1, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (259, 'Yulima', 1, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (260, 'Buk Mar\'ah', 1, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (261, 'Rokha', 1, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (262, 'Mariah', 2, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (263, 'Wati', 1, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (264, 'Buk Win', 2, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (265, 'Aas', 3, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (266, 'Bu Siti', 1, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (268, 'Darmi (Genduk)', 1, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (271, 'Bu Suha ', 1, 3, 1);
+INSERT INTO `tbl_penerima` VALUES (232, 'Abdul Kahar', 1, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (234, 'Ning Susiati', 2, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (235, 'Muslimah', 1, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (236, 'Sholeh', 2, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (238, 'Ninik', 1, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (239, 'Tutik', 2, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (241, 'Asiah', 1, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (242, 'Sariyah', 1, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (246, 'Naimun', 2, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (251, 'Zainuri', 2, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (254, 'Eko', 1, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (255, 'Ali Ibrahim', 2, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (256, 'Ali Fathani', 1, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (257, 'Fathana', 1, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (258, 'Ali Mustaqim', 1, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (259, 'Yulima', 1, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (260, 'Buk Mar\'ah', 1, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (261, 'Rokha', 1, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (262, 'Mariah', 2, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (263, 'Wati', 1, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (264, 'Buk Win', 2, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (265, 'Aas', 3, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (266, 'Bu Siti', 1, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (268, 'Darmi (Genduk)', 1, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (271, 'Bu Suha ', 1, 3, 0);
 INSERT INTO `tbl_penerima` VALUES (274, 'Ibunya Nera', 2, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (276, 'Susi', 3, 1, 1);
+INSERT INTO `tbl_penerima` VALUES (276, 'Susi', 3, 1, 0);
 INSERT INTO `tbl_penerima` VALUES (298, 'Yaati kos erwin', 2, 4, 0);
 INSERT INTO `tbl_penerima` VALUES (299, 'Toari', 2, 4, 0);
 INSERT INTO `tbl_penerima` VALUES (303, 'Agung', 1, 2, 0);
@@ -361,11 +362,11 @@ INSERT INTO `tbl_penerima` VALUES (305, 'Hariono (kost suyono)', 2, 2, 0);
 INSERT INTO `tbl_penerima` VALUES (306, 'Martinus(kost pipit)', 2, 2, 0);
 INSERT INTO `tbl_penerima` VALUES (307, 'Rohman(kost pipit)', 2, 2, 0);
 INSERT INTO `tbl_penerima` VALUES (308, 'Bpk hermanto', 2, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (309, 'Edi Supriyanto', 2, 3, 1);
+INSERT INTO `tbl_penerima` VALUES (309, 'Edi Supriyanto', 2, 3, 0);
 INSERT INTO `tbl_penerima` VALUES (310, 'Iwan(kost nyoman)', 2, 2, 0);
 INSERT INTO `tbl_penerima` VALUES (312, 'Yudha', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (313, 'Rais', 2, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (314, 'Basri', 2, 3, 1);
+INSERT INTO `tbl_penerima` VALUES (313, 'Rais', 2, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (314, 'Basri', 2, 3, 0);
 INSERT INTO `tbl_penerima` VALUES (317, 'Mulyosantoso', 1, 5, 0);
 INSERT INTO `tbl_penerima` VALUES (318, 'Mbak Tatik', 1, 5, 0);
 INSERT INTO `tbl_penerima` VALUES (319, 'Mbah Mud', 1, 5, 0);
@@ -404,15 +405,15 @@ INSERT INTO `tbl_penerima` VALUES (358, 'Mbah Siti', 1, 5, 0);
 INSERT INTO `tbl_penerima` VALUES (360, 'Umi kalsum', 2, 5, 0);
 INSERT INTO `tbl_penerima` VALUES (361, 'M Amin', 2, 5, 0);
 INSERT INTO `tbl_penerima` VALUES (365, 'Arwintono', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (366, 'karomah ', 1, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (367, 'ibu sri cucuk ', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (368, 'nah rowi ', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (369, 'jumaroh', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (370, 'pak totok', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (371, 'ayu ', 1, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (372, 'maimunah', 1, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (373, 'ropi\'ah', 2, 1, 1);
-INSERT INTO `tbl_penerima` VALUES (374, 'bapak paeran ', 2, 1, 1);
+INSERT INTO `tbl_penerima` VALUES (366, 'karomah ', 1, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (367, 'ibu sri cucuk ', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (368, 'nah rowi ', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (369, 'jumaroh', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (370, 'pak totok', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (371, 'ayu ', 1, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (372, 'maimunah', 1, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (373, 'ropi\'ah', 2, 1, 0);
+INSERT INTO `tbl_penerima` VALUES (374, 'bapak paeran ', 2, 1, 0);
 INSERT INTO `tbl_penerima` VALUES (376, 'Ayah Arimbi (pengamen)', 2, 4, 0);
 INSERT INTO `tbl_penerima` VALUES (377, 'Bpk. Paijan (supir Bemo)', 1, 4, 0);
 INSERT INTO `tbl_penerima` VALUES (378, 'Abdul  Karim', 2, 2, 0);
@@ -420,15 +421,15 @@ INSERT INTO `tbl_penerima` VALUES (379, 'Ustd. Abdi', 3, 2, 0);
 INSERT INTO `tbl_penerima` VALUES (380, 'Komaria', 1, 2, 0);
 INSERT INTO `tbl_penerima` VALUES (381, 'Aisyah', 3, 6, 0);
 INSERT INTO `tbl_penerima` VALUES (382, 'Sunarto', 1, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (384, 'Yati', 2, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (385, 'Rianto', 2, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (386, 'Kholil', 1, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (387, 'Imam Muslik', 2, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (388, 'H. Jufri', 3, 3, 1);
-INSERT INTO `tbl_penerima` VALUES (389, 'Malikhah', 3, 3, 1);
+INSERT INTO `tbl_penerima` VALUES (384, 'Yati', 2, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (385, 'Rianto', 2, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (386, 'Kholil', 1, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (387, 'Imam Muslik', 2, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (388, 'H. Jufri', 3, 3, 0);
+INSERT INTO `tbl_penerima` VALUES (389, 'Malikhah', 3, 3, 0);
 INSERT INTO `tbl_penerima` VALUES (390, 'Siti Mudrika', 3, 4, 0);
 INSERT INTO `tbl_penerima` VALUES (391, 'Sri Rahayu', 2, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (392, 'Ten Ketang', 2, 1, 1);
+INSERT INTO `tbl_penerima` VALUES (392, 'Ten Ketang', 2, 1, 0);
 
 -- ----------------------------
 -- Table structure for tbl_user_koor
@@ -921,97 +922,98 @@ CREATE TABLE `tbl_zakat_maal`  (
   `nama_pemberi_maal` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `kategori_zakat` int(11) NULL DEFAULT NULL,
   `nominal_zakat` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  `alamat` int(11) NULL DEFAULT NULL,
+  `alamat_lainnya` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
   `tanggal` date NULL DEFAULT NULL,
   `petugas1` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `petugas2` int(11) NULL DEFAULT NULL,
+  `petugas2` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `keterangan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
   PRIMARY KEY (`id_zakat_maal`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 90 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 91 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_zakat_maal
 -- ----------------------------
-INSERT INTO `tbl_zakat_maal` VALUES (4, 'Lukman Hakim', 1, '2000000', 'Graha Tirta Akasia 36', '2021-05-07', '7', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (5, 'Mas ria', 3, '1000', 'Rt 02, Rw 01', '2021-05-07', '7', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (6, 'Bpak M. Lukman Hakim', 3, '35000', 'Graha Tirta Akasia 36', '2021-05-07', '7', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (7, 'Lailatul Isnaini Arofah', 4, '450000', 'RT03 RW01 JANTI', '2021-05-07', '7', 0, 'Nifas');
-INSERT INTO `tbl_zakat_maal` VALUES (8, 'Ahmad abdul ghofur', 3, '4000', 'Janti RT 19 RW 01', '2021-05-07', '5', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (9, 'Marlina', 4, '150000', 'Rt 19', '2021-05-08', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (10, 'Farida Nur Zeha', 3, '200000', 'Buduran', '2021-05-08', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (11, 'Miftahuddin', 3, '100000', 'Rt 19 rw 01', '2021-05-09', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (15, 'Apriyana H.', 4, '0', 'Wisma Tropodo', '2021-05-09', '3', 0, 'Beras 14 kg');
-INSERT INTO `tbl_zakat_maal` VALUES (16, 'Bpk Ari', 3, '1000', 'K24', '2021-05-09', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (17, 'Rohaida', 4, '450000', 'Dukuh ngingas', '2021-05-09', '3', 0, 'Sakit');
-INSERT INTO `tbl_zakat_maal` VALUES (18, 'Bpk Adi Maulana', 3, '5000', 'Perum Graha Tirta Dahlia', '2021-05-09', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (19, 'Bpk Wahyu Romahdhony', 1, '17000', 'Magetan', '2021-05-09', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (20, 'Sarito', 3, '1000', 'Rt 19', '2021-05-10', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (21, 'Nurhayati', 3, '17000', 'Makarya Binangun', '2021-05-10', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (22, 'Indra Gunawan', 3, '1000', 'Buduran', '2021-05-10', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (23, 'Filza nur khanani', 4, '450000', 'Brigjen katamso', '2021-05-10', '11', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (24, 'Ibu nur aini', 3, '64000', '', '2021-05-10', '11', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (25, 'Bpk pulung', 1, '500000', 'Graha Tirta akasia', '2021-05-10', '11', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (26, 'Bpk pulung', 3, '269000', 'Graha Tirta akasia', '2021-05-10', '11', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (27, 'Bpk suparto', 3, '2000', 'Ngingas', '2021-05-10', '11', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (28, 'Bpk sigit', 1, '100000', 'RT 02', '2021-05-10', '11', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (29, 'Bpk sigit ', 3, '100000', 'RT 02', '2021-05-10', '11', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (30, 'Ibu suminten', 4, '450000', 'RT 19', '2021-05-10', '11', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (31, 'Juwanto', 3, '200000', 'Rt 20', '2021-05-10', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (33, 'Ibu Prapto', 4, '225000', '', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (34, 'Pak Syukur', 3, '200000', 'RT 18', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (35, 'Hj Abdul Manan', 1, '500000', 'WEDORO MASJID', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (36, 'Ibu Desy', 3, '68000', 'MASANGAN GEDANGAN', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (37, 'Bapak Imam', 3, '17000', 'JANTI 03', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (38, 'Bapak Yahya', 3, '250000', 'JANTI RT18', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (39, 'Ibu Mariyah', 3, '250000', 'JANTI RT18', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (40, 'PT SERODJA SURYA KACA', 2, '500000', 'JANTI', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (41, 'Bpk. Aan', 1, '1500000', 'RT18/RW01', '2021-05-11', '5', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (42, 'Bpk. Selamet Riyanto', 3, '50000', '02/01 Janti', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (43, 'Bpk. Wawan', 1, '100000', 'Gunung Sari', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (44, 'Ibu Sadan', 1, '150000', 'Rt 03 RW 01', '2021-05-11', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (45, 'Ibu Hasna Rief / Bapak Johan W', 1, '500000', 'Rt 19 rw 01', '2021-05-11', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (46, 'H. Mulyadi', 1, '100000', 'Rt 18 rw 01', '2021-05-11', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (47, 'H. Nuril Huda', 1, '200000', 'Rt 20 rw 01', '2021-05-11', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (48, 'H. Sukani', 1, '500000', 'Rt 20 rw 01', '2021-05-11', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (49, 'Bpk. Rudi Setiawan', 1, '100000', 'RT 18', '2021-05-11', '11', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (50, 'Ibu Siti', 3, '7000', 'RT 03 RW 01', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (51, 'Bapak Mulyadi', 1, '500000', 'Janti RT 01', '2021-05-11', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (52, 'Ari budiono', 3, '100000', 'Janti RT 02', '2021-05-11', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (53, 'Nanuk Susilowati', 4, '450000', 'Makarya Binangun', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (54, 'Bapak Sutomo', 1, '1000000', 'Janti RT 01', '2021-05-11', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (55, 'Elinda Wulandari', 4, '250000', 'RT 03 RW 01', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (56, 'Jahuri', 1, '1450000', 'RT 02 RW 01', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (57, 'Bapak makmun', 3, '200000', 'Janti RT 02', '2021-05-11', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (58, 'Bapak Sadali', 3, '200000', 'Janti RT 02', '2021-05-11', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (59, 'Bapak Artono', 1, '100000', 'Janti RT 02', '2021-05-11', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (60, 'Toko Setiawan', 2, '200000', 'Janti RT 02', '2021-05-11', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (61, 'Gangsar montor (Bpk Sigit)', 1, '300000', 'Janti RT 02', '2021-05-11', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (62, 'Bapak Munasrip', 3, '1000', 'Janti RT 18', '2021-05-11', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (63, 'Pak Suwono', 3, '50000', 'RT 03 RW 01', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (64, 'Pak Malik', 3, '17000', 'RT 18 RW 01', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (65, 'Bapak Jalil', 3, '8000', 'RT 19 RW 01', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (66, 'Wahyu', 4, '450000', 'RT 02 RW 01', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (67, 'Bapak Mulyadi', 1, '500000', 'RT 01 RW 01', '2021-05-11', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (68, 'Bani Adam', 3, '100000', 'Rt 01 Rw 01', '2021-05-11', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (69, 'Roni', 1, '500000', 'Rt 20 Rw 01', '2021-05-11', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (70, 'Adi triyasa', 4, '180000', 'RT 19', '2021-05-11', '3', 5, '12 Hari');
-INSERT INTO `tbl_zakat_maal` VALUES (71, 'Ibu Prapto', 3, '42000', 'Rt 18 RW 01', '2021-05-11', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (72, 'Cristian dan Tyas', 3, '34000', 'Rt 01', '2021-05-12', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (73, 'Mbak Indra', 1, '100000', 'Rt 01', '2021-05-12', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (74, 'Fulan', 3, '50000', 'Rt 01', '2021-05-12', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (76, 'H. Suyono', 1, '300000', 'Rt 20 rw 01', '2021-05-12', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (77, 'Suliyat', 3, '85000', 'Rt 20 rw 01', '2021-05-12', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (78, 'Albad', 3, '368000', 'Pengkol', '2021-05-12', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (79, 'Imron', 3, '68000', 'Rt 02 rw 01', '2021-05-12', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (80, 'Asiyah', 4, '450000', 'Rt 03', '2021-05-12', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (81, 'Sugito', 1, '200000', 'Rt 02', '2021-05-12', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (82, 'Moch Zaini', 4, '0', '', '2021-05-12', '3', 0, 'Beras 10 kg');
-INSERT INTO `tbl_zakat_maal` VALUES (83, 'Moh. Nasrullah', 3, '35000', 'RT 02 RW 01', '2021-05-12', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (84, 'Moch. Nasrullah', 3, '35000', 'RT 02 RW 01', '2021-05-12', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (85, 'Ibu Pradita', 3, '1000', 'Gang 5 No.128', '2021-05-12', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (86, 'Bu Eka', 3, '175000', 'Gang 5 No.18', '2021-05-12', '12', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (87, 'Sumarlan ', 3, '100000', 'Rt 01', '2021-05-12', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (88, 'Dullah ', 3, '20000', 'Rt 01', '2021-05-12', '3', 0, '');
-INSERT INTO `tbl_zakat_maal` VALUES (89, 'Rochim', 3, '100000', 'Rt 01', '2021-05-12', '3', 0, '');
+INSERT INTO `tbl_zakat_maal` VALUES (4, 'Lukman Hakim', 1, '2000000', 7, 'Graha Tirta Akasia 36', '2021-05-07', '7', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (5, 'Mas ria', 3, '1000', 2, 'Rt 02, Rw 01', '2021-05-07', '7', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (6, 'Bpak M. Lukman Hakim', 3, '35000', 7, 'Graha Tirta Akasia 36', '2021-05-07', '7', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (7, 'Lailatul Isnaini Arofah', 4, '450000', 3, 'RT03 RW01 JANTI', '2021-05-07', '7', NULL, 'Nifas');
+INSERT INTO `tbl_zakat_maal` VALUES (8, 'Ahmad abdul ghofur', 3, '4000', 5, 'Janti RT 19 RW 01', '2021-05-07', '5', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (9, 'Marlina', 4, '150000', 5, 'Rt 19', '2021-05-08', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (10, 'Farida Nur Zeha', 3, '200000', 7, 'Buduran', '2021-05-08', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (11, 'Miftahuddin', 3, '100000', 5, 'Rt 19 rw 01', '2021-05-09', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (15, 'Apriyana H.', 4, '0', 7, 'Wisma Tropodo', '2021-05-09', '3', NULL, 'Beras 14 kg');
+INSERT INTO `tbl_zakat_maal` VALUES (16, 'Bpk Ari', 3, '1000', 7, 'K24', '2021-05-09', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (17, 'Rohaida', 4, '450000', 7, 'Dukuh ngingas', '2021-05-09', '3', NULL, 'Sakit');
+INSERT INTO `tbl_zakat_maal` VALUES (18, 'Bpk Adi Maulana', 3, '5000', 7, 'Perum Graha Tirta Dahlia', '2021-05-09', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (19, 'Bpk Wahyu Romahdhony', 1, '17000', 7, 'Magetan', '2021-05-09', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (20, 'Sarito', 3, '1000', 5, 'Rt 19', '2021-05-10', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (21, 'Nurhayati', 3, '17000', 7, 'Makarya Binangun', '2021-05-10', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (22, 'Indra Gunawan', 3, '1000', 7, 'Buduran', '2021-05-10', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (23, 'Filza nur khanani', 4, '450000', 7, 'Brigjen katamso', '2021-05-10', '11', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (24, 'Ibu nur aini', 3, '64000', 1, '', '2021-05-10', '11', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (25, 'Bpk pulung', 1, '500000', 7, 'Graha Tirta akasia', '2021-05-10', '11', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (26, 'Bpk pulung', 3, '269000', 7, 'Graha Tirta akasia', '2021-05-10', '11', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (27, 'Bpk suparto', 3, '2000', 7, 'Ngingas', '2021-05-10', '11', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (28, 'Bpk sigit', 1, '100000', 2, 'RT 02', '2021-05-10', '11', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (29, 'Bpk sigit ', 3, '100000', 2, 'RT 02', '2021-05-10', '11', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (30, 'Ibu suminten', 4, '450000', 5, 'RT 19', '2021-05-10', '11', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (31, 'Juwanto', 3, '200000', 6, 'Rt 20', '2021-05-10', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (33, 'Ibu Prapto', 4, '225000', 1, '', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (34, 'Pak Syukur', 3, '200000', 4, 'RT 18', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (35, 'Hj Abdul Manan', 1, '500000', 7, 'WEDORO MASJID', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (36, 'Ibu Desy', 3, '68000', 7, 'MASANGAN GEDANGAN', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (37, 'Bapak Imam', 3, '17000', 3, 'JANTI 03', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (38, 'Bapak Yahya', 3, '250000', 4, 'JANTI RT18', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (39, 'Ibu Mariyah', 3, '250000', 4, 'JANTI RT18', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (40, 'PT SERODJA SURYA KACA', 2, '500000', 7, 'JANTI', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (41, 'Bpk. Aan', 1, '1500000', 4, 'RT18/RW01', '2021-05-11', '5', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (42, 'Bpk. Selamet Riyanto', 3, '50000', 2, '02/01 Janti', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (43, 'Bpk. Wawan', 1, '100000', 7, 'Gunung Sari', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (44, 'Ibu Sadan', 1, '150000', 3, 'Rt 03 RW 01', '2021-05-11', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (45, 'Ibu Hasna Rief / Bapak Johan W', 1, '500000', 5, 'Rt 19 rw 01', '2021-05-11', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (46, 'H. Mulyadi', 1, '100000', 4, 'Rt 18 rw 01', '2021-05-11', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (47, 'H. Nuril Huda', 1, '200000', 6, 'Rt 20 rw 01', '2021-05-11', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (48, 'H. Sukani', 1, '500000', 6, 'Rt 20 rw 01', '2021-05-11', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (49, 'Bpk. Rudi Setiawan', 1, '100000', 4, 'RT 18', '2021-05-11', '11', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (50, 'Ibu Siti', 3, '7000', 3, 'RT 03 RW 01', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (51, 'Bapak Mulyadi', 1, '500000', 1, 'Janti RT 01', '2021-05-11', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (52, 'Ari budiono', 3, '100000', 2, 'Janti RT 02', '2021-05-11', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (53, 'Nanuk Susilowati', 4, '450000', 7, 'Makarya Binangun', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (54, 'Bapak Sutomo', 1, '1000000', 1, 'Janti RT 01', '2021-05-11', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (55, 'Elinda Wulandari', 4, '250000', 3, 'RT 03 RW 01', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (56, 'Jahuri', 1, '1450000', 2, 'RT 02 RW 01', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (57, 'Bapak makmun', 3, '200000', 2, 'Janti RT 02', '2021-05-11', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (58, 'Bapak Sadali', 3, '200000', 2, 'Janti RT 02', '2021-05-11', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (59, 'Bapak Artono', 1, '100000', 2, 'Janti RT 02', '2021-05-11', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (60, 'Toko Setiawan', 2, '200000', 2, 'Janti RT 02', '2021-05-11', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (61, 'Gangsar montor (Bpk Sigit)', 1, '300000', 2, 'Janti RT 02', '2021-05-11', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (62, 'Bapak Munasrip', 3, '1000', 4, 'Janti RT 18', '2021-05-11', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (63, 'Pak Suwono', 3, '50000', 3, 'RT 03 RW 01', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (64, 'Pak Malik', 3, '17000', 4, 'RT 18 RW 01', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (65, 'Bapak Jalil', 3, '8000', 5, 'RT 19 RW 01', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (66, 'Wahyu', 4, '450000', 2, 'RT 02 RW 01', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (67, 'Bapak Mulyadi', 1, '500000', 1, 'RT 01 RW 01', '2021-05-11', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (68, 'Bani Adam', 3, '100000', 1, 'Rt 01 Rw 01', '2021-05-11', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (69, 'Roni', 1, '500000', 6, 'Rt 20 Rw 01', '2021-05-11', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (70, 'Adi triyasa', 4, '180000', 5, 'RT 19', '2021-05-11', '3', NULL, '12 Hari');
+INSERT INTO `tbl_zakat_maal` VALUES (71, 'Ibu Prapto', 3, '42000', 4, 'Rt 18 RW 01', '2021-05-11', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (72, 'Cristian dan Tyas', 3, '34000', 1, 'Rt 01', '2021-05-12', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (73, 'Mbak Indra', 1, '100000', 1, 'Rt 01', '2021-05-12', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (74, 'Fulan', 3, '50000', 1, 'Rt 01', '2021-05-12', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (76, 'H. Suyono', 1, '300000', 6, 'Rt 20 rw 01', '2021-05-12', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (77, 'Suliyat', 3, '85000', 6, 'Rt 20 rw 01', '2021-05-12', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (78, 'Albad', 3, '368000', 7, 'Pengkol', '2021-05-12', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (79, 'Imron', 3, '68000', 2, 'Rt 02 rw 01', '2021-05-12', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (80, 'Asiyah', 4, '450000', 3, 'Rt 03', '2021-05-12', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (81, 'Sugito', 1, '200000', 2, 'Rt 02', '2021-05-12', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (82, 'Moch Zaini', 4, '0', 1, '', '2021-05-12', '3', NULL, 'Beras 10 kg');
+INSERT INTO `tbl_zakat_maal` VALUES (83, 'Moh. Nasrullah', 3, '35000', 2, 'RT 02 RW 01', '2021-05-12', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (84, 'Moch. Nasrullah', 3, '35000', 2, 'RT 02 RW 01', '2021-05-12', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (85, 'Ibu Pradita', 3, '1000', 7, 'Gang 5 No.128', '2021-05-12', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (86, 'Bu Eka', 3, '175000', 7, 'Gang 5 No.18', '2021-05-12', '12', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (87, 'Sumarlan ', 3, '100000', 1, 'Rt 01', '2021-05-12', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (88, 'Dullah ', 3, '20000', 1, 'Rt 01', '2021-05-12', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (89, 'Rochim', 3, '100000', 1, 'Rt 01', '2021-05-12', '3', NULL, '');
 
 SET FOREIGN_KEY_CHECKS = 1;

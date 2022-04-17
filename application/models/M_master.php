@@ -34,7 +34,7 @@ class M_master extends CI_Model
     FROM
       tbl_user_koor AS a
       JOIN tbl_master_alamat AS b ON b.id_master_alamat = a.alamat_koor
-      JOIN tbl_master_akses AS c ON c.id_akses = a.LEVEL');
+      JOIN tbl_master_akses AS c ON c.id_akses = a.level');
   }
 
   public function jumlah_user_petugas()

@@ -12,16 +12,18 @@ $(document).ready(function () {
 	// $(window).load(function () {
 	$("#judul").hide();
 	$("#lainnya").hide();
-	// $("#sn3").hide();
+	$("#style").hide();
 
 	$("#alamat").change(function () {
 		console.log($(this).val());
 		if ($(this).val() != 7) {
 			$("#judul").hide();
 			$("#lainnya").hide();
+			$("#style").hide();
 		} else {
 			$("#judul").show();
 			$("#lainnya").show();
+			$("#style").show();
 		}
 	});
 });

@@ -141,13 +141,13 @@ class Login extends CI_Controller
             $data_session = array(
                 'status'     => true,
                 'level'      => 7,
-                'id'         => $id,
+                'id_koor'         => $id,
                 'nama'       => $nama,
                 'panggilan' => $panggilan
             );
 
             $this->session->set_userdata($data_session);
-            redirect(base_url("koor/Dashboard"));
+            redirect(base_url("Dashboard"));
         } else {
             $this->session->set_flashdata('flash', 'Wrong');
 

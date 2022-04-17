@@ -67,12 +67,12 @@ foreach ($get_data->result() as $row) {
                                 </select>
                             </div>
                             <?php if ($f == 7) { ?>
-                                <div class="col-4">
+                                <div class="col-4" id="style">
                                     <label class="form-label" id="judul">Alamat Lainnya </label>
                                     <input type="text" placeholder="Alamat Lainnya" class="form-control" name="lainnya" id="lainnya" value="<?= $g ?>">
                                 </div>
                             <?php } else { ?>
-                                <!-- <div class="col-4">
+                                <!-- <div class="col-4" id="style">
                                     <label class="form-label" id="judul">Alamat Lainnya </label>
                                     <input type="text" placeholder="Alamat Lainnya" class="form-control" name="lainnya" id="lainnya" value="">
                                 </div> -->
