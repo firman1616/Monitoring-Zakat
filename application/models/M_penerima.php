@@ -11,11 +11,11 @@ class M_penerima extends CI_Model
         a.ket_penerima,
         a.koor,
         b.nama_ket,
-        c.nama_koor 
+        c.nama_petugas 
     FROM
         `tbl_penerima` as a
     JOIN tbl_master_penerima as b ON a.ket_penerima = b.id_ket
-    JOIN tbl_user_koor as c ON a.koor = c.id_user_koor");
+    JOIN tbl_user_petugas as c ON a.koor = c.id_user_petugas");
     }
 
     public function filter_penerima($id)
@@ -27,11 +27,30 @@ class M_penerima extends CI_Model
         a.ket_penerima,
         a.koor,
         b.nama_ket,
-        c.nama_koor 
+        c.nama_petugas 
     FROM
         `tbl_penerima` as a
     JOIN tbl_master_penerima as b ON a.ket_penerima = b.id_ket
-    JOIN tbl_user_koor as c ON a.koor = c.id_user_koor
-		WHERE koor = $id");
+    JOIN tbl_user_petugas as c ON a.koor = c.id_user_petugas
+	WHERE koor = $id");
+    }
+
+    public function user_koor()
+    {
+        return $this->db->query('SELECT
+            a.id_user_petugas,
+            a.nama_petugas,
+            a.username,
+            a.password,
+            a.keterangan,
+            a.level,
+            a.alamat_petugas,
+            b.nama_master_alamat as petugas_alamat,
+            c.nama_akses 
+        FROM
+            tbl_user_petugas as a
+        JOIN tbl_master_alamat as b on b.id_master_alamat = a.alamat_petugas
+        JOIN tbl_master_akses as c on c.id_akses = a.level
+        WHERE a.level = 7');
     }
 }

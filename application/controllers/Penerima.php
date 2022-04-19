@@ -21,13 +21,12 @@ class Penerima extends CI_Controller
             'akses' => $this->session->userdata('level'),
             'name' => $this->session->userdata('nama'),
             'id_petugas' => $this->session->userdata('id'),
-            'id_koor' => $this->session->userdata('id_koor'),
             'title' => 'Data Penerima Zakat',
             'conten' => 'conten/penerima_zakat',
             'get_data' => $this->penerima->data_penerima(),
-            'get_filter_data' => $this->penerima->filter_penerima($this->session->userdata('id_koor')),
+            'get_filter_data' => $this->penerima->filter_penerima($this->session->userdata('id')),
             'kategori' => $this->m_data->get_data('tbl_master_penerima'),
-            'get_koor' => $this->m_data->get_data('tbl_user_koor'),
+            'get_koor' => $this->penerima->user_koor(),
             'headder_css' => array(
                 'assets/template/assets/vendor/simple-datatables/style.css',
             ),
@@ -47,7 +46,7 @@ class Penerima extends CI_Controller
         if ($akses != 7) {
             $simpan = $this->input->post('koor');
         } else {
-            $simpan = $this->session->userdata('id_koor');
+            $simpan = $this->session->userdata('id');
         }
 
         $data = [
@@ -67,7 +66,7 @@ class Penerima extends CI_Controller
         if ($akses != 7) {
             $simpan = $this->input->post('koor');
         } else {
-            $simpan = $this->session->userdata('id_koor');
+            $simpan = $this->session->userdata('id');
         }
         $data = [
             'nama_penerima' => $this->input->post('nama_penerima'),

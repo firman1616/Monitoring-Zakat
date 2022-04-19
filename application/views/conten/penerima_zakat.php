@@ -42,7 +42,7 @@
                                         <th scope="row"><?= $x++; ?></th>
                                         <td><?= $row->nama_penerima ?></td>
                                         <td><?= $row->nama_ket ?></td>
-                                        <td><?= $row->nama_koor ?></td>
+                                        <td><?= $row->nama_petugas ?></td>
                                         <td>
                                             <?php
                                             if ($row->status == 0) { ?>
@@ -61,7 +61,7 @@
                                         <th scope="row"><?= $x++; ?></th>
                                         <td><?= $row->nama_penerima ?></td>
                                         <td><?= $row->nama_ket ?></td>
-                                        <td><?= $row->nama_koor ?></td>
+                                        <td><?= $row->nama_petugas ?></td>
                                         <td>
                                             <?php
                                             if ($row->status == 0) { ?>
@@ -109,15 +109,18 @@
                             <?php } ?>
                         </select>
                     </div>
-                    <div class="col-12">
-                        <label for="inputNanme4" class="form-label">Korodinator</label>
-                        <select name="koor" id="koor" class="form-control">
-                            <option value="" disabled selected>Pilih Kategori</option>
-                            <?php foreach ($get_koor->result() as $row) { ?>
-                                <option value="<?= $row->id_user_koor ?>"><?= $row->nama_koor ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
+                    <?php if ($akses != 7) { ?>
+                        <div class="col-12">
+                            <label for="inputNanme4" class="form-label">Korodinator</label>
+                            <select name="koor" id="koor" class="form-control">
+                                <option value="" disabled selected>Pilih Kategori</option>
+                                <?php foreach ($get_koor->result() as $row) { ?>
+                                    <option value="<?= $row->id_user_petugas ?>"><?= $row->nama_petugas ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    <?php } ?>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -130,57 +133,121 @@
 <!-- End Tambah Data -->
 
 <!-- Edit Modal -->
+
+<!-- End Edit Modal -->
+
 <?php
 $y = 1;
-foreach ($get_data->result() as $row) {
-    $a = $row->ket_penerima;
-    $b = $row->koor;
+if ($akses != 7) {
+    foreach ($get_data->result() as $row) {
+        $a = $row->ket_penerima;
+        $b = $row->koor;
 ?>
-    <div class="modal fade" id="editModal<?= $y++; ?>" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form action="<?= site_url('Penerima/update_data_penerima/' . $row->id_penerima) ?>" method="post">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Edit Data Penerima</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="col-12">
-                            <label for="inputNanme4" class="form-label">Nama Penerima</label>
-                            <input type="text" class="form-control" id="nama_penerima" name="nama_penerima" value="<?= $row->nama_penerima ?>">
+        <div class="modal fade" id="editModal<?= $y++; ?>" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="<?= site_url('Penerima/update_data_penerima/' . $row->id_penerima) ?>" method="post">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Edit Data Penerima</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="col-12">
-                            <label for="inputNanme4" class="form-label">Kategori Penerima</label>
-                            <select name="kategori" id="kategori" class="form-control">
-                                <option value="" disabled selected>Pilih Kategori</option>
-                                <?php foreach ($kategori->result() as $row) { ?>
-                                    <option <?php if ($a == $row->id_ket) {
-                                                echo "SELECTED";
-                                            } ?> value="<?= $row->id_ket ?>"><?= $row->nama_ket ?></option>
-                                <?php } ?>
-                            </select>
+                        <div class="modal-body">
+                            <div class="col-12">
+                                <label for="inputNanme4" class="form-label">Nama Penerima</label>
+                                <input type="text" class="form-control" id="nama_penerima" name="nama_penerima" value="<?= $row->nama_penerima ?>">
+                            </div>
+
+                            <div class="col-12">
+                                <label for="inputNanme4" class="form-label">Kategori Penerima</label>
+                                <select name="kategori" id="kategori" class="form-control">
+                                    <option value="" disabled selected>Pilih Kategori</option>
+                                    <?php foreach ($kategori->result() as $row) { ?>
+                                        <option <?php if ($a == $row->id_ket) {
+                                                    echo "SELECTED";
+                                                } ?> value="<?= $row->id_ket ?>"><?= $row->nama_ket ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+
+                            <?php if ($akses != 7) { ?>
+                                <div class="col-12">
+                                    <label for="inputNanme4" class="form-label">Korodinator</label>
+                                    <select name="koor" id="koor" class="form-control">
+                                        <option value="" disabled selected>Pilih Kategori</option>
+                                        <?php foreach ($get_koor->result() as $row) { ?>
+                                            <option <?php if ($b == $row->id_user_petugas) {
+                                                        echo "SELECTED";
+                                                    } ?> value="<?= $row->id_user_petugas ?>"><?= $row->nama_petugas ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            <?php } ?>
+
                         </div>
-                        <div class="col-12">
-                            <label for="inputNanme4" class="form-label">Korodinator</label>
-                            <select name="koor" id="koor" class="form-control">
-                                <option value="" disabled selected>Pilih Kategori</option>
-                                <?php foreach ($get_koor->result() as $row) { ?>
-                                    <option <?php if ($b == $row->id_user_koor) {
-                                                echo "SELECTED";
-                                            } ?> value="<?= $row->id_user_koor ?>"><?= $row->nama_koor ?></option>
-                                <?php } ?>
-                            </select>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
-    </div><!-- End Basic Modal-->
+    <?php $no++;
+    }
+} else {
+    foreach ($get_filter_data->result() as $row) {
+        $a = $row->ket_penerima;
+        $b = $row->koor; ?>
+        <div class="modal fade" id="editModal<?= $y++; ?>" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="<?= site_url('Penerima/update_data_penerima/' . $row->id_penerima) ?>" method="post">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Edit Data Penerima</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-12">
+                                <label for="inputNanme4" class="form-label">Nama Penerima</label>
+                                <input type="text" class="form-control" id="nama_penerima" name="nama_penerima" value="<?= $row->nama_penerima ?>">
+                            </div>
+
+                            <div class="col-12">
+                                <label for="inputNanme4" class="form-label">Kategori Penerima</label>
+                                <select name="kategori" id="kategori" class="form-control">
+                                    <option value="" disabled selected>Pilih Kategori</option>
+                                    <?php foreach ($kategori->result() as $row) { ?>
+                                        <option <?php if ($a == $row->id_ket) {
+                                                    echo "SELECTED";
+                                                } ?> value="<?= $row->id_ket ?>"><?= $row->nama_ket ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+
+                            <?php if ($akses != 7) { ?>
+                                <div class="col-12">
+                                    <label for="inputNanme4" class="form-label">Korodinator</label>
+                                    <select name="koor" id="koor" class="form-control">
+                                        <option value="" disabled selected>Pilih Kategori</option>
+                                        <?php foreach ($get_koor->result() as $row) { ?>
+                                            <option <?php if ($b == $row->id_user_petugas) {
+                                                        echo "SELECTED";
+                                                    } ?> value="<?= $row->id_user_petugas ?>"><?= $row->nama_petugas ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            <?php } ?>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 <?php $no++;
+    }
 }
 ?>
-<!-- End Edit Modal -->

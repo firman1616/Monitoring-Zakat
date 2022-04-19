@@ -79,13 +79,13 @@
                             foreach ($user_koor->result() as $row) { ?>
                                 <tr>
                                     <th scope="row"><?= $x++; ?></th>
-                                    <td><?= $row->nama_koor ?></td>
+                                    <td><?= $row->nama_petugas ?></td>
                                     <td><?= $row->username ?></td>
                                     <td><?= $row->password ?></td>
-                                    <td><?= $row->koor_alamat ?></td>
+                                    <td><?= $row->petugas_alamat ?></td>
                                     <td>
                                         <button type="button" class="btn btn-warning" title="Edit Data User" data-bs-toggle="modal" data-bs-target="#editKoorModel<?= $koor++; ?>"><i class="bi bi-pencil-square"></i></button>
-                                        <a href="<?= site_url('Master/hapus_koor/' . $row->id_user_koor) ?>" class="btn btn-danger hapus-user" title="Hapus Data User"><i class="bi bi-trash2-fill"></i></a>
+                                        <a href="<?= site_url('Master/hapus_petugas/' . $row->id_user_petugas) ?>" class="btn btn-danger hapus-user" title="Hapus Data User"><i class="bi bi-trash2-fill"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -215,13 +215,13 @@ foreach ($user_petugas->result() as $row) {
 <?php
 $z = 1;
 foreach ($user_koor->result() as $row) {
-    $a = $row->alamat_koor;
-    $b = $row->level;
+    $a = $row->alamat_petugas;
+    $d = $row->level;
 ?>
     <div class="modal fade" id="editKoorModel<?= $z++; ?>" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="<?= site_url('Master/update_koor/' . $row->id_user_koor) ?>" method="post">
+                <form action="<?= site_url('Master/update_petugas/' . $row->id_user_petugas) ?>" method="post">
                     <div class="modal-header">
                         <h5 class="modal-title">Tambah Data User</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -230,7 +230,7 @@ foreach ($user_koor->result() as $row) {
                         <div class="col-12">
                             <div class="col-12">
                                 <label for="inputNanme4" class="form-label">Nama User</label>
-                                <input type="text" class="form-control" name="nama_user" id="nama_user" value="<?= $row->nama_koor ?>">
+                                <input type="text" class="form-control" name="nama_user" id="nama_user" value="<?= $row->nama_petugas ?>">
                             </div>
                             <div class="col-12">
                                 <label for="inputNanme4" class="form-label">Username</label>
@@ -247,6 +247,15 @@ foreach ($user_koor->result() as $row) {
                                     <option value="<?= $row->id_master_alamat ?>" <?php if ($a == $row->id_master_alamat) {
                                                                                         echo "SELECTED";
                                                                                     } ?>><?= $row->nama_master_alamat ?></option>
+                                <?php } ?>
+                            </select>
+                            <label for="inputNanme4" class="form-label">Akses User</label>
+                            <select name="akses" id="akses" class="form-control">
+                                <option value="" disabled selected>Pilih Akses User</option>
+                                <?php foreach ($master_akses->result() as $row) { ?>
+                                    <option value="<?= $row->id_akses ?>" <?php if ($d == $row->id_akses) {
+                                                                                echo "SELECTED";
+                                                                            } ?>><?= $row->nama_akses ?></option>
                                 <?php } ?>
                             </select>
                         </div>

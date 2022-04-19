@@ -139,7 +139,7 @@
                                             <select name="petugas2" id="petugas2" class="form-control">
                                                 <option value="" disabled selected>Pilih Petugas</option>
                                                 <?php foreach ($get_koor->result() as $row) { ?>
-                                                    <option value="<?= $row->id_user_koor ?>"><?= $row->nama_koor ?></option>
+                                                    <option value="<?= $row->id_user_petugas ?>"><?= $row->nama_petugas ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>

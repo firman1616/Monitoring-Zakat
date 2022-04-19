@@ -92,4 +92,9 @@ class M_zakat extends CI_Model
     {
         return $this->db->query("SELECT * FROM `tbl_zakat_maal`")->num_rows();
     }
+
+    public function user_koor()
+    {
+        return $this->db->query("SELECT id_user_petugas, nama_petugas FROM `tbl_user_petugas` WHERE level = 7");
+    }
 }
