@@ -28,6 +28,15 @@
             </li>
         <?php } ?>
 
+        <?php if ($akses == 1 || $akses == 2 || $akses == 3 || $akses == 4) { ?>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<?= base_url('Keuangan') ?>">
+                    <i class="bi bi-credit-card-2-back-fill"></i>
+                    <span>Keuangan</span>
+                </a>
+            </li>
+        <?php } ?>
+
 
 
         <?php if ($akses == 1 || $akses == 2 || $akses == 3 || $akses == 4) { ?>

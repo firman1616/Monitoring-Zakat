@@ -11,7 +11,7 @@
  Target Server Version : 50733
  File Encoding         : 65001
 
- Date: 17/04/2022 12:31:25
+ Date: 19/04/2022 16:33:08
 */
 
 SET NAMES utf8mb4;
@@ -206,255 +206,231 @@ CREATE TABLE `tbl_penerima`  (
   `koor` int(11) NULL DEFAULT NULL,
   `status` int(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id_penerima`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 395 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 394 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_penerima
 -- ----------------------------
-INSERT INTO `tbl_penerima` VALUES (1, 'Sumarso', 1, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (2, 'Bu Yani', 3, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (4, 'Bu Saropah', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (6, 'Bpk Jayadi (Sanimas)', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (8, 'Bu Jenjem', 1, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (9, 'Eka', 1, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (10, 'Bpk Suli', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (12, 'Bpk Samsul', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (13, 'Futihatus', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (14, 'Bu Zubaidah', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (15, 'Bu Kasiah', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (16, 'Bu Julaika', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (17, 'Bpk Sumarsono', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (18, 'Bpk Yono', 1, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (19, 'Bpk Marianto ', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (20, 'Bpk Sahid ', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (21, 'Bpk Surati', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (22, 'Bu Sunar', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (24, 'Bpk Sari (Suroso) /sri utami', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (25, 'Bpk Soemedi', 3, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (26, 'Bu Fida (Qodir)', 3, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (27, 'Bpk Hada’ (Bu Titin)', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (28, 'Bpk Jaiman', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (29, 'Bpk Paidi', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (31, 'Bu Siti', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (32, 'Bpk Joko', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (33, 'Rita', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (36, 'Choirul (Dian)', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (37, 'ibu diana', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (38, 'Mad Bukhori', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (39, 'Bu Khomsatun', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (41, 'Bpk Qodir', 3, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (42, 'bu juaria', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (46, 'Agus Salim', 3, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (47, 'Abd. Rosyid', 3, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (48, 'M. Isa', 1, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (49, 'Karsimin', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (50, 'Socheh', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (51, 'Juwariyah', 3, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (54, 'Bu Nur (Pecel)', 1, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (55, 'Sunaryo (Doyok)', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (56, 'H. Chamim Rosidi', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (57, 'Abd. Ghofur', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (58, 'Fatchul Korib', 1, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (59, 'Ach Kamaludin', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (61, 'Rochimah', 3, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (63, 'Sua Pijet', 1, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (64, 'Riadi', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (65, 'Kholil', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (66, 'Ani', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (68, 'Sriama (Pecel)', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (69, 'Nining (Alm Kamid) ', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (70, 'Zahro', 3, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (74, 'Martini (Kost Tulus)', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (113, 'Hj. Nurul Qomariyah', 3, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (114, 'Bu Ameni', 1, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (115, 'Bpk Khusairi', 1, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (116, 'Bu Sumarni', 1, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (117, 'Bu Semi', 1, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (118, 'Bpk Sigit Sugiarto ', 2, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (119, 'Bu Nur Rohmah', 1, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (121, 'Bu Mudjiono', 1, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (122, 'Amal', 2, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (123, 'Bu Siamah', 1, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (124, 'Bu Nur Mahmuda', 2, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (125, 'Toni M', 2, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (126, 'Hj. Indahwati ', 3, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (127, 'H. Anas Aly', 3, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (129, 'Bpk Mat Jeliteng', 1, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (130, 'Bu Harti (Malik)', 1, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (132, 'Hari Setiono', 1, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (133, 'Bpk M Sofi’i', 1, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (134, 'Bpk Saimun', 1, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (166, 'Asemah', 2, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (167, 'Ulis', 2, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (168, 'Ninik', 1, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (169, 'Fitri', 1, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (170, 'Bu Kadiman/Jayem', 1, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (172, 'Ny Sembodo', 2, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (173, 'Munasri', 2, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (174, 'Ny.Kholiq', 1, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (176, 'Imam kos Mukiyat', 2, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (177, 'Gunawan Kos Yus', 2, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (178, 'Endang', 2, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (179, 'Bunda Diyah', 3, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (180, 'Alm Umar Efendy', 1, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (181, 'Agus', 2, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (182, 'Taufiq', 2, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (183, 'Kusnan kos', 1, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (184, 'Meme', 2, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (185, 'Sunarsih', 2, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (186, 'Ibu Mirna', 1, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (187, 'Makrufah', 1, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (188, 'Ibu Ulfa', 1, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (191, 'Rinda', 3, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (192, 'Asmalika', 3, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (193, 'Ibu Maya', 1, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (194, 'Romlah', 2, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (195, 'Nur Azizah ', 1, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (209, 'P.panut', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (211, 'Harsono/ning nur', 1, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (215, 'Bu Lek Alif ?', 2, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (216, 'Sulika', 1, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (217, 'Tas\'an', 2, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (218, 'Ibu Dinda', 1, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (220, 'bpk untung', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (221, 'dul hadi', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (222, 'sulton', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (223, 'bu nurul', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (224, 'bpk buri', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (225, 'irtanto', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (226, 'Jaswadi', 2, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (227, 'Dani', 1, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (228, 'Tutik', 1, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (230, 'Bu Tin (Khundoli)', 1, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (231, 'Mut (gorengan)', 1, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (232, 'Abdul Kahar', 1, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (234, 'Ning Susiati', 2, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (235, 'Muslimah', 1, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (236, 'Sholeh', 2, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (238, 'Ninik', 1, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (239, 'Tutik', 2, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (241, 'Asiah', 1, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (242, 'Sariyah', 1, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (246, 'Naimun', 2, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (251, 'Zainuri', 2, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (254, 'Eko', 1, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (255, 'Ali Ibrahim', 2, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (256, 'Ali Fathani', 1, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (257, 'Fathana', 1, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (258, 'Ali Mustaqim', 1, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (259, 'Yulima', 1, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (260, 'Buk Mar\'ah', 1, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (261, 'Rokha', 1, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (262, 'Mariah', 2, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (263, 'Wati', 1, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (264, 'Buk Win', 2, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (265, 'Aas', 3, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (266, 'Bu Siti', 1, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (268, 'Darmi (Genduk)', 1, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (271, 'Bu Suha ', 1, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (274, 'Ibunya Nera', 2, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (276, 'Susi', 3, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (298, 'Yaati kos erwin', 2, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (299, 'Toari', 2, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (303, 'Agung', 1, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (304, 'Bu sundari', 2, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (305, 'Hariono (kost suyono)', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (306, 'Martinus(kost pipit)', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (307, 'Rohman(kost pipit)', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (308, 'Bpk hermanto', 2, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (309, 'Edi Supriyanto', 2, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (310, 'Iwan(kost nyoman)', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (312, 'Yudha', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (313, 'Rais', 2, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (314, 'Basri', 2, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (317, 'Mulyosantoso', 1, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (318, 'Mbak Tatik', 1, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (319, 'Mbah Mud', 1, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (320, 'Mbah Kamiso', 1, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (321, 'Mega FS', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (322, 'Amala', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (323, 'Misnati', 1, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (324, 'Latifah', 1, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (325, 'Mbah Ratmi', 1, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (326, 'Yadi', 1, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (327, 'Jamila', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (328, 'P Mat satpam', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (329, 'Bu Sum', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (330, 'P Minto', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (331, 'P. Sokib', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (332, 'Suryati', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (333, 'Khozin', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (335, 'Mujiati', 1, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (336, 'Dewi Asfiyah', 3, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (337, 'Nur Anisah', 3, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (339, 'Ulfa', 3, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (341, 'Seno Susanto', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (342, 'P. Misri', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (343, 'P. Rokim', 1, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (347, 'P. Taufik H', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (348, 'B. Lilik', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (349, 'Tantok', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (350, 'Putra', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (351, 'P. Komar', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (352, 'Purnomo (bagas)', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (353, 'Bambang Ase', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (355, 'P. Dono Novi', 1, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (356, 'Sutrisno', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (357, 'Sugeng P', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (358, 'Mbah Siti', 1, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (360, 'Umi kalsum', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (361, 'M Amin', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (365, 'Arwintono', 2, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (366, 'karomah ', 1, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (367, 'ibu sri cucuk ', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (368, 'nah rowi ', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (369, 'jumaroh', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (370, 'pak totok', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (371, 'ayu ', 1, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (372, 'maimunah', 1, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (373, 'ropi\'ah', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (374, 'bapak paeran ', 2, 1, 0);
-INSERT INTO `tbl_penerima` VALUES (376, 'Ayah Arimbi (pengamen)', 2, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (377, 'Bpk. Paijan (supir Bemo)', 1, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (378, 'Abdul  Karim', 2, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (379, 'Ustd. Abdi', 3, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (380, 'Komaria', 1, 2, 0);
-INSERT INTO `tbl_penerima` VALUES (381, 'Aisyah', 3, 6, 0);
-INSERT INTO `tbl_penerima` VALUES (382, 'Sunarto', 1, 5, 0);
-INSERT INTO `tbl_penerima` VALUES (384, 'Yati', 2, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (385, 'Rianto', 2, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (386, 'Kholil', 1, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (387, 'Imam Muslik', 2, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (388, 'H. Jufri', 3, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (389, 'Malikhah', 3, 3, 0);
-INSERT INTO `tbl_penerima` VALUES (390, 'Siti Mudrika', 3, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (391, 'Sri Rahayu', 2, 4, 0);
-INSERT INTO `tbl_penerima` VALUES (392, 'Ten Ketang', 2, 1, 0);
-
--- ----------------------------
--- Table structure for tbl_user_koor
--- ----------------------------
-DROP TABLE IF EXISTS `tbl_user_koor`;
-CREATE TABLE `tbl_user_koor`  (
-  `id_user_koor` int(11) NOT NULL AUTO_INCREMENT,
-  `nama_koor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `panggilan_koor` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `alamat_koor` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `username` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `password` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
-  `level` int(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`id_user_koor`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Records of tbl_user_koor
--- ----------------------------
-INSERT INTO `tbl_user_koor` VALUES (1, 'M. Apriadi Setiawan', 'Adi', '1', 'adi', 'c46335eb267e2e1cde5b017acb4cd799', 7);
-INSERT INTO `tbl_user_koor` VALUES (2, 'M. Nur Laba', 'Mas Nur', '2', 'nur', 'b55178b011bfb206965f2638d0f87047', 7);
-INSERT INTO `tbl_user_koor` VALUES (3, 'Rizky', 'Rizky', '3', 'rizky', '49d8712dd6ac9c3745d53cd4be48284c', 7);
-INSERT INTO `tbl_user_koor` VALUES (4, 'Abdul Mughni', 'Oni', '4', 'oni', 'cb7f4a5e75e6f7340971c99ea4587999', 7);
-INSERT INTO `tbl_user_koor` VALUES (5, 'Miftachudin', 'mifta', '5', 'mifta', '150bfb5c3fcc30c477b8253721262363', 7);
-INSERT INTO `tbl_user_koor` VALUES (6, 'Zahid', 'Zahid', '6', 'zahid', 'c651148415ab2a260e6c506075c12ae3', 7);
+INSERT INTO `tbl_penerima` VALUES (1, 'Sumarso', 1, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (2, 'Bu Yani', 3, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (4, 'Bu Saropah', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (6, 'Bpk Jayadi (Sanimas)', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (8, 'Bu Jenjem', 1, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (9, 'Eka', 1, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (10, 'Bpk Suli', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (12, 'Bpk Samsul', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (13, 'Futihatus', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (14, 'Bu Zubaidah', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (15, 'Bu Kasiah', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (16, 'Bu Julaika', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (17, 'Bpk Sumarsono', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (18, 'Bpk Yono', 1, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (19, 'Bpk Marianto ', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (20, 'Bpk Sahid ', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (21, 'Bpk Surati', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (22, 'Bu Sunar', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (24, 'Bpk Sari (Suroso) /sri utami', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (25, 'Bpk Soemedi', 3, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (26, 'Bu Fida (Qodir)', 3, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (27, 'Bpk Hada’ (Bu Titin)', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (28, 'Bpk Jaiman', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (29, 'Bpk Paidi', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (31, 'Bu Siti', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (32, 'Bpk Joko', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (33, 'Rita', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (36, 'Choirul (Dian)', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (37, 'ibu diana', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (38, 'Mad Bukhori', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (39, 'Bu Khomsatun', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (41, 'Bpk Qodir', 3, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (42, 'bu juaria', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (46, 'Agus Salim', 3, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (47, 'Abd. Rosyid', 3, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (48, 'M. Isa', 1, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (49, 'Karsimin', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (50, 'Socheh', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (51, 'Juwariyah', 3, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (54, 'Bu Nur (Pecel)', 1, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (55, 'Sunaryo (Doyok)', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (56, 'H. Chamim Rosidi', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (57, 'Abd. Ghofur', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (58, 'Fatchul Korib', 1, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (59, 'Ach Kamaludin', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (61, 'Rochimah', 3, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (63, 'Sua Pijet', 1, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (64, 'Riadi', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (65, 'Kholil', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (66, 'Ani', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (68, 'Sriama (Pecel)', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (69, 'Nining (Alm Kamid) ', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (70, 'Zahro', 3, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (74, 'Martini (Kost Tulus)', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (113, 'Hj. Nurul Qomariyah', 3, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (114, 'Bu Ameni', 1, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (115, 'Bpk Khusairi', 1, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (116, 'Bu Sumarni', 1, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (117, 'Bu Semi', 1, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (118, 'Bpk Sigit Sugiarto ', 2, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (119, 'Bu Nur Rohmah', 1, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (121, 'Bu Mudjiono', 1, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (122, 'Amal', 2, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (123, 'Bu Siamah', 1, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (124, 'Bu Nur Mahmuda', 2, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (125, 'Toni M', 2, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (126, 'Hj. Indahwati ', 3, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (127, 'H. Anas Aly', 3, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (129, 'Bpk Mat Jeliteng', 1, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (130, 'Bu Harti (Malik)', 1, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (132, 'Hari Setiono', 1, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (133, 'Bpk M Sofi’i', 1, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (134, 'Bpk Saimun', 1, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (166, 'Asemah', 2, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (167, 'Ulis', 2, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (168, 'Ninik', 1, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (169, 'Fitri', 1, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (170, 'Bu Kadiman/Jayem', 1, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (172, 'Ny Sembodo', 2, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (173, 'Munasri', 2, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (174, 'Ny.Kholiq', 1, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (176, 'Imam kos Mukiyat', 2, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (177, 'Gunawan Kos Yus', 2, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (178, 'Endang', 2, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (179, 'Bunda Diyah', 3, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (180, 'Alm Umar Efendy', 1, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (181, 'Agus', 2, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (182, 'Taufiq', 2, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (183, 'Kusnan kos', 1, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (184, 'Meme', 2, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (185, 'Sunarsih', 2, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (186, 'Ibu Mirna', 1, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (187, 'Makrufah', 1, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (188, 'Ibu Ulfa', 1, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (191, 'Rinda', 3, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (192, 'Asmalika', 3, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (193, 'Ibu Maya', 1, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (194, 'Romlah', 2, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (195, 'Nur Azizah ', 1, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (209, 'P.panut', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (211, 'Harsono/ning nur', 1, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (215, 'Bu Lek Alif ?', 2, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (216, 'Sulika', 1, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (217, 'Tas\'an', 2, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (218, 'Ibu Dinda', 1, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (220, 'bpk untung', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (221, 'dul hadi', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (222, 'sulton', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (223, 'bu nurul', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (224, 'bpk buri', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (225, 'irtanto', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (226, 'Jaswadi', 2, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (227, 'Dani', 1, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (228, 'Tutik', 1, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (230, 'Bu Tin (Khundoli)', 1, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (231, 'Mut (gorengan)', 1, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (232, 'Abdul Kahar', 1, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (234, 'Ning Susiati', 2, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (235, 'Muslimah', 1, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (236, 'Sholeh', 2, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (238, 'Ninik', 1, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (239, 'Tutik', 2, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (241, 'Asiah', 1, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (242, 'Sariyah', 1, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (246, 'Naimun', 2, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (251, 'Zainuri', 2, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (254, 'Eko', 1, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (255, 'Ali Ibrahim', 2, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (256, 'Ali Fathani', 1, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (257, 'Fathana', 1, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (258, 'Ali Mustaqim', 1, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (259, 'Yulima', 1, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (260, 'Buk Mar\'ah', 1, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (261, 'Rokha', 1, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (262, 'Mariah', 2, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (263, 'Wati', 1, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (264, 'Buk Win', 2, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (265, 'Aas', 3, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (266, 'Bu Siti', 1, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (268, 'Darmi (Genduk)', 1, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (271, 'Bu Suha ', 1, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (274, 'Ibunya Nera', 2, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (276, 'Susi', 3, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (298, 'Yaati kos erwin', 2, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (299, 'Toari', 2, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (303, 'Agung', 1, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (304, 'Bu sundari', 2, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (305, 'Hariono (kost suyono)', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (306, 'Martinus(kost pipit)', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (307, 'Rohman(kost pipit)', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (308, 'Bpk hermanto', 2, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (309, 'Edi Supriyanto', 2, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (310, 'Iwan(kost nyoman)', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (312, 'Yudha', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (313, 'Rais', 2, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (314, 'Basri', 2, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (317, 'Mulyosantoso', 1, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (318, 'Mbak Tatik', 1, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (319, 'Mbah Mud', 1, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (320, 'Mbah Kamiso', 1, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (321, 'Mega FS', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (322, 'Amala', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (323, 'Misnati', 1, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (324, 'Latifah', 1, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (325, 'Mbah Ratmi', 1, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (326, 'Yadi', 1, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (327, 'Jamila', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (328, 'P Mat satpam', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (329, 'Bu Sum', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (330, 'P Minto', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (331, 'P. Sokib', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (332, 'Suryati', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (333, 'Khozin', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (335, 'Mujiati', 1, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (336, 'Dewi Asfiyah', 3, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (337, 'Nur Anisah', 3, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (339, 'Ulfa', 3, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (341, 'Seno Susanto', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (342, 'P. Misri', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (343, 'P. Rokim', 1, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (347, 'P. Taufik H', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (348, 'B. Lilik', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (349, 'Tantok', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (350, 'Putra', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (351, 'P. Komar', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (352, 'Purnomo (bagas)', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (353, 'Bambang Ase', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (355, 'P. Dono Novi', 1, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (356, 'Sutrisno', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (357, 'Sugeng P', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (358, 'Mbah Siti', 1, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (360, 'Umi kalsum', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (361, 'M Amin', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (365, 'Arwintono', 2, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (366, 'karomah ', 1, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (367, 'ibu sri cucuk ', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (368, 'nah rowi ', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (369, 'jumaroh', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (370, 'pak totok', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (371, 'ayu ', 1, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (372, 'maimunah', 1, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (373, 'ropi\'ah', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (374, 'bapak paeran ', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (376, 'Ayah Arimbi (pengamen)', 2, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (377, 'Bpk. Paijan (supir Bemo)', 1, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (378, 'Abdul  Karim', 2, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (379, 'Ustd. Abdi', 3, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (380, 'Komaria', 1, 15, 0);
+INSERT INTO `tbl_penerima` VALUES (381, 'Aisyah', 3, 18, 0);
+INSERT INTO `tbl_penerima` VALUES (382, 'Sunarto', 1, 19, 0);
+INSERT INTO `tbl_penerima` VALUES (384, 'Yati', 2, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (385, 'Rianto', 2, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (386, 'Kholil', 1, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (387, 'Imam Muslik', 2, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (388, 'H. Jufri', 3, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (389, 'Malikhah', 3, 16, 0);
+INSERT INTO `tbl_penerima` VALUES (390, 'Siti Mudrika', 3, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (391, 'Sri Rahayu', 2, 17, 0);
+INSERT INTO `tbl_penerima` VALUES (392, 'Ten Ketang', 2, 14, 0);
+INSERT INTO `tbl_penerima` VALUES (393, 'Tukiyem', 1, 17, 0);
 
 -- ----------------------------
 -- Table structure for tbl_user_petugas
@@ -469,7 +445,7 @@ CREATE TABLE `tbl_user_petugas`  (
   `alamat_petugas` int(11) NULL DEFAULT NULL,
   `level` int(11) NULL DEFAULT 5,
   PRIMARY KEY (`id_user_petugas`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_user_petugas
@@ -484,6 +460,12 @@ INSERT INTO `tbl_user_petugas` VALUES (10, 'Edo Dwi Minardi', 'edo', 'd2d612f72e
 INSERT INTO `tbl_user_petugas` VALUES (11, 'Achmad Garudatus Zam', 'garuda', '586293e168054f480d08e30fba98c295', 'garuda', 1, 5);
 INSERT INTO `tbl_user_petugas` VALUES (12, 'Alfin Rahmad Zakaria', 'alfin', '6ff92dee2a93081f0192781f156fa0e9', 'alfin', 1, 5);
 INSERT INTO `tbl_user_petugas` VALUES (13, 'M. Wahyu Hidayatulla', 'wahyu', '32c9e71e866ecdbc93e497482aa6779f', 'wahyu', 1, 5);
+INSERT INTO `tbl_user_petugas` VALUES (14, 'M. Apriadi Setiawan', 'adi', 'c46335eb267e2e1cde5b017acb4cd799', 'adi', 1, 7);
+INSERT INTO `tbl_user_petugas` VALUES (15, 'M. Nur Laba', 'nur', 'b55178b011bfb206965f2638d0f87047', 'nur', 2, 7);
+INSERT INTO `tbl_user_petugas` VALUES (16, 'Rizky', 'rizky', '49d8712dd6ac9c3745d53cd4be48284c', 'rizky', 3, 7);
+INSERT INTO `tbl_user_petugas` VALUES (17, 'Abdul Mughni', 'oni', 'cb7f4a5e75e6f7340971c99ea4587999', 'oni', 4, 7);
+INSERT INTO `tbl_user_petugas` VALUES (18, 'Zahid', 'zahid', 'c651148415ab2a260e6c506075c12ae3', 'zahid', 6, 7);
+INSERT INTO `tbl_user_petugas` VALUES (19, 'Miftachudin', 'mifta', '150bfb5c3fcc30c477b8253721262363', 'mifta', 5, 7);
 
 -- ----------------------------
 -- Table structure for tbl_zakat_fitrah
@@ -929,7 +911,7 @@ CREATE TABLE `tbl_zakat_maal`  (
   `petugas2` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `keterangan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
   PRIMARY KEY (`id_zakat_maal`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 91 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 90 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_zakat_maal
