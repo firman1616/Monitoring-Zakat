@@ -11,6 +11,7 @@ class Keuangan extends CI_Controller
             redirect(base_url("Login"));
         }
         // $this->load->library('Pdf');
+        $this->load->model('M_keuangan', 'keuangan');
     }
 
 
@@ -27,12 +28,21 @@ class Keuangan extends CI_Controller
 
     public function donatur()
     {
+        $akses = $this->session->userdata('level');
+        if ($akses != 7) {
+            $get_donate = $this->keuangan->data_donatur();
+        } else {
+            $get_donate = $this->keuangan->get_filter_data($this->session->userdata('id'));
+        }
+
         $data = [
-            'id' => $this->session->userdata('id'),
             'akses' => $this->session->userdata('level'),
+            'id' => $this->session->userdata('id'),
             'name' => $this->session->userdata('nama'),
             'title' => 'Data Donatur',
-            'conten' => 'conten/donatur'
+            'conten' => 'conten/donatur',
+            'get_data' => $get_donate
+
         ];
         $this->load->view('template/conten', $data);
     }

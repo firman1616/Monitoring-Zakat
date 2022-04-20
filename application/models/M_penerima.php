@@ -10,6 +10,9 @@ class M_penerima extends CI_Model
         a.status,
         a.ket_penerima,
         a.koor,
+        a.status_penerima,
+        a.validation_data,
+        a.date_validation,
         b.nama_ket,
         c.nama_petugas 
     FROM
@@ -26,6 +29,9 @@ class M_penerima extends CI_Model
         a.status,
         a.ket_penerima,
         a.koor,
+        a.status_penerima,
+        a.validation_data,
+        a.date_validation,
         b.nama_ket,
         c.nama_petugas 
     FROM
@@ -52,5 +58,15 @@ class M_penerima extends CI_Model
         JOIN tbl_master_alamat as b on b.id_master_alamat = a.alamat_petugas
         JOIN tbl_master_akses as c on c.id_akses = a.level
         WHERE a.level = 7');
+    }
+
+    function update_validation_data($table, $data)
+    {
+        $this->db->update($table, $data);
+    }
+
+    public function date_validate()
+    {
+        return $this->db->query("SELECT validation_data, date_validation FROM tbl_penerima LIMIT 1");
     }
 }

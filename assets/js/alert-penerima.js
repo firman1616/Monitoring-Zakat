@@ -17,6 +17,24 @@ if (flashValdasi) {
 	});
 }
 
+const flashStatusPenerima = $(".flash-status_penerima").data("flashdata");
+if (flashStatusPenerima) {
+	Swal.fire({
+		icon: "success",
+		title: "Selamat",
+		text: "Status Data Penerima Berhasil " + flashStatusPenerima,
+	});
+}
+
+const flashDataValidation = $(".flash-data-validation").data("flashdata");
+if (flashDataValidation) {
+	Swal.fire({
+		icon: "success",
+		title: "Selamat",
+		text: " Data Berhasil " + flashDataValidation,
+	});
+}
+
 
 $(".hapus-penerima").on("click", function (e) {
 	// hentikan aksi default
