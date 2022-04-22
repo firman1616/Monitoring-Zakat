@@ -11,7 +11,7 @@
  Target Server Version : 50733
  File Encoding         : 65001
 
- Date: 21/04/2022 02:53:21
+ Date: 22/04/2022 22:25:33
 */
 
 SET NAMES utf8mb4;
@@ -192,8 +192,8 @@ CREATE TABLE `tbl_master_penerima`  (
 -- ----------------------------
 -- Records of tbl_master_penerima
 -- ----------------------------
-INSERT INTO `tbl_master_penerima` VALUES (1, 'Berat');
-INSERT INTO `tbl_master_penerima` VALUES (2, 'RIngan');
+INSERT INTO `tbl_master_penerima` VALUES (1, 'Fakir');
+INSERT INTO `tbl_master_penerima` VALUES (2, 'Miskin');
 INSERT INTO `tbl_master_penerima` VALUES (3, 'Sabilillah');
 
 -- ----------------------------
@@ -210,7 +210,7 @@ CREATE TABLE `tbl_penerima`  (
   `validation_data` int(255) NULL DEFAULT 0,
   `date_validation` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id_penerima`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 396 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 394 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_penerima

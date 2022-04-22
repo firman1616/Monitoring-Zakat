@@ -69,4 +69,38 @@ class M_penerima extends CI_Model
     {
         return $this->db->query("SELECT validation_data, date_validation FROM tbl_penerima LIMIT 1");
     }
+
+    public function print_data($id)
+    {
+        return $this->db->query("SELECT
+        a.nama_penerima,
+        a.status_penerima,
+        a.validation_data,
+        b.id_ket,
+        b.nama_ket,
+        c.nama_petugas,
+        c.alamat_petugas,
+        d.nama_master_alamat 
+    FROM
+        tbl_penerima as a
+    JOIN tbl_master_penerima as b ON a.ket_penerima = b.id_ket
+    JOIN tbl_user_petugas as c ON a.koor = c.id_user_petugas
+    JOIN tbl_master_alamat as d ON c.alamat_petugas = d.id_master_alamat
+    WHERE a.status_penerima = 0 AND c.alamat_petugas = $id
+        ");
+    }
+
+    public function count_kategori($id)
+    {
+        return $this->db->query("SELECT
+            b.nama_ket,
+            COUNT(b.id_ket) as jumlah
+        FROM
+            tbl_penerima as a
+        JOIN tbl_master_penerima as b ON a.ket_penerima = b.id_ket
+        JOIN tbl_user_petugas as c ON a.koor = c.id_user_petugas
+        JOIN tbl_master_alamat as d ON c.alamat_petugas = d.id_master_alamat
+        WHERE a.status_penerima = 0 AND c.alamat_petugas = $id
+        GROUP BY b.nama_ket");
+    }
 }

@@ -24,35 +24,60 @@ foreach ($date_valid->result() as $d) {
     <div class="flash-status_penerima" data-flashdata="<?= $this->session->flashdata('validasi2') ?>"></div>
     <div class="flash-data-validation" data-flashdata="<?= $this->session->flashdata('data_valid') ?>"></div>
 
+    <?php if ($akses != 7) { ?>
+        <form action="<?= site_url('Penerima/cetak_data') ?>" method="post">
+            <div class="row">
+                <div class="col-2">
+                    <select name="alamat" id="alamat" class="form-control">
+                        <option value="" disabled selected> PIlih Alamat</option>
+                        <?php foreach ($get_alamat->result() as $row) { ?>
+                            <option value="<?= $row->id_master_alamat ?>"><?= $row->nama_master_alamat ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="col-1">
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-cloud-download"></i></button>
+                </div>
+            </div>
+        </form>
+    <?php } ?>
+
+
     <section class="section">
         <div class="row">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Data Penerima Zakat</h5>
-                    <?php if ($a != 0 && $akses != 7) { ?>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
-                            Tamabh Data Penerima
-                        </button>
-                    <?php
-                    } elseif ($a != 1 && $akses == 7 || $akses != 7) { ?>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
-                            Tamabh Data Penerima
-                        </button>
-                    <?php } ?>
 
-                    <?php
-                    if ($akses != 7) {
-                        if ($validate == 0) { ?>
-                            <a href="<?= site_url('Penerima/update_data_validation') ?>" class="btn btn-danger">Validasi Data</a>
-                        <?php } else { ?>
-                            <!-- <a href="" class="btn btn-success">Validasi Data</a> -->
-                    <?php }
-                    }
-                    ?>
-                    <h5 style="margin-top: 6px;">Data Di Validasi pada : <b><?php if ($b == null) {
-                                                                                echo "-";
+                    <!-- <div class="container"> -->
+                    <div class="row">
+                        <?php if ($a != 0 && $akses != 7) { ?>
+                            <button type="button" class="btn btn-primary col-3" data-bs-toggle="modal" data-bs-target="#basicModal">
+                                Tambah Data Penerima
+                            </button>
+                        <?php
+                        } elseif ($a != 1 && $akses == 7 || $akses != 7) { ?>
+                            <button type="button" class="btn btn-primary col-3" data-bs-toggle="modal" data-bs-target="#basicModal">
+                                Tambah Data Penerima
+                            </button>
+                        <?php } ?>
+
+                        <?php
+                        if ($akses != 7) {
+                            if ($validate == 0) { ?>
+                                <a href="<?= site_url('Penerima/update_data_validation') ?>" style="margin-left: 4px;" class="btn btn-danger col-3">Validasi Data</a>
+                            <?php } else { ?>
+                                <!-- <a href="" class="btn btn-success">Validasi Data</a> -->
+                        <?php }
+                        }
+                        ?>
+                    </div>
+
+                    <!-- </div> -->
+                    <h5 style="margin-top: 6px;">Data Di Validasi pada : <b><?php if ($b != NULL) {
+                                                                                echo date('d F Y H:i:s', strtotime($b));
                                                                             } else {
-                                                                                date('d F Y H:i:s', strtotime($b));
+                                                                                echo "-";
                                                                             } ?></b></h5>
                     <table class="table datatable">
                         <thead>
@@ -95,30 +120,23 @@ foreach ($date_valid->result() as $d) {
                                         <?php }
                                         ?>
 
-                                        <?php
-                                        if ($a != 0 && $akses != 7) {
-                                            if ($akses != 7 && $row->status_penerima == 0) { ?>
-                                                <a href="<?= site_url('Penerima/update_penerima_off/' . $row->id_penerima) ?>" class="btn btn-danger"><i class="bi bi-power"></i></a>
-                                            <?php    } else { ?>
-                                                <a href="<?= site_url('Penerima/update_penerima_on/' . $row->id_penerima) ?>" class="btn btn-primary"><i class="bi bi-power"></i></a>
-                                            <?php }
-                                        } elseif ($a != 1 && $row->status == 0 && $akses == 7 || $akses != 7) { ?>
-                                            <a href="<?= site_url('Penerima/update_penerima_off/' . $row->id_penerima) ?>" class="btn btn-danger"><i class="bi bi-power"></i></a>
+                                        <?php if ($a != 1 || $akses != 7) {
+                                            if ($row->status_penerima != 1) { ?>
+                                                <a href="<?= site_url('Penerima/update_penerima_off/' . $row->id_penerima) ?>" class="btn btn-primary"><i class="bi bi-power"></i></a>
+                                            <?php } elseif ($row->status_penerima != 0 && $akses != 7) { ?>
+                                                <a href="<?= site_url('Penerima/update_penerima_on/' . $row->id_penerima) ?>" class="btn btn-danger"><i class="bi bi-power"></i></a>
                                         <?php }
-                                        ?>
-
+                                        } ?>
 
 
                                     </td>
                                     <td>
-                                        <?php if ($a != 0 && $akses != 7) { ?>
-                                            <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#editModal<?= $no++; ?>"><i class="bi bi-pencil-square"></i></button>
-                                            <a class="hapus-penerima btn btn-danger" href="<?= site_url('Penerima/hapus_data_penerima/' . $row->id_penerima) ?>"><i class="bi bi-trash"></i></a>
-                                        <?php
-                                        } elseif ($a != 1 && $akses == 7 || $akses != 7) { ?>
+
+                                        <?php if ($a != 1 || $akses != 7) { ?>
                                             <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#editModal<?= $no++; ?>"><i class="bi bi-pencil-square"></i></button>
                                             <a class="hapus-penerima btn btn-danger" href="<?= site_url('Penerima/hapus_data_penerima/' . $row->id_penerima) ?>"><i class="bi bi-trash"></i></a>
                                         <?php } ?>
+
                                     </td>
                                 </tr>
                             <?php    }  ?>

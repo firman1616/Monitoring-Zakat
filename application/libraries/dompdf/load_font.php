@@ -1,14 +1,23 @@
-#!/usr/bin/php
 <?php
-/**
- * @package dompdf
- * @link    http://dompdf.github.com/
- * @author  Benj Carson <benjcarson@digitaljunkies.ca>
- * @author  Fabien Ménager <fabien.menager@gmail.com>
- * @license http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License
- */
+// 1. [Required] Point to the composer or dompdf autoloader
+require_once "vendor/autoload.php";
 
-require_once "dompdf_config.inc.php";
+// 2. [Optional] Set the path to your font directory
+//    By default dompdf loads fonts to dompdf/lib/fonts
+//    If you have modified your font directory set this
+//    variable appropriately.
+//$fontDir = "lib/fonts";
+
+
+// *** DO NOT MODIFY BELOW THIS POINT ***
+
+use Dompdf\Dompdf;
+use Dompdf\CanvasFactory;
+use Dompdf\Exception;
+use Dompdf\FontMetrics;
+use Dompdf\Options;
+
+use FontLib\Font;
 
 /**
  * Display command line usage
@@ -48,6 +57,11 @@ if ( $_SERVER["argc"] < 3 && @$_SERVER["argv"][1] != "system_fonts" ) {
   usage();
 }
 
+$dompdf = new Dompdf();
+if (isset($fontDir) && realpath($fontDir) !== false) {
+  $dompdf->getOptions()->set('fontDir', $fontDir);
+}
+
 /**
  * Installs a new font family
  * This function maps a font-family name to a font.  It tries to locate the
@@ -55,20 +69,21 @@ if ( $_SERVER["argc"] < 3 && @$_SERVER["argv"][1] != "system_fonts" ) {
  * files are located, ttf versions of the font are copied to the fonts
  * directory.  Changes to the font lookup table are saved to the cache.
  *
+ * @param Dompdf $dompdf      dompdf main object 
  * @param string $fontname    the font-family name
  * @param string $normal      the filename of the normal face font subtype
  * @param string $bold        the filename of the bold face font subtype
  * @param string $italic      the filename of the italic face font subtype
  * @param string $bold_italic the filename of the bold italic face font subtype
  *
- * @throws DOMPDF_Exception
+ * @throws Exception
  */
-function install_font_family($fontname, $normal, $bold = null, $italic = null, $bold_italic = null) {
-  Font_Metrics::init();
+function install_font_family($dompdf, $fontname, $normal, $bold = null, $italic = null, $bold_italic = null) {
+  $fontMetrics = $dompdf->getFontMetrics();
   
   // Check if the base filename is readable
   if ( !is_readable($normal) )
-    throw new DOMPDF_Exception("Unable to read '$normal'.");
+    throw new Exception("Unable to read '$normal'.");
 
   $dir = dirname($normal);
   $basename = basename($normal);
@@ -82,7 +97,7 @@ function install_font_family($fontname, $normal, $bold = null, $italic = null, $
   }
 
   if ( !in_array($ext, array(".ttf", ".otf")) ) {
-    throw new DOMPDF_Exception("Unable to process fonts of type '$ext'.");
+    throw new Exception("Unable to process fonts of type '$ext'.");
   }
 
   // Try $file_Bold.$ext etc.
@@ -114,23 +129,23 @@ function install_font_family($fontname, $normal, $bold = null, $italic = null, $
   // Copy the files to the font directory.
   foreach ($fonts as $var => $src) {
     if ( is_null($src) ) {
-      $entry[$var] = DOMPDF_FONT_DIR . mb_substr(basename($normal), 0, -4);
+      $entry[$var] = $dompdf->getOptions()->get('fontDir') . '/' . mb_substr(basename($normal), 0, -4);
       continue;
     }
 
     // Verify that the fonts exist and are readable
     if ( !is_readable($src) )
-      throw new DOMPDF_Exception("Requested font '$src' is not readable");
+      throw new Exception("Requested font '$src' is not readable");
 
-    $dest = DOMPDF_FONT_DIR . basename($src);
+    $dest = $dompdf->getOptions()->get('fontDir') . '/' . basename($src);
 
     if ( !is_writeable(dirname($dest)) )
-      throw new DOMPDF_Exception("Unable to write to destination '$dest'.");
+      throw new Exception("Unable to write to destination '$dest'.");
 
     echo "Copying $src to $dest...\n";
 
     if ( !copy($src, $dest) )
-      throw new DOMPDF_Exception("Unable to copy '$src' to '$dest'");
+      throw new Exception("Unable to copy '$src' to '$dest'");
     
     $entry_name = mb_substr($dest, 0, -4);
     
@@ -138,20 +153,35 @@ function install_font_family($fontname, $normal, $bold = null, $italic = null, $
     
     $font_obj = Font::load($dest);
     $font_obj->saveAdobeFontMetrics("$entry_name.ufm");
+    $font_obj->close();
 
     $entry[$var] = $entry_name;
   }
 
   // Store the fonts in the lookup table
-  Font_Metrics::set_font_family($fontname, $entry);
+  $fontMetrics->setFontFamily($fontname, $entry);
 
   // Save the changes
-  Font_Metrics::save_font_families();
+  $fontMetrics->saveFontFamilies();
 }
 
 // If installing system fonts (may take a long time)
 if ( $_SERVER["argv"][1] === "system_fonts" ) {
-  $fonts = Font_Metrics::get_system_fonts();
+  $fontMetrics = $dompdf->getFontMetrics();
+  $files = glob("/usr/share/fonts/truetype/*.ttf") +
+    glob("/usr/share/fonts/truetype/*/*.ttf") +
+    glob("/usr/share/fonts/truetype/*/*/*.ttf") +
+    glob("C:\\Windows\\fonts\\*.ttf") +
+    glob("C:\\WinNT\\fonts\\*.ttf") +
+    glob("/mnt/c_drive/WINDOWS/Fonts/");
+  $fonts = array();
+  foreach ($files as $file) {
+      $font = Font::load($file);
+      $records = $font->getData("name", "records");
+      $type = $fontMetrics->getType($records[2]);
+      $fonts[mb_strtolower($records[1])][$type] = $file;
+      $font->close();
+  }
   
   foreach ( $fonts as $family => $files ) {
     echo " >> Installing '$family'... \n";
@@ -160,7 +190,7 @@ if ( $_SERVER["argv"][1] === "system_fonts" ) {
       echo "No 'normal' style font file\n";
     }
     else {
-      install_font_family( $family, @$files["normal"], @$files["bold"], @$files["italic"], @$files["bold_italic"]);
+      install_font_family($dompdf, $family, @$files["normal"], @$files["bold"], @$files["italic"], @$files["bold_italic"]);
       echo "Done !\n";
     }
     
@@ -168,5 +198,5 @@ if ( $_SERVER["argv"][1] === "system_fonts" ) {
   }
 }
 else {
-  call_user_func_array("install_font_family", array_slice($_SERVER["argv"], 1));
+  call_user_func_array("install_font_family", array_merge( array($dompdf), array_slice($_SERVER["argv"], 1) ));
 }

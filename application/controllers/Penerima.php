@@ -10,7 +10,7 @@ class Penerima extends CI_Controller
         if ($this->session->userdata('status') == FALSE || $this->session->userdata('level') != 1 && $this->session->userdata('level') != 2 && $this->session->userdata('level') != 7 && $this->session->userdata('level') != 3) {
             redirect(base_url("Login"));
         }
-        // $this->load->library('Pdf');
+        $this->load->library('Pdfgenerator');
         $this->load->model('M_penerima', 'penerima');
     }
 
@@ -35,6 +35,7 @@ class Penerima extends CI_Controller
             'date_valid' => $this->penerima->date_validate(),
             'kategori' => $this->m_data->get_data('tbl_master_penerima'),
             'get_koor' => $this->penerima->user_koor(),
+            'get_alamat' => $this->m_data->get_data('tbl_master_alamat'),
             'headder_css' => array(
                 'assets/template/assets/vendor/simple-datatables/style.css',
             ),
@@ -147,4 +148,25 @@ class Penerima extends CI_Controller
         $this->session->set_flashdata('data_valid', 'Divalidasi');
         redirect('Penerima');
     }
+
+    public function cetak_data()
+    {
+        $id = $this->input->post('alamat');
+        $this->data['title_pdf'] = 'Data Penerima RT';
+        $file_pdf = 'data_penduduk_rt';
+        $paper = 'A4';
+        $orientation = "portrait";
+        $this->data['data_penduduk'] = $this->penerima->print_data($id);
+        $this->data['count'] = $this->penerima->count_kategori($id);
+        $html = $this->load->view('conten/laporan_penerima', $this->data, true);
+        $this->pdfgenerator->generate($html, $file_pdf, $paper, $orientation);
+    }
+
+    // public function cetak()
+    // {
+    //     $title_page = 'Data Penduduk RT';
+    //     $data['cetak'] = 'Data Penduduk RT';
+    //     $html = $this->load->view('conten/laporan_pdf', $data, true);
+    //     $this->pdf->pdf_create($html, $title_page, 'A4', 'portaid');
+    // }
 }
