@@ -149,6 +149,16 @@ class Penerima extends CI_Controller
         redirect('Penerima');
     }
 
+    // public function single_validation()
+    // {
+    //     $status = 1;
+    //     $valid_date = date('Y-m-d H:i:s');
+    //     $koor = $this->input->post('koor');
+    //     $this->penerima->single_validation($status, $valid_date, $koor);
+    //     $this->session->set_flashdata('data_valid', 'Divalidasi');
+    //     redirect('Penerima');
+    // }
+
     public function cetak_data()
     {
         $id = $this->input->post('alamat');

@@ -8,6 +8,7 @@ class M_keuangan extends CI_Model
         a.id_donatur,
         a.nama_donatur,
         a.alamat_donatur,
+        a.alamat_lainnya,
         a.nominal,
         a.status,
         a.validation,
@@ -23,6 +24,7 @@ class M_keuangan extends CI_Model
             a.id_donatur,
             a.nama_donatur,
             a.alamat_donatur,
+            a.alamat_lainnya,
             a.nominal,
             a.status,
             a.validation,
@@ -30,6 +32,11 @@ class M_keuangan extends CI_Model
         FROM
             `tbl_donatur` as a
         JOIN tbl_user_petugas as b ON a.petugas_penerima = b.id_user_petugas
-        WHERE a.petugas_penerima = $id ");
+        WHERE a.petugas_penerima = $id");
+    }
+
+    public function jumlah_donatur()
+    {
+        return $this->db->query("SELECT SUM(nominal) as jumlah FROM `tbl_donatur` WHERE status = 1");
     }
 }

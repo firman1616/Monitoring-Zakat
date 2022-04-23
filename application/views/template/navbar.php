@@ -37,6 +37,15 @@
             </li>
         <?php } ?>
 
+        <?php if ($akses == 7) { ?>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<?= base_url('Keuangan/donatur') ?>">
+                    <i class="bi bi-credit-card-2-back-fill"></i>
+                    <span>Data Donatur</span>
+                </a>
+            </li>
+        <?php } ?>
+
 
 
         <?php if ($akses == 1 || $akses == 2 || $akses == 3 || $akses == 4) { ?>

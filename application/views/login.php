@@ -10,7 +10,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="<?= base_url('') ?>assets/template/assets/img/favicon.png" rel="icon">
+    <link href="<?= base_url('') ?>assets/logo/user_logo.png" rel="icon">
     <link href="<?= base_url('') ?>assets/template/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -50,9 +50,8 @@
                         <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
                             <div class="d-flex justify-content-center py-4">
-                                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                                    <img src="assets/template/assets/img/logo.png" alt="">
-                                    <span class="d-none d-lg-block">NiceAdmin</span>
+                                <a href="index.html" class="d-flex align-items-center">
+                                    <img src="assets/logo/login.png" alt="" height="100px">
                                 </a>
                             </div><!-- End Logo -->
 

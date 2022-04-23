@@ -65,6 +65,11 @@ class M_penerima extends CI_Model
         $this->db->update($table, $data);
     }
 
+    public function single_validation($status, $valid_date, $koor)
+    {
+        return $this->db->query("UPDATE tbl_penerima SET validation_data = '$status', date_validation = '$valid_date' WHERE koor = '$koor'");
+    }
+
     public function date_validate()
     {
         return $this->db->query("SELECT validation_data, date_validation FROM tbl_penerima LIMIT 1");

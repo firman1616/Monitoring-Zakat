@@ -11,7 +11,7 @@
  Target Server Version : 50733
  File Encoding         : 65001
 
- Date: 22/04/2022 22:25:33
+ Date: 23/04/2022 14:21:18
 */
 
 SET NAMES utf8mb4;
@@ -24,11 +24,11 @@ DROP TABLE IF EXISTS `tbl_donatur`;
 CREATE TABLE `tbl_donatur`  (
   `id_donatur` int(11) NOT NULL AUTO_INCREMENT,
   `nama_donatur` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `alamat_donatur` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  `alamat_donatur` int(11) NULL DEFAULT NULL,
+  `alamat_lainnya` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `nominal` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `petugas_penerima` int(11) NULL DEFAULT NULL,
   `status` int(11) NULL DEFAULT 0,
-  `gambar` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
   `validation` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id_donatur`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
@@ -36,13 +36,13 @@ CREATE TABLE `tbl_donatur`  (
 -- ----------------------------
 -- Records of tbl_donatur
 -- ----------------------------
-INSERT INTO `tbl_donatur` VALUES (4, 'Ibu Sadan', 'Janti waru', '150000', 3, 1, NULL, '2021-05-08 15:45:59');
-INSERT INTO `tbl_donatur` VALUES (5, 'Johan Wisaksono / Hasna Rief', 'Rt 19', '500000', 3, 1, NULL, '2021-05-09 16:07:05');
-INSERT INTO `tbl_donatur` VALUES (6, 'Bpk mulyadi', 'RT 18', '100000', 3, 1, NULL, '2021-05-10 21:42:15');
-INSERT INTO `tbl_donatur` VALUES (7, 'Bpk. Rudi Setiawan', 'RT 18', '100000', 3, 1, NULL, '2021-05-11 20:24:21');
-INSERT INTO `tbl_donatur` VALUES (8, 'H Sukani ', 'RT 20', '500000', 3, 0, NULL, '2021-05-12 08:32:18');
-INSERT INTO `tbl_donatur` VALUES (9, 'H Suyono ', 'RT 20', '300000', 3, 0, NULL, '2021-05-12 08:33:48');
-INSERT INTO `tbl_donatur` VALUES (10, 'H Nuril Huda', 'RT 20', '200000', 3, 0, NULL, '2021-05-12 08:34:07');
+INSERT INTO `tbl_donatur` VALUES (4, 'Ibu Sadan', 7, 'Janti waru', '150000', 3, 0, '2022-04-23 06:15:13');
+INSERT INTO `tbl_donatur` VALUES (5, 'Johan Wisaksono / Hasna Rief', 5, 'Rt 19', '500000', 3, 0, NULL);
+INSERT INTO `tbl_donatur` VALUES (6, 'Bpk mulyadi', 4, 'RT 18', '100000', 3, 0, NULL);
+INSERT INTO `tbl_donatur` VALUES (7, 'Bpk. Rudi Setiawan', 4, 'RT 18', '100000', 3, 0, NULL);
+INSERT INTO `tbl_donatur` VALUES (8, 'H Sukani ', 6, 'RT 20', '500000', 3, 0, NULL);
+INSERT INTO `tbl_donatur` VALUES (9, 'H Suyono ', 6, 'RT 20', '300000', 3, 0, NULL);
+INSERT INTO `tbl_donatur` VALUES (10, 'H Nuril Huda', 6, 'RT 20', '200000', 3, 0, NULL);
 
 -- ----------------------------
 -- Table structure for tbl_master_akses
@@ -208,7 +208,7 @@ CREATE TABLE `tbl_penerima`  (
   `status` int(1) NOT NULL DEFAULT 0,
   `status_penerima` int(1) NULL DEFAULT 0,
   `validation_data` int(255) NULL DEFAULT 0,
-  `date_validation` datetime(0) NULL DEFAULT NULL,
+  `date_validation` date NULL DEFAULT NULL,
   PRIMARY KEY (`id_penerima`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 394 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 

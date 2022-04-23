@@ -17,8 +17,10 @@
             <div class="col-lg-12">
                 <div class="row">
 
-                    <!--  Zakat Fitrah -->
-
+                    <!--  Zakat Donatur -->
+                    <?php foreach ($jml_donatur->result() as $row) {
+                        $a = $row->jumlah;
+                    } ?>
                     <div class="col-xxl-6 col-md-6">
                         <a href="<?= base_url('Keuangan/donatur') ?>">
                             <div class="card info-card revenue-card">
@@ -32,7 +34,7 @@
                                         </div>
                                         <div class="ps-3">
                                             <h6>Data Donatur</h6>
-                                            <span class="text-success small pt-1 fw-bold">100.000</span> <span class="text-muted small pt-2 ps-1">Orang</span>
+                                            <span class="text-success small pt-1 fw-bold">Rp. <?= number_format($a); ?>,-</span>
 
                                         </div>
                                     </div>
@@ -41,9 +43,9 @@
                             </div>
                         </a>
                     </div>
-                    <!-- End  Zakat Fitrah -->
+                    <!-- End  Donatur -->
 
-                    <!-- Maal -->
+                    <!-- Keuangan -->
                     <div class="col-xxl-6 col-md-6">
                         <a href="<?= base_url('Pembayaran/zakat_maal') ?>">
                             <div class="card info-card revenue-card">
@@ -66,7 +68,7 @@
                             </div>
                         </a>
                     </div>
-                    <!-- End Maal -->
+                    <!-- End Keuangan -->
 
 
 

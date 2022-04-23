@@ -10,7 +10,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="<?= base_url() ?>assets/template/assets/img/favicon.png" rel="icon">
+    <link href="<?= base_url() ?>assets/logo/user_logo.png" rel="icon">
     <link href="<?= base_url() ?>assets/template/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -52,8 +52,8 @@
 
         <div class="d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
-                <img src="<?= base_url('') ?>assets/template/assets/img/logo.png" alt="">
-                <span class="d-none d-lg-block">NURUL HUDA</span>
+                <img src="<?= base_url('') ?>assets/logo/navbar.png" alt="" width="250px" height="200px">
+                <!-- <span class="d-none d-lg-block">NURUL HUDA</span> -->
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
@@ -78,7 +78,7 @@
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <img src="<?= base_url('') ?>assets/template/assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+                        <img src="<?= base_url('') ?>assets/logo/user_logo.png" alt="Profile" class="rounded-circle">
                         <span class="d-none d-md-block dropdown-toggle ps-2"><?= $name ?></span>
                     </a><!-- End Profile Iamge Icon -->
 

@@ -16,7 +16,26 @@ foreach ($data_penduduk->result() as $row) {
 
 <body>
     <div style="text-align:center">
-        <h3> Laporan PDF Toko Kita</h3>
+        <table border="1" style="border: solid black;" width="100%">
+            <tr>
+                <th width="15%" height="10%">
+
+                    <div align="center"><img src="<?= base_url('assets/logo/kop_laziz.png') ?>" alt="logo" width="55%"></div>
+                </th>
+                <th>
+                    <center><span><b>
+                                <h5>JARINGAN PENGELOLA ZAKAT FITRAH, ZAKAT MAAL, INFAQ, SHODAQOH, DAN PARTISIPASI SOSIAL</h5>
+                            </b></span></center>
+                    <center><span><B>
+                                <h5>MASJID BESAR :NURUL HUDA" JANTI</h5>
+                            </B></span></center>
+                    <center><span><b>
+                                <h6>TAHUN / <?= date('Y') ?> M</h6>
+                            </b></span></center>
+                </th>
+                <th width="15%" height="10%">tes</th>
+            </tr>
+        </table>
     </div>
     <table>
         <tr>
@@ -41,7 +60,7 @@ foreach ($data_penduduk->result() as $row) {
             </td>
         </tr>
     </table>
-    <table width="100%" border="1" style="border-collapse: collapse;">
+    <table width=" 100%" border="1" style="border-collapse: collapse;">
         <thead>
             <tr>
                 <th rowspan="2">No.</th>

@@ -1,6 +1,7 @@
 <?php
 foreach ($get_data->result() as $v) {
     $validate = $v->validation_data;
+    $koor = $v->koor;
 }
 foreach ($date_valid->result() as $d) {
     $a = $d->validation_data;
@@ -24,24 +25,6 @@ foreach ($date_valid->result() as $d) {
     <div class="flash-status_penerima" data-flashdata="<?= $this->session->flashdata('validasi2') ?>"></div>
     <div class="flash-data-validation" data-flashdata="<?= $this->session->flashdata('data_valid') ?>"></div>
 
-    <?php if ($akses != 7) { ?>
-        <form action="<?= site_url('Penerima/cetak_data') ?>" method="post">
-            <div class="row">
-                <div class="col-2">
-                    <select name="alamat" id="alamat" class="form-control">
-                        <option value="" disabled selected> PIlih Alamat</option>
-                        <?php foreach ($get_alamat->result() as $row) { ?>
-                            <option value="<?= $row->id_master_alamat ?>"><?= $row->nama_master_alamat ?></option>
-                        <?php } ?>
-                    </select>
-                </div>
-                <div class="col-1">
-                    <button type="submit" class="btn btn-primary"><i class="bi bi-cloud-download"></i></button>
-                </div>
-            </div>
-        </form>
-    <?php } ?>
-
 
     <section class="section">
         <div class="row">
@@ -49,8 +32,44 @@ foreach ($date_valid->result() as $d) {
                 <div class="card-body">
                     <h5 class="card-title">Data Penerima Zakat</h5>
 
+                    <?php if ($akses != 7) { ?>
+                        <form action="<?= site_url('Penerima/cetak_data') ?>" method="post">
+                            <div class="row" style="margin-right: 70px;">
+                                <div class="col-3">
+                                    <select name="alamat" id="alamat" class="form-control">
+                                        <option value="" disabled selected> PIlih Alamat</option>
+                                        <?php foreach ($get_alamat->result() as $row) { ?>
+                                            <option value="<?= $row->id_master_alamat ?>"><?= $row->nama_master_alamat ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                                <div class="row col-3">
+                                    <button type="submit" class="btn btn-primary col-2" style="margin-left: 4px;"><i class="bi bi-cloud-download"></i></button>
+                                </div>
+                            </div>
+                        </form>
+
+                    <?php } ?>
+                    <?php if ($akses != 7) { ?>
+                        <!-- <form action="<?= site_url('Penerima/single_validation') ?>" method="post">
+                            <div class="row">
+                                <div class="col-3">
+                                    <select name="koor" id="koor" class="form-control">
+                                        <option value="" disabled selected> PIlih Koordinator</option>
+                                        <?php foreach ($get_koor->result() as $row) { ?>
+                                            <option value="<?= $row->id_user_petugas ?>"><?= $row->nama_petugas ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                                <div class="row col-3">
+                                    <button type="submit" class="btn btn-primary col-2" style="margin-left: 4px;"><i class="bi bi-check2"></i></button>
+                                </div>
+                            </div>
+                        </form> -->
+                    <?php } ?>
+
                     <!-- <div class="container"> -->
-                    <div class="row">
+                    <div class="row" style="margin-top: 5px;">
                         <?php if ($a != 0 && $akses != 7) { ?>
                             <button type="button" class="btn btn-primary col-3" data-bs-toggle="modal" data-bs-target="#basicModal">
                                 Tambah Data Penerima
@@ -71,11 +90,13 @@ foreach ($date_valid->result() as $d) {
                         <?php }
                         }
                         ?>
+
                     </div>
+
 
                     <!-- </div> -->
                     <h5 style="margin-top: 6px;">Data Di Validasi pada : <b><?php if ($b != NULL) {
-                                                                                echo date('d F Y H:i:s', strtotime($b));
+                                                                                // echo date('d F Y H:i:s', strtotime($b));
                                                                             } else {
                                                                                 echo "-";
                                                                             } ?></b></h5>
@@ -112,6 +133,7 @@ foreach ($date_valid->result() as $d) {
                                         <?php } ?>
                                     </td>
                                     <td>
+                                        <!-- Button Update Status Penyaluran -->
                                         <?php
                                         if ($row->status == 0) { ?>
                                             <a href="<?= site_url('Penerima/update_status_terima/' . $row->id_penerima) ?>" class="btn btn-primary"><i class="bi bi-check2"></i></a>
@@ -120,6 +142,7 @@ foreach ($date_valid->result() as $d) {
                                         <?php }
                                         ?>
 
+                                        <!-- button Update status ketersediaan warga -->
                                         <?php if ($a != 1 || $akses != 7) {
                                             if ($row->status_penerima != 1) { ?>
                                                 <a href="<?= site_url('Penerima/update_penerima_off/' . $row->id_penerima) ?>" class="btn btn-primary"><i class="bi bi-power"></i></a>
