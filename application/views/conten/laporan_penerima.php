@@ -15,28 +15,25 @@ foreach ($data_penduduk->result() as $row) {
 ?>
 
 <body>
-    <div style="text-align:center">
-        <table border="1" style="border: solid black;" width="100%">
+    <table width="100%">
+        <tbody>
             <tr>
-                <th width="15%" height="10%">
-
-                    <div align="center"><img src="<?= base_url('assets/logo/kop_laziz.png') ?>" alt="logo" width="55%"></div>
-                </th>
-                <th>
-                    <center><span><b>
-                                <h5>JARINGAN PENGELOLA ZAKAT FITRAH, ZAKAT MAAL, INFAQ, SHODAQOH, DAN PARTISIPASI SOSIAL</h5>
-                            </b></span></center>
-                    <center><span><B>
-                                <h5>MASJID BESAR :NURUL HUDA" JANTI</h5>
-                            </B></span></center>
-                    <center><span><b>
-                                <h6>TAHUN / <?= date('Y') ?> M</h6>
-                            </b></span></center>
-                </th>
-                <th width="15%" height="10%">tes</th>
+                <td width="21%">
+                    <center><img src="<?= base_url('') ?>assets/logo/kop_laziz.png" width="102" height="50" alt="" /></center>
+                </td>
+                <td width="65%" align="center" valign="middle">
+                    <strong>JARINGAN PENGELOLA ZAKAT FITRAH, ZAKAT MAAL, INFAQ SHODAQOH DAN PARTISIPASI SOSIAL</strong><br>
+                    <strong>MASJID BESAR "NURUL HUDA" JANTI</strong><br>
+                    <strong>TAHUN 1443H / 2022M</strong>
+                </td>
+                <td width="14%">
+                    <center><img src="<?= base_url('') ?>assets/logo/nh.png" width="96" height="66" alt="" /></center>
+                </td>
             </tr>
-        </table>
-    </div>
+        </tbody>
+    </table>
+    <center>Sekretariat : Jl. Brigjen Katamso I, Janti, Waru - Sidoarjo</center>
+    <hr>
     <table>
         <tr>
             <td>Nama Koordinator</td>
