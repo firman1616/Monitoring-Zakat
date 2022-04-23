@@ -29,7 +29,7 @@ foreach ($date_valid->result() as $d) {
     <section class="section">
         <div class="row">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body table-responsive">
                     <h5 class="card-title">Data Penerima Zakat</h5>
 
                     <?php if ($akses != 7) { ?>
@@ -44,7 +44,7 @@ foreach ($date_valid->result() as $d) {
                                     </select>
                                 </div>
                                 <div class="row col-3">
-                                    <button type="submit" class="btn btn-primary col-2" style="margin-left: 4px;"><i class="bi bi-cloud-download"></i></button>
+                                    <button type="submit" class="btn btn-primary" style="margin-left: 4px;"><i class="bi bi-cloud-download"></i></button>
                                 </div>
                             </div>
                         </form>
@@ -70,26 +70,29 @@ foreach ($date_valid->result() as $d) {
 
                     <!-- <div class="container"> -->
                     <div class="row" style="margin-top: 5px;">
-                        <?php if ($a != 0 && $akses != 7) { ?>
-                            <button type="button" class="btn btn-primary col-3" data-bs-toggle="modal" data-bs-target="#basicModal">
-                                Tambah Data Penerima
-                            </button>
-                        <?php
-                        } elseif ($a != 1 && $akses == 7 || $akses != 7) { ?>
-                            <button type="button" class="btn btn-primary col-3" data-bs-toggle="modal" data-bs-target="#basicModal">
-                                Tambah Data Penerima
-                            </button>
-                        <?php } ?>
-
-                        <?php
-                        if ($akses != 7) {
-                            if ($validate == 0) { ?>
-                                <a href="<?= site_url('Penerima/update_data_validation') ?>" style="margin-left: 4px;" class="btn btn-danger col-3">Validasi Data</a>
-                            <?php } else { ?>
-                                <!-- <a href="" class="btn btn-success">Validasi Data</a> -->
-                        <?php }
-                        }
-                        ?>
+                        <div class="col-md-3">
+                            <?php if ($a != 0 && $akses != 7) { ?>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
+                                    Tambah Data
+                                </button>
+                            <?php
+                            } elseif ($a != 1 && $akses == 7 || $akses != 7) { ?>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
+                                    Tambah Data
+                                </button>
+                            <?php } ?>
+                        </div>
+                        <div class="col-md-3">
+                            <?php
+                            if ($akses != 7) {
+                                if ($validate == 0) { ?>
+                                    <a href="<?= site_url('Penerima/update_data_validation') ?>" style="margin-left: 4px;" class="btn btn-danger ">Validasi Data</a>
+                                <?php } else { ?>
+                                    <!-- <a href="" class="btn btn-success">Validasi Data</a> -->
+                            <?php }
+                            }
+                            ?>
+                        </div>
 
                     </div>
 

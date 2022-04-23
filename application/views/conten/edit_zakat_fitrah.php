@@ -33,7 +33,7 @@ foreach ($get_data->result() as $row) {
                     <form action="<?= site_url('Pembayaran/update_zakat_fitrah/' . $i) ?>" method="post">
                         <div class="col-12">
                             <label class="form-label">Nama Pemberi Zakat <small style="color: red;">*</small></label>
-                            <input type="text" class="form-control" id="nama_pemberi" name="nama_pemberi" required placeholder="ex. Sutaji" value="<?= $id_user; ?>">
+                            <input type="text" class="form-control" id="nama_pemberi" name="nama_pemberi" required placeholder="ex. Sutaji" value="<?= $a; ?>">
                         </div>
                         <div class="row">
                             <div class="col-4">
