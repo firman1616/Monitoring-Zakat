@@ -11,7 +11,7 @@
  Target Server Version : 50733
  File Encoding         : 65001
 
- Date: 23/04/2022 19:45:52
+ Date: 24/04/2022 11:56:24
 */
 
 SET NAMES utf8mb4;
@@ -29,14 +29,14 @@ CREATE TABLE `tbl_donatur`  (
   `nominal` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `petugas_penerima` int(11) NULL DEFAULT NULL,
   `status` int(11) NULL DEFAULT 0,
-  `validation` datetime(0) NULL DEFAULT NULL,
+  `validation` date NULL DEFAULT NULL,
   PRIMARY KEY (`id_donatur`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_donatur
 -- ----------------------------
-INSERT INTO `tbl_donatur` VALUES (4, 'Ibu Sadan', 7, 'Janti waru', '150000', 3, 0, '2022-04-23 06:15:13');
+INSERT INTO `tbl_donatur` VALUES (4, 'Ibu Sadan', 7, 'Janti waru', '150000', 3, 0, NULL);
 INSERT INTO `tbl_donatur` VALUES (5, 'Johan Wisaksono / Hasna Rief', 5, 'Rt 19', '500000', 3, 0, NULL);
 INSERT INTO `tbl_donatur` VALUES (6, 'Bpk mulyadi', 4, 'RT 18', '100000', 3, 0, NULL);
 INSERT INTO `tbl_donatur` VALUES (7, 'Bpk. Rudi Setiawan', 4, 'RT 18', '100000', 3, 0, NULL);
@@ -507,7 +507,7 @@ CREATE TABLE `tbl_zakat_fitrah`  (
   `tanggal` datetime(0) NULL DEFAULT NULL,
   `petugas` int(20) NULL DEFAULT NULL,
   PRIMARY KEY (`id_zakat_fitrah`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 418 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 409 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_zakat_fitrah
@@ -915,8 +915,6 @@ INSERT INTO `tbl_zakat_fitrah` VALUES (405, 'Bpk saiful anam', '2', '3', '6.00',
 INSERT INTO `tbl_zakat_fitrah` VALUES (406, 'Krisna harimurti', '1', '3', '3.00', '', 7, 'Perum graha tirta', '', '2021-05-12 15:55:47', 5);
 INSERT INTO `tbl_zakat_fitrah` VALUES (407, 'bpk samsul huda', '4', '2.8', '11.20', '', 6, 'Rt20', '', '2021-05-12 16:22:21', 3);
 INSERT INTO `tbl_zakat_fitrah` VALUES (408, 'bpk yus', '4', '3', '12.00', '', 4, 'Rt 18', '', '2021-05-12 16:22:41', 3);
-INSERT INTO `tbl_zakat_fitrah` VALUES (416, 'Tes Simpan Data 2', '2', '2', '4', '10000', 7, 'Jakarta', 'OK', '2022-04-14 07:04:14', 3);
-INSERT INTO `tbl_zakat_fitrah` VALUES (417, 'Tes Simpan Data 3', '5', '2', '10', '1000', 1, NULL, 'OKE OKE', '2022-04-14 07:07:00', NULL);
 
 -- ----------------------------
 -- Table structure for tbl_zakat_maal

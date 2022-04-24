@@ -196,7 +196,7 @@ class Pembayaran extends CI_Controller
             'get_maal_filter' => $this->zakat->tampil_maal_filter(),
             'get_alamat' => $this->m_data->get_data('tbl_master_alamat'),
             'get_kategori' => $this->m_data->get_data('tbl_master_maal'),
-            'get_koor' => $this->m_data->get_data('tbl_user_koor'),
+            'get_koor' => $this->zakat->user_koor(),
             'headder_css' => array(
                 'assets/template/assets/vendor/simple-datatables/style.css',
             ),

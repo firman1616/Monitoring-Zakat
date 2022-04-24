@@ -15,7 +15,7 @@
         <div class="row">
 
             <div class="card">
-                <div class="card-body">
+                <div class="card-body table-responsive">
                     <h5 class="card-title">Data Donatur</h5>
 
                     <!-- Default Tabs -->
@@ -49,7 +49,7 @@
                                         <tr>
                                             <th scope="row"><?= $x++; ?></th>
                                             <td><?= $row->nama_donatur ?></td>
-                                            <td>Rp. <?= number_format($row->nominal, 3) ?>,-</td>
+                                            <td>Rp. <?= number_format($row->nominal, 2) ?>,-</td>
                                             <td>
                                                 <?php
                                                 if ($row->status == 1) { ?>

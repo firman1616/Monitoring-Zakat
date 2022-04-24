@@ -70,7 +70,7 @@ foreach ($data_penduduk->result() as $row) {
             <tr>
                 <th>Fakir</th>
                 <th>Miskin</th>
-                <th>Sabil</th>
+                <th>Sabilillah</th>
             </tr>
         </thead>
         <tbody>

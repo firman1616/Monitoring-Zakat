@@ -160,6 +160,9 @@ foreach ($date_valid->result() as $d) {
 
                                         <?php if ($a != 1 || $akses != 7) { ?>
                                             <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#editModal<?= $no++; ?>"><i class="bi bi-pencil-square"></i></button>
+                                        <?php } ?>
+
+                                        <?php if ($akses != 7) { ?>
                                             <a class="hapus-penerima btn btn-danger" href="<?= site_url('Penerima/hapus_data_penerima/' . $row->id_penerima) ?>"><i class="bi bi-trash"></i></a>
                                         <?php } ?>
 

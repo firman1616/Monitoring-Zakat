@@ -18,107 +18,250 @@
         <div class="row">
 
           <!-- Sales Card -->
-          <div class="col-xxl-4 col-md-6">
-            <div class="card info-card sales-card">
+          <?php if ($akses == 1 || $akses == 2 || $akses == 4 || $akses == 5 || $akses == 6) { ?>
 
-              <div class="card-body">
-                <h5 class="card-title">Total Donatur |<span><?= date('Y') ?></span></h5>
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
 
-                <div class="d-flex align-items-center">
-                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <i class="bi bi-cart"></i>
-                  </div>
-                  <div class="ps-3">
-                    <h6>145</h6>
-                    <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                <div class="card-body">
+                  <h5 class="card-title">Total Donatur | <span><?= date('Y') ?></span></h5>
 
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-cart"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6><?php if ($jumlah_donatur->total == null) {
+                            echo "Rp. 0,-";
+                          } else {
+                            echo "Rp. " . number_format($jumlah_donatur->total, 0, ',', '.');
+                          } ?></h6>
+                      <span class="text-success small pt-1 fw-bold"><?= $count_donatur->jumlah ?></span> <span class="text-muted small pt-2 ps-1">Orang</span>
+
+                    </div>
                   </div>
                 </div>
-              </div>
 
+              </div>
             </div>
-          </div><!-- End Sales Card -->
+          <?php } ?>
+          <!-- End Sales Card -->
 
           <!-- Revenue Card -->
-          <div class="col-xxl-4 col-md-6">
-            <div class="card info-card revenue-card">
+          <?php if ($akses == 1 || $akses == 2 || $akses == 3 || $akses == 6 || $akses == 5) { ?>
 
-              <div class="card-body">
-                <h5 class="card-title">Total Beras |<span><?= date('Y') ?></span></h5>
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
 
-                <div class="d-flex align-items-center">
-                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <i class="bi bi-currency-dollar"></i>
-                  </div>
-                  <div class="ps-3">
-                    <h6>$3,264</h6>
-                    <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                <div class="card-body">
+                  <h5 class="card-title">Total Beras | <span><?= date('Y') ?></span></h5>
 
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-basket-fill"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6><?php if ($jumlah_beras->total_beras == 0) {
+                            echo "0 Kg";
+                          } else {
+                            echo $jumlah_beras->total_beras . " Kg";
+                          } ?></h6>
+                      <span class="text-success small pt-1 fw-bold"><?php if ($jumlah_uang_beras->total_uang_fitrah != 0) {
+                                                                      echo "Rp. " . number_format($jumlah_uang_beras->total_uang_fitrah, 0, ',', '.');
+                                                                    } else {
+                                                                      echo "Rp. 0,-";
+                                                                    } ?></span> <span class="text-muted small pt-2 ps-1"> </span>
+                      <span class="text-success small pt-1 fw-bold"><?= $count_fitrah ?></span> <span class="text-muted small pt-2 ps-1">Orang</span>
+
+                    </div>
                   </div>
                 </div>
-              </div>
 
+              </div>
             </div>
-          </div><!-- End Revenue Card -->
+          <?php } ?>
+          <!-- End Revenue Card -->
 
           <!-- Zakat Maal Card -->
-          <div class="col-xxl-4 col-md-6">
-            <div class="card info-card revenue-card">
+          <?php if ($akses == 1 || $akses == 2 || $akses == 3 || $akses == 6 || $akses == 5) { ?>
+
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
 
 
-              <div class="card-body">
-                <h5 class="card-title">Total Maal |<span><?= date('Y') ?></span></h5>
+                <div class="card-body">
+                  <h5 class="card-title">Total Maal | <span><?= date('Y') ?></span></h5>
 
-                <div class="d-flex align-items-center">
-                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <i class="bi bi-currency-dollar"></i>
-                  </div>
-                  <div class="ps-3">
-                    <h6>$3,264</h6>
-                    <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6><?php if ($total_all_maal->nominal != 0) {
+                            echo "Rp. " . number_format($total_all_maal->nominal, 0, ',', '.');
+                          } else {
+                            echo "Rp. 0,-";
+                          } ?></h6>
+                      <span class="text-success small pt-1 fw-bold"><?php if ($total_maal->maal != 0) {
+                                                                      echo "Rp. " . number_format($total_maal->maal, 0, ',', '.');
+                                                                    } else {
+                                                                      echo "Rp. 0,-";
+                                                                    } ?></span>
 
+                      <span class="text-success small pt-1 fw-bold"><?php if ($total_ps->ps != 0) {
+                                                                      echo "Rp. " . number_format($total_ps->ps, 0, ',', '.');
+                                                                    } else {
+                                                                      echo "Rp. 0,-";
+                                                                    } ?></span>
+
+                      <span class="text-success small pt-1 fw-bold"><?php if ($total_is->infaq != 0) {
+                                                                      echo "Rp. " . number_format($total_is->infaq, 0, ',', '.');
+                                                                    } else {
+                                                                      echo "Rp. 0,-";
+                                                                    } ?></span>
+
+                      <span class="text-success small pt-1 fw-bold"><?php if ($total_fid->fid != 0) {
+                                                                      echo "Rp. " . number_format($total_fid->fid, 0, ',', '.');
+                                                                    } else {
+                                                                      echo "Rp. 0,-";
+                                                                    } ?></span>
+
+                    </div>
                   </div>
                 </div>
-              </div>
 
+              </div>
             </div>
-          </div><!-- End Zakat Maal Card -->
+          <?php } ?>
+          <!-- End Zakat Maal Card -->
+
           <!-- Customers Card -->
-          <div class="col-xxl-4 col-xl-12">
+          <?php if ($akses == 1 || $akses == 2 || $akses == 3 || $akses == 6 || $akses == 5) { ?>
+            <div class="col-xxl-4 col-xl-12">
 
-            <div class="card info-card customers-card">
+              <div class="card info-card customers-card">
 
-              <div class="filter">
-                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                  <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
-                  </li>
 
-                  <li><a class="dropdown-item" href="#">Today</a></li>
-                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                  <li><a class="dropdown-item" href="#">This Year</a></li>
-                </ul>
+                <div class="card-body">
+                  <h5 class="card-title">Penerima Zakat <span>| <?= date('Y') ?></span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people-fill"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6><?= $penerima_zakat ?> Orang</h6>
+                      <!-- <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span> -->
+
+                    </div>
+                  </div>
+
+                </div>
               </div>
 
-              <div class="card-body">
-                <h5 class="card-title">Customers <span>| This Year</span></h5>
+            </div><!-- End Customers Card -->
 
-                <div class="d-flex align-items-center">
-                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <i class="bi bi-people"></i>
+
+
+
+            <div class="col-xxl-4 col-xl-12">
+
+              <div class="card info-card customers-card">
+
+
+                <div class="card-body">
+                  <h5 class="card-title">Total Penerima Fakir <span>| <?= date('Y') ?></span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people-fill"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6><?= $penerima_fakir
+                          ?> Orang</h6>
+                      <!-- <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span> -->
+
+                    </div>
                   </div>
-                  <div class="ps-3">
-                    <h6>1244</h6>
-                    <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
 
+                </div>
+              </div>
+
+            </div><!-- End Customers Card -->
+
+            <div class="col-xxl-4 col-xl-12">
+
+              <div class="card info-card customers-card">
+
+
+                <div class="card-body">
+                  <h5 class="card-title">Total Penerima Miskkin <span>| <?= date('Y') ?></span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people-fill"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6><?= $penerima_miskin
+                          ?> Orang</h6>
+                      <!-- <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span> -->
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <!-- End Customers Card -->
+
+            <div class="col-xxl-4 col-xl-12">
+              <div class="card info-card customers-card">
+                <div class="card-body">
+                  <h5 class="card-title">Total Penerima Sabilillah <span>| <?= date('Y') ?></span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people-fill"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6><?= $penerima_sabilillah
+                          ?> Orang</h6>
+                      <!-- <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span> -->
+                    </div>
                   </div>
                 </div>
-
               </div>
             </div>
+          <?php } ?>
+          <!-- End Customers Card -->
 
-          </div><!-- End Customers Card -->
+          <!-- Total Penerima User -->
+          <?php
+          if ($akses == 7) {
+            foreach ($count_kategori->result() as $row) { ?>
+              <div class="col-xxl-4 col-xl-12">
+                <div class="card info-card customers-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Total Penerima <?= $row->nama_ket ?> <span>| <?= date('Y') ?></span></h5>
+
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-people-fill"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6><?= $row->jumlah;
+                            ?> Orang</h6>
+                        <!-- <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          <?php  }
+          }
+          ?>
+          <!-- End Total Penerima User -->
 
           <!-- Reports -->
           <div class="col-12">

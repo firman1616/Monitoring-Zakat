@@ -87,9 +87,9 @@ foreach ($get_data->result() as $row) {
                                 <select name="petugas2" id="petugas2" class="form-control">
                                     <option value="" disabled selected>Pilih Petugas</option>
                                     <?php foreach ($get_koor->result() as $row) { ?>
-                                        <option <?php if ($g == $row->id_user_koor) {
+                                        <option <?php if ($g == $row->id_user_petugas) {
                                                     echo "SELECTED";
-                                                } ?> value="<?= $row->id_user_koor ?>"><?= $row->nama_koor ?></option>
+                                                } ?> value="<?= $row->id_user_petugas ?>"><?= $row->nama_petugas ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
