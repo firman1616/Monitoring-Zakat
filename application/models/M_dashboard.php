@@ -18,7 +18,7 @@ class M_dashboard extends CI_Model
 
     public function jumlah_uang_beras()
     {
-        return $this->db->query("SELECT SUM(total_beras) as total_uang_fitrah FROM tbl_zakat_fitrah WHERE YEAR(tanggal) = YEAR(CURDATE())")->row();
+        return $this->db->query("SELECT SUM(uang) as total_uang_fitrah FROM tbl_zakat_fitrah WHERE YEAR(tanggal) = YEAR(CURDATE())")->row();
     }
 
     public function count_fitrah()

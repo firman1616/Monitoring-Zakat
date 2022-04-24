@@ -136,7 +136,7 @@
           <!-- End Zakat Maal Card -->
 
           <!-- Customers Card -->
-          <?php if ($akses == 1 || $akses == 2 || $akses == 3 || $akses == 6 || $akses == 5) { ?>
+          <?php if ($akses == 1 || $akses == 2 || $akses == 3 || $akses == 6) { ?>
             <div class="col-xxl-4 col-xl-12">
 
               <div class="card info-card customers-card">
