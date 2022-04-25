@@ -37,6 +37,7 @@ class Dashboard extends CI_Controller
             'penerima_miskin' => $this->dash->penerima_miskin(),
             'penerima_sabilillah' => $this->dash->penerima_sabilillah(),
             'count_kategori' => $this->dash->count_kategori($this->session->userdata('id')),
+            'bar_fitrah' => $this->dash->bar_fitrah(),
         ];
         $this->load->view('template/conten', $data);
     }

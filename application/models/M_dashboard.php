@@ -82,4 +82,9 @@ class M_dashboard extends CI_Model
     WHERE a.status_penerima = 0 AND a.koor = '$id'
     GROUP BY b.nama_ket");
     }
+
+    public function bar_fitrah()
+    {
+        return $this->db->query("SELECT YEAR(tanggal) as tahun, SUM(berat_beras) as total FROM `tbl_zakat_fitrah` GROUP BY YEAR(tanggal)")->result();
+    }
 }
