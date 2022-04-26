@@ -87,4 +87,24 @@ class M_dashboard extends CI_Model
     {
         return $this->db->query("SELECT YEAR(tanggal) as tahun, SUM(berat_beras) as total FROM `tbl_zakat_fitrah` GROUP BY YEAR(tanggal)")->result();
     }
+
+    public function bar_maal()
+    {
+        return $this->db->query("SELECT YEAR(tanggal) as tahun, SUM(nominal_zakat) as total_maal FROM tbl_zakat_maal WHERE kategori_zakat = 1 GROUP BY YEAR(tanggal)")->result();
+    }
+
+    public function bar_ps()
+    {
+        return $this->db->query("SELECT YEAR(tanggal) as tahun, SUM(nominal_zakat) as total_ps FROM tbl_zakat_maal WHERE kategori_zakat = 2 GROUP BY YEAR(tanggal)")->result();
+    }
+
+    public function bar_is()
+    {
+        return $this->db->query("SELECT YEAR(tanggal) as tahun, SUM(nominal_zakat) as total_is FROM tbl_zakat_maal WHERE kategori_zakat = 3 GROUP BY YEAR(tanggal)")->result();
+    }
+
+    public function bar_fidyah()
+    {
+        return $this->db->query("SELECT YEAR(tanggal) as tahun, SUM(nominal_zakat) as total_fidyah FROM tbl_zakat_maal WHERE kategori_zakat = 4 GROUP BY YEAR(tanggal)")->result();
+    }
 }
