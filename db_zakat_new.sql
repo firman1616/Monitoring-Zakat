@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : xampp
+ Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 50733
+ Source Server Version : 100422
  Source Host           : localhost:3306
  Source Schema         : db_zakat_new2
 
  Target Server Type    : MySQL
- Target Server Version : 50733
+ Target Server Version : 100422
  File Encoding         : 65001
 
- Date: 24/04/2022 11:56:24
+ Date: 28/04/2022 14:00:15
 */
 
 SET NAMES utf8mb4;
@@ -73,7 +73,7 @@ CREATE TABLE `tbl_master_alamat`  (
   `id_master_alamat` int(11) NOT NULL AUTO_INCREMENT,
   `nama_master_alamat` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_master_alamat`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_master_alamat
@@ -94,7 +94,7 @@ CREATE TABLE `tbl_master_jabatan`  (
   `id_master_jabatan` int(11) NOT NULL AUTO_INCREMENT,
   `nama_jabatan` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_master_jabatan`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_master_jabatan
@@ -118,7 +118,7 @@ CREATE TABLE `tbl_master_kwitansi`  (
   `kota_kwitansi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `alamat_organisasi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
   PRIMARY KEY (`id_kwitansi`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_master_kwitansi
@@ -138,11 +138,7 @@ CREATE TABLE `tbl_master_laporan`  (
   `jabatan` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `nama_sekretaris` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_master_lap`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Records of tbl_master_laporan
--- ----------------------------
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for tbl_master_lokasi
@@ -155,11 +151,7 @@ CREATE TABLE `tbl_master_lokasi`  (
   `kontak_lokasi` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `foto_lokasi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
   PRIMARY KEY (`id_lokasi`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Records of tbl_master_lokasi
--- ----------------------------
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for tbl_master_maal
@@ -169,7 +161,7 @@ CREATE TABLE `tbl_master_maal`  (
   `id_master_maal` int(11) NOT NULL AUTO_INCREMENT,
   `nama_maal` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_master_maal`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_master_maal
@@ -187,7 +179,7 @@ CREATE TABLE `tbl_master_penerima`  (
   `id_ket` int(11) NOT NULL AUTO_INCREMENT,
   `nama_ket` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_ket`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_master_penerima
@@ -210,7 +202,7 @@ CREATE TABLE `tbl_penerima`  (
   `validation_data` int(255) NULL DEFAULT 0,
   `date_validation` date NULL DEFAULT NULL,
   PRIMARY KEY (`id_penerima`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 394 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 394 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_penerima
@@ -271,7 +263,7 @@ INSERT INTO `tbl_penerima` VALUES (70, 'Zahro', 3, 15, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (74, 'Martini (Kost Tulus)', 2, 15, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (113, 'Hj. Nurul Qomariyah', 3, 17, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (114, 'Bu Ameni', 1, 17, 0, 0, 0, NULL);
-INSERT INTO `tbl_penerima` VALUES (115, 'Bpk Khusairi', 1, 17, 0, 0, 0, NULL);
+INSERT INTO `tbl_penerima` VALUES (115, 'Bpk Khusairi', 1, 17, 0, 1, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (116, 'Bu Sumarni', 1, 17, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (117, 'Bu Semi', 1, 17, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (118, 'Bpk Sigit Sugiarto ', 2, 17, 0, 0, 0, NULL);
@@ -280,7 +272,7 @@ INSERT INTO `tbl_penerima` VALUES (121, 'Bu Mudjiono', 1, 17, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (122, 'Amal', 2, 17, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (123, 'Bu Siamah', 1, 17, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (124, 'Bu Nur Mahmuda', 2, 17, 0, 0, 0, NULL);
-INSERT INTO `tbl_penerima` VALUES (125, 'Toni M', 2, 17, 0, 0, 0, NULL);
+INSERT INTO `tbl_penerima` VALUES (125, 'Toni M', 2, 17, 0, 1, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (126, 'Hj. Indahwati ', 3, 17, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (127, 'H. Anas Aly', 3, 17, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (129, 'Bpk Mat Jeliteng', 1, 17, 0, 0, 0, NULL);
@@ -333,7 +325,7 @@ INSERT INTO `tbl_penerima` VALUES (230, 'Bu Tin (Khundoli)', 1, 17, 0, 0, 0, NUL
 INSERT INTO `tbl_penerima` VALUES (231, 'Mut (gorengan)', 1, 17, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (232, 'Abdul Kahar', 1, 16, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (234, 'Ning Susiati', 2, 16, 0, 0, 0, NULL);
-INSERT INTO `tbl_penerima` VALUES (235, 'Muslimah', 1, 16, 0, 0, 0, NULL);
+INSERT INTO `tbl_penerima` VALUES (235, 'Mbak mariyah', 2, 16, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (236, 'Sholeh', 2, 16, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (238, 'Ninik', 1, 16, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (239, 'Tutik', 2, 16, 0, 0, 0, NULL);
@@ -361,7 +353,7 @@ INSERT INTO `tbl_penerima` VALUES (276, 'Susi', 3, 14, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (298, 'Yaati kos erwin', 2, 17, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (299, 'Toari', 2, 17, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (303, 'Agung', 1, 15, 0, 0, 0, NULL);
-INSERT INTO `tbl_penerima` VALUES (304, 'Bu sundari', 2, 17, 0, 0, 0, NULL);
+INSERT INTO `tbl_penerima` VALUES (304, 'Bu sundari', 2, 17, 0, 1, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (305, 'Hariono (kost suyono)', 2, 15, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (306, 'Martinus(kost pipit)', 2, 15, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (307, 'Rohman(kost pipit)', 2, 15, 0, 0, 0, NULL);
@@ -434,7 +426,7 @@ INSERT INTO `tbl_penerima` VALUES (389, 'Malikhah', 3, 16, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (390, 'Siti Mudrika', 3, 17, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (391, 'Sri Rahayu', 2, 17, 0, 0, 0, NULL);
 INSERT INTO `tbl_penerima` VALUES (392, 'Ten Ketang', 2, 14, 0, 0, 0, NULL);
-INSERT INTO `tbl_penerima` VALUES (393, 'Tukiyem', 1, 17, 0, 0, 0, NULL);
+INSERT INTO `tbl_penerima` VALUES (393, 'Tukiyem', 1, 17, 0, 1, 0, NULL);
 
 -- ----------------------------
 -- Table structure for tbl_user_koor
@@ -449,11 +441,7 @@ CREATE TABLE `tbl_user_koor`  (
   `password` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
   `level` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id_user_koor`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Records of tbl_user_koor
--- ----------------------------
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for tbl_user_petugas
@@ -468,27 +456,31 @@ CREATE TABLE `tbl_user_petugas`  (
   `alamat_petugas` int(11) NULL DEFAULT NULL,
   `level` int(11) NULL DEFAULT 5,
   PRIMARY KEY (`id_user_petugas`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_user_petugas
 -- ----------------------------
-INSERT INTO `tbl_user_petugas` VALUES (3, 'Moch. Firman Firdaus', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 1, 1);
-INSERT INTO `tbl_user_petugas` VALUES (5, 'M. Firdi Widiansyah', 'widi', 'd49b9709c6ca14577f08b2ab21ab7964', 'widi', 2, 2);
+INSERT INTO `tbl_user_petugas` VALUES (3, 'Moch. Firman Firdaus', 'admin', 'e79c7323f62151abde47e29987b38859', 'akusayangkamu', 1, 1);
+INSERT INTO `tbl_user_petugas` VALUES (5, 'M. Firdi Widiansyah', 'widi', '817e12a8f1dfb8620f1522995a692f38', 'Widi.00', 2, 2);
 INSERT INTO `tbl_user_petugas` VALUES (6, 'Auliya Arfiantoro', 'fian', '3a63bfc12d919d317531fe8583593d7a', 'fian', 1, 3);
 INSERT INTO `tbl_user_petugas` VALUES (7, 'Rizky Rachmad Zulkar', 'boboho', '8e36aec125377b008352fc32b27daf06', 'boboho', 3, 3);
 INSERT INTO `tbl_user_petugas` VALUES (8, 'Alif Rafliyudin', 'alif', '099a147c0c6bcd34009896b2cc88633c', 'alif', 3, 5);
 INSERT INTO `tbl_user_petugas` VALUES (9, 'Yuli Dwi Setiawan', 'yuli', '4a01a05a350e1c7710c989f1211245a8', 'yuli', 2, 5);
 INSERT INTO `tbl_user_petugas` VALUES (10, 'Edo Dwi Minardi', 'edo', 'd2d612f72e42577991f4a5936cecbcc0', 'edo', 4, 5);
 INSERT INTO `tbl_user_petugas` VALUES (11, 'Achmad Garudatus Zam', 'garuda', '586293e168054f480d08e30fba98c295', 'garuda', 1, 5);
-INSERT INTO `tbl_user_petugas` VALUES (12, 'Alfin Rahmad Zakaria', 'alfin', '6ff92dee2a93081f0192781f156fa0e9', 'alfin', 1, 5);
-INSERT INTO `tbl_user_petugas` VALUES (13, 'M. Wahyu Hidayatulla', 'wahyu', '32c9e71e866ecdbc93e497482aa6779f', 'wahyu', 1, 5);
-INSERT INTO `tbl_user_petugas` VALUES (14, 'M. Apriadi Setiawan', 'adi', 'c46335eb267e2e1cde5b017acb4cd799', 'adi', 1, 7);
-INSERT INTO `tbl_user_petugas` VALUES (15, 'M. Nur Laba', 'nur', 'b55178b011bfb206965f2638d0f87047', 'nur', 2, 7);
-INSERT INTO `tbl_user_petugas` VALUES (16, 'Rizky', 'rizky', '49d8712dd6ac9c3745d53cd4be48284c', 'rizky', 3, 7);
+INSERT INTO `tbl_user_petugas` VALUES (14, 'M. Apriadi Setiawan', 'adi', 'd10aef7b970ee2a1bd621a779e90e952', 'Adi.01', 1, 7);
+INSERT INTO `tbl_user_petugas` VALUES (15, 'M. Nur Laba', 'nur', '2c6655ec98c35c521d6405745ea8c1b4', 'Nur.01', 2, 7);
+INSERT INTO `tbl_user_petugas` VALUES (16, 'Imam Muslich', 'muslih', '41f52158ed8081cc394d2cd42744d65d', 'Muslih.01', 3, 7);
 INSERT INTO `tbl_user_petugas` VALUES (17, 'Abdul Mughni', 'oni', 'cb7f4a5e75e6f7340971c99ea4587999', 'oni', 4, 7);
-INSERT INTO `tbl_user_petugas` VALUES (18, 'Zahid', 'zahid', 'c651148415ab2a260e6c506075c12ae3', 'zahid', 6, 7);
-INSERT INTO `tbl_user_petugas` VALUES (19, 'Miftachudin', 'mifta', '150bfb5c3fcc30c477b8253721262363', 'mifta', 5, 7);
+INSERT INTO `tbl_user_petugas` VALUES (18, 'Zahid', 'zahid', 'a4c794c47d95895fb8799ef052411c47', 'Zahid.02', 6, 7);
+INSERT INTO `tbl_user_petugas` VALUES (19, 'Ramadhan Dwi Handoko', 'koko', 'b9d1bb08c6c9c301af4ed192a733370f', 'Koko.01', 5, 7);
+INSERT INTO `tbl_user_petugas` VALUES (20, 'Ferdi', 'ferdi', '8bf4bb0e2efad01abe522bf314504a49', 'ferdi', 1, 5);
+INSERT INTO `tbl_user_petugas` VALUES (21, 'Arif', 'arif', '0ff6c3ace16359e41e37d40b8301d67f', 'arif', 6, 5);
+INSERT INTO `tbl_user_petugas` VALUES (22, 'Wawan', 'wawan', '0a000f688d85de79e3761dec6816b2a5', 'wawan', 6, 5);
+INSERT INTO `tbl_user_petugas` VALUES (23, 'Abdul Mughni', 'oni', 'e575e724f835c9754452649fe9f7228d', 'Oni.01', 4, 5);
+INSERT INTO `tbl_user_petugas` VALUES (24, 'Firdaus', 'daus', '715d7c9ff041047aeb25c535e7e2f661', 'daus', 2, 4);
+INSERT INTO `tbl_user_petugas` VALUES (25, 'M. Abdul Aziz', 'aziz', 'b85dc795ba17cb243ab156f8c52124e1', 'aziz', 2, 2);
 
 -- ----------------------------
 -- Table structure for tbl_zakat_fitrah
@@ -507,7 +499,7 @@ CREATE TABLE `tbl_zakat_fitrah`  (
   `tanggal` datetime(0) NULL DEFAULT NULL,
   `petugas` int(20) NULL DEFAULT NULL,
   PRIMARY KEY (`id_zakat_fitrah`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 409 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 431 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_zakat_fitrah
@@ -915,6 +907,28 @@ INSERT INTO `tbl_zakat_fitrah` VALUES (405, 'Bpk saiful anam', '2', '3', '6.00',
 INSERT INTO `tbl_zakat_fitrah` VALUES (406, 'Krisna harimurti', '1', '3', '3.00', '', 7, 'Perum graha tirta', '', '2021-05-12 15:55:47', 5);
 INSERT INTO `tbl_zakat_fitrah` VALUES (407, 'bpk samsul huda', '4', '2.8', '11.20', '', 6, 'Rt20', '', '2021-05-12 16:22:21', 3);
 INSERT INTO `tbl_zakat_fitrah` VALUES (408, 'bpk yus', '4', '3', '12.00', '', 4, 'Rt 18', '', '2021-05-12 16:22:41', 3);
+INSERT INTO `tbl_zakat_fitrah` VALUES (409, 'Su\'eb', '9', '3', '27', '', 4, '', 'trismiyati\r\njatu rachmawati\r\ndadang suryana\r\nhimawan santoso\r\ndaru saroza\r\nhartulis\r\nreisha shelfiera\r\narsy calista putri', '2022-04-24 09:26:24', 5);
+INSERT INTO `tbl_zakat_fitrah` VALUES (410, 'Trianda Aditya', '3', '5', '15', '0', 7, 'Makarya Blok A 23', 'Nur laba', '2022-04-26 12:52:48', 11);
+INSERT INTO `tbl_zakat_fitrah` VALUES (411, 'Rumanto', '1', '3', '3', '0', 7, 'Makarya binangun', 'Rekap 26 April', '2022-04-26 12:54:27', 11);
+INSERT INTO `tbl_zakat_fitrah` VALUES (412, 'Maulana Huda', '2', '3', '6', '0', 7, 'Janti', 'Rekap 26 April', '2022-04-26 12:55:24', 11);
+INSERT INTO `tbl_zakat_fitrah` VALUES (413, 'Sumarlan', '3', '3', '9', '0', 7, 'Janti', 'Rekap 26 April', '2022-04-26 12:56:02', 11);
+INSERT INTO `tbl_zakat_fitrah` VALUES (414, 'Noval Aditya', '2', '5', '10', '0', 7, 'Janti', 'Rekap 26 April', '2022-04-26 12:56:44', 11);
+INSERT INTO `tbl_zakat_fitrah` VALUES (415, 'Bagus Nurya U', '3', '3', '9', '0', 7, 'Janti', 'Rekap 26 April', '2022-04-26 01:02:00', 11);
+INSERT INTO `tbl_zakat_fitrah` VALUES (416, 'Agus Sugiantoro', '5', '3', '15', '170000', 2, NULL, '', '2022-04-26 02:39:34', 11);
+INSERT INTO `tbl_zakat_fitrah` VALUES (417, 'A. Muqorrobin', '7', '3', '21', '238000', 7, 'Tropodo', '', '2022-04-26 02:39:24', 11);
+INSERT INTO `tbl_zakat_fitrah` VALUES (418, 'Ali fathoni', '2', '3', '6', '', 3, NULL, '', '2022-04-26 06:17:18', 23);
+INSERT INTO `tbl_zakat_fitrah` VALUES (419, 'Ali fatoni', '2', '3', '6', '', 3, '', '', '2022-04-26 08:13:47', 11);
+INSERT INTO `tbl_zakat_fitrah` VALUES (420, 'Bapak karsimin', '7', '3', '21', '', 2, '', '', '2022-04-26 08:34:14', 11);
+INSERT INTO `tbl_zakat_fitrah` VALUES (421, 'Susi Dwi W', '2', '3', '6', '0', 7, 'Brigjend Katamso gg patung', '', '2022-04-26 10:23:33', 24);
+INSERT INTO `tbl_zakat_fitrah` VALUES (422, 'ifan bin umar', '2', '3', '6', '', 7, 'graha tirta', '', '2022-04-27 02:49:29', 11);
+INSERT INTO `tbl_zakat_fitrah` VALUES (423, 'bapak Asep', '3', '3', '9', '102000', 2, '', '', '2022-04-27 03:20:47', 11);
+INSERT INTO `tbl_zakat_fitrah` VALUES (424, 'Bapak didik sutrisno', '4', '3', '12', '136000', 3, '', '', '2022-04-27 04:02:23', 11);
+INSERT INTO `tbl_zakat_fitrah` VALUES (425, 'bapak purwanto', '3', '3', '9', '', 2, '', '', '2022-04-27 04:40:23', 11);
+INSERT INTO `tbl_zakat_fitrah` VALUES (426, 'bapak miskidi', '2', '3', '6', '', 2, '', '', '2022-04-27 05:04:32', 11);
+INSERT INTO `tbl_zakat_fitrah` VALUES (427, 'bapak Nafi\' rachmad zulkarnain', '3', '3', '9', '', 5, '', '', '2022-04-27 08:03:39', 11);
+INSERT INTO `tbl_zakat_fitrah` VALUES (428, 'Ibu Alfi nur rahmawati', '4', '3', '12', '', 2, '', '', '2022-04-27 08:33:32', 11);
+INSERT INTO `tbl_zakat_fitrah` VALUES (429, 'bapak Udin', '8', '3', '24', '', 3, '', '', '2022-04-27 08:34:10', 11);
+INSERT INTO `tbl_zakat_fitrah` VALUES (430, 'Bapak Udin', '3', '3', '9', '102000', 2, '', '', '2022-04-27 09:31:25', 11);
 
 -- ----------------------------
 -- Table structure for tbl_zakat_maal
@@ -932,7 +946,7 @@ CREATE TABLE `tbl_zakat_maal`  (
   `petugas2` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `keterangan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
   PRIMARY KEY (`id_zakat_maal`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 90 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 95 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_zakat_maal
@@ -1018,5 +1032,10 @@ INSERT INTO `tbl_zakat_maal` VALUES (86, 'Bu Eka', 3, '175000', 7, 'Gang 5 No.18
 INSERT INTO `tbl_zakat_maal` VALUES (87, 'Sumarlan ', 3, '100000', 1, 'Rt 01', '2021-05-12', '3', NULL, '');
 INSERT INTO `tbl_zakat_maal` VALUES (88, 'Dullah ', 3, '20000', 1, 'Rt 01', '2021-05-12', '3', NULL, '');
 INSERT INTO `tbl_zakat_maal` VALUES (89, 'Rochim', 3, '100000', 1, 'Rt 01', '2021-05-12', '3', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (90, 'A. Muqorrobin', 3, '2000', 7, 'Tropodo', '2022-04-26', '11', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (91, 'Agus Sugiantoro', 3, '5000', 2, '', '2022-04-26', '11', NULL, '');
+INSERT INTO `tbl_zakat_maal` VALUES (92, 'Lukman Hakim', 1, '2500000', 7, 'Janti', '2022-04-26', '11', '15', '');
+INSERT INTO `tbl_zakat_maal` VALUES (93, 'Bapak didik sutrisno', 3, '1000', 3, '', '2022-04-27', '11', '17', '');
+INSERT INTO `tbl_zakat_maal` VALUES (94, 'bapak Udin', 3, '20000', 3, '', '2022-04-27', '11', '17', '');
 
 SET FOREIGN_KEY_CHECKS = 1;
