@@ -48,7 +48,7 @@
           <!-- End Sales Card -->
 
           <!-- Revenue Card -->
-          <?php if ($akses == 1 || $akses == 2 || $akses == 3 || $akses == 6 || $akses == 5) { ?>
+          <?php if ($akses == 1 || $akses == 2 || $akses == 3 || $akses == 4 || $akses == 6 || $akses == 5) { ?>
 
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card revenue-card">
@@ -83,7 +83,7 @@
           <!-- End Revenue Card -->
 
           <!-- Zakat Maal Card -->
-          <?php if ($akses == 1 || $akses == 2 || $akses == 3 || $akses == 6 || $akses == 5) { ?>
+          <?php if ($akses == 1 || $akses == 2 || $akses == 3 || $akses == 4 || $akses == 6 || $akses == 5) { ?>
 
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card revenue-card">
@@ -136,8 +136,8 @@
           <!-- End Zakat Maal Card -->
 
           <!-- Customers Card -->
-          <?php if ($akses == 1 || $akses == 2 || $akses == 3 || $akses == 6) { ?>
-            <div class="col-xxl-4 col-xl-12">
+          <?php if ($akses == 1 || $akses == 2 || $akses == 3 || $akses == 4 || $akses == 6) { ?>
+            <div class="col-xxl-4 col-md-6">
 
               <div class="card info-card customers-card">
 
@@ -164,7 +164,7 @@
 
 
 
-            <div class="col-xxl-4 col-xl-12">
+            <div class="col-xxl-4 col-md-6">
 
               <div class="card info-card customers-card">
 
@@ -189,7 +189,7 @@
 
             </div><!-- End Customers Card -->
 
-            <div class="col-xxl-4 col-xl-12">
+            <div class="col-xxl-4 col-md-6">
 
               <div class="card info-card customers-card">
 
@@ -215,7 +215,7 @@
             </div>
             <!-- End Customers Card -->
 
-            <div class="col-xxl-4 col-xl-12">
+            <div class="col-xxl-4 col-md-6">
               <div class="card info-card customers-card">
                 <div class="card-body">
                   <h5 class="card-title">Total Penerima Sabilillah <span>| <?= date('Y') ?></span></h5>
@@ -240,7 +240,7 @@
           <?php
           if ($akses == 7) {
             foreach ($count_kategori->result() as $row) { ?>
-              <div class="col-xxl-4 col-xl-12">
+              <div class="col-xxl-4 col-md-6">
                 <div class="card info-card customers-card">
                   <div class="card-body">
                     <h5 class="card-title">Total Penerima <?= $row->nama_ket ?> <span>| <?= date('Y') ?></span></h5>

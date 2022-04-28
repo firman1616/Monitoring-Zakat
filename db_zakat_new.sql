@@ -1,11 +1,11 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : laragon
+ Source Server         : xampp
  Source Server Type    : MySQL
  Source Server Version : 50733
  Source Host           : localhost:3306
- Source Schema         : db_zakat_new
+ Source Schema         : db_zakat_new2
 
  Target Server Type    : MySQL
  Target Server Version : 50733
