@@ -39,4 +39,19 @@ class M_keuangan extends CI_Model
     {
         return $this->db->query("SELECT SUM(nominal) as jumlah FROM `tbl_donatur` WHERE status = 1");
     }
+
+    public function jumlah_uang_beras()
+    {
+        return $this->db->query("SELECT SUM(uang) as total_uang_fitrah FROM tbl_zakat_fitrah WHERE YEAR(tanggal) = YEAR(CURDATE())")->row();
+    }
+
+    public function saldo_maal_fid()
+    {
+       return $this->db->query("SELECT SUM(nominal_zakat) as total_maal_fid FROM `tbl_zakat_maal` WHERE kategori_zakat IN (1,4) AND YEAR(tanggal) = YEAR(CURDATE())")->row();
+    }
+
+    public function saldo_is_ps()
+    {
+       return $this->db->query("SELECT SUM(nominal_zakat) as total_is_ps FROM `tbl_zakat_maal` WHERE kategori_zakat IN (2,3) AND YEAR(tanggal) = YEAR(CURDATE())")->row();
+    }
 }

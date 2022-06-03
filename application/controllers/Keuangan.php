@@ -118,4 +118,26 @@ class Keuangan extends CI_Controller
         $this->session->set_flashdata('donatur', 'Dibatalkan');
         redirect('Keuangan/donatur');
     }
+
+    public function rekap_keuangan()
+    {
+        $data = [
+            'akses' => $this->session->userdata('level'),
+            'id' => $this->session->userdata('id'),
+            'name' => $this->session->userdata('nama'),
+            'title' => 'Data Donatur',
+            'conten' => 'conten/rekap_keuangan',
+            // 'get_data' => $get_donate,
+            'get_alamat' => $this->m_data->get_data('tbl_master_alamat'),
+            'jumlah_uang_beras' => $this->keuangan->jumlah_uang_beras(),
+            'saldo_maal_fid' => $this->keuangan->saldo_maal_fid(),
+            'saldo_is_ps' => $this->keuangan->saldo_is_ps(),
+            'footer_js' => array(
+                'assets/js/zakat.js',
+                'assets/js/alert-keuangan.js',
+            ),
+
+        ];
+        $this->load->view('template/conten', $data);
+    }
 }

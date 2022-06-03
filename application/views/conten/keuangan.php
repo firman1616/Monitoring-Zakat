@@ -11,6 +11,7 @@
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
+        
         <div class="row">
 
             <!-- Left side columns -->
@@ -47,7 +48,7 @@
 
                     <!-- Keuangan -->
                     <div class="col-xxl-6 col-md-6">
-                        <a href="<?= base_url('Pembayaran/zakat_maal') ?>">
+                        <a href="<?= base_url('Keuangan/rekap_keuangan') ?>">
                             <div class="card info-card revenue-card">
 
                                 <div class="card-body">
