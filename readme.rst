@@ -1,70 +1,53 @@
-###################
-What is CodeIgniter
-###################
+#####################################
+MONITORING PEMBAYARAN ZAKAT FITRAH
+#####################################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Aplikasi ini digunakan untuk memonitoring Pembayaran Zakat yang dilakukan oleh orang yang wajib membayar zakat.
+yang nantinya mempermuda Amil / Panitia zakat untuk membuat laporan yang akan di laporkan pada Pihak Laziznu setempat.
 
 *******************
-Release Information
+SPESIFIKASI APLIKASI
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+1. Framework codeigniter 3.1.11
+2. Database MySQL 5.7.x
+3. PHP 7.2.x
+4. Web Sevice Laragon
 
-**************************
-Changelog and New Features
-**************************
+************************************
+Tools yang digunakan dalam aplikasi
+************************************
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+1. Navicat 15
+2. Visual Studio Code
+3. Laragon
+4. Google Chrome
 
 *******************
-Server Requirements
+FITUR APLIKASI
 *******************
 
-PHP version 5.6 or newer is recommended.
+**********
+ADMIN PAGE
+**********
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+1. Dashboard
+2. Pembayaran Zakat Fitrah dan Maal
+3. Data Penerima Zakat
+4. Pencatatan Keuangan
+5. Master Data
 
 ************
-Installation
+USER PAGE
 ************
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+1. Dashboard
+2. Pembayaran Zakat Fitrah dan Maal
+3. Data Donatur
 
-*******
-License
-*******
+*******************
+KOORDINATOR PAGE
+*******************
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+1. Dashboard
+2. Data Penerima Zakat
