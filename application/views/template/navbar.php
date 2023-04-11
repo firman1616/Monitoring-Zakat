@@ -11,6 +11,7 @@
         </li>
 
         <?php if ($akses == 1 || $akses == 2 || $akses == 4 || $akses == 5) { ?>
+            <li class="nav-heading">Zakat</li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<?= base_url('Pembayaran') ?>">
                     <i class="bi bi-credit-card-fill"></i>
@@ -29,6 +30,7 @@
         <?php } ?>
 
         <?php if ($akses == 1 || $akses == 2 || $akses == 3 || $akses == 4) { ?>
+            <li class="nav-heading">Report</li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<?= base_url('Keuangan') ?>">
                     <i class="bi bi-credit-card-2-back-fill"></i>
