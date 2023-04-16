@@ -78,6 +78,7 @@
                                                     <td>Rp. <?= number_format($row->nominal_zakat, 2) ?>,-</td>
                                                     <td><?= $row->petugas1 ?></td>
                                                     <td>
+                                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DetailMaal<?= $no++; ?>"><i class="bi bi-file-earmark-medical-fill"></i></button>
                                                         <a href="<?= site_url('Pembayaran/v_edit_maal/' . $row->id_zakat_maal) ?>" class="btn btn-warning" title="Edit Data"><i class="bi bi-pencil-square"></i></a>
                                                         <?php if ($akses == 1 || $akses == 2) { ?>
                                                             <a href="" class="btn btn-danger" title="Hapus Data"><i class="bi bi-trash-fill"></i></a>
