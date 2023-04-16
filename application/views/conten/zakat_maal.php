@@ -48,6 +48,7 @@
                                     </thead>
                                     <tbody>
                                         <?php
+                                        $no = 1;
                                         $x = 1;
                                         if ($akses == 1 || $akses == 2) {
                                             foreach ($get_maal->result() as $row) {
@@ -59,6 +60,7 @@
                                                     <td>Rp. <?= number_format($row->nominal_zakat, 2) ?>,-</td>
                                                     <td><?= $row->petugas1 ?></td>
                                                     <td>
+                                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DetailMaal<?= $no++; ?>"><i class="bi bi-file-earmark-medical-fill"></i></button>
                                                         <a href="<?= site_url('Pembayaran/v_edit_maal/' . $row->id_zakat_maal) ?>" class="btn btn-warning" title="Edit Data"><i class="bi bi-pencil-square"></i></a>
                                                         <?php if ($akses == 1 || $akses == 2) { ?>
                                                             <a href="<?= site_url('Pembayaran/hapus_zakat_maal/' . $row->id_zakat_maal) ?>" class="btn btn-danger hapus-fitrah" title="Hapus Data User"><i class="bi bi-trash2-fill"></i></a>
@@ -158,3 +160,54 @@
     </section>
 
 </main><!-- End #main -->
+
+<?php
+$y = 1;
+foreach ($get_maal->result() as $a) { ?>
+
+    <div class="modal fade" id="DetailMaal<?= $y++; ?>" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detail Data</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th scope="row" style="width: 40%;">Nama</th>
+                                <td style="width: 5%;">:</td>
+                                <td><?= $a->nama_pemberi_maal ?></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="width: 40%;">Kategori</th>
+                                <td style="width: 5%;">:</td>
+                                <td><?= $a->nama_maal ?></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="width: 40%;">Nominal</th>
+                                <td style="width: 5%;">:</td>
+                                <td><?= 'Rp. ' . number_format($a->nominal_zakat) . ',-' ?></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="width: 40%;">Alamat</th>
+                                <td style="width: 5%;">:</td>
+                                <td><?= $a->nama_master_alamat ?></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="width: 40%;">Keterangan</th>
+                                <td style="width: 5%;">:</td>
+                                <td><?= $a->keterangan ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php $no++;
+} ?>

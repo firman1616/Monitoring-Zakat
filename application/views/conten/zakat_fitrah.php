@@ -49,6 +49,7 @@
                                     <tbody>
                                         <?php
                                         $x = 1;
+                                        $no = 1;
                                         if ($akses == 1 || $akses == 2) {
                                             foreach ($get_fitrah->result() as $row) {
                                         ?>
@@ -59,7 +60,7 @@
                                                     <td><?= $row->total_beras ?></td>
                                                     <td><?= $row->nama_petugas ?></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DetailFitrah"><i class="bi bi-file-earmark-medical-fill"></i></button>
+                                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DetailFitrah<?= $no++; ?>"><i class="bi bi-file-earmark-medical-fill"></i></button>
                                                         <a href="<?= site_url('Pembayaran/v_edit_fitrah/' . $row->id_zakat_fitrah) ?>" class="btn btn-warning" title="Edit Data"><i class="bi bi-pencil-square"></i></a>
                                                         <?php if ($akses == 1 || $akses == 2) { ?>
                                                             <a href="<?= site_url('Pembayaran/hapus_zakat_fitrah/' . $row->id_zakat_fitrah) ?>" class="btn btn-danger hapus-fitrah" title="Hapus Data User"><i class="bi bi-trash2-fill"></i></a>
@@ -77,6 +78,7 @@
                                                     <td><?= $row->total_beras ?></td>
                                                     <td><?= $row->nama_petugas ?></td>
                                                     <td>
+                                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DetailFitrah<?= $no++; ?>"><i class="bi bi-file-earmark-medical-fill"></i></button>
                                                         <a href="<?= site_url('Pembayaran/v_edit_fitrah/' . $row->id_zakat_fitrah) ?>" class="btn btn-warning" title="Edit Data"><i class="bi bi-pencil-square"></i></a>
                                                         <?php if ($akses == 1 || $akses == 2) { ?>
                                                             <a href="" class="btn btn-danger" title="Hapus Data"><i class="bi bi-trash-fill"></i></a>
@@ -152,20 +154,59 @@
 
 </main><!-- End #main -->
 
-<div class="modal fade" id="DetailFitrah" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Basic Modal</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Non omnis incidunt qui sed occaecati magni asperiores est mollitia. Soluta at et reprehenderit. Placeat autem numquam et fuga numquam. Tempora in facere consequatur sit dolor ipsum. Consequatur nemo amet incidunt est facilis. Dolorem neque recusandae quo sit molestias sint dignissimos.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+
+<?php
+$y = 1;
+foreach ($get_fitrah->result() as $a) { ?>
+
+    <div class="modal fade" id="DetailFitrah<?= $y++; ?>" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detail Data</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th scope="row" style="width: 40%;">Nama</th>
+                                <td style="width: 5%;">:</td>
+                                <td><?= $a->nama_pemberi_zakat_fitrah ?></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="width: 40%;">Besaran Jiwa</th>
+                                <td style="width: 5%;">:</td>
+                                <td><?= $a->besaran_jiwa ?></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="width: 40%;">Total Beras</th>
+                                <td style="width: 5%;">:</td>
+                                <td><?= $a->total_beras ?></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="width: 40%;">pembelian Beras</th>
+                                <td style="width: 5%;">:</td>
+                                <td><?= 'Rp. ' . number_format($a->uang) . ',-' ?></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="width: 40%;">Alamat</th>
+                                <td style="width: 5%;">:</td>
+                                <td><?= $a->nama_master_alamat ?> (<?= $a->alamat_lainnya ?>)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="width: 40%;">Keterangan</th>
+                                <td style="width: 5%;">:</td>
+                                <td><?= $a->keterangan ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+<?php $no++;
+} ?>
