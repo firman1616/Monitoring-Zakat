@@ -32,7 +32,7 @@
                                         </div>
                                         <div class="ps-3">
                                             <h6>Pembayaran Zakat Fitrah</h6>
-                                            <span class="text-success small pt-1 fw-bold"><?= $fitrah ?></span> <span class="text-muted small pt-2 ps-1">Orang</span>
+                                            <!-- <span class="text-success small pt-1 fw-bold"><?= $fitrah ?></span> <span class="text-muted small pt-2 ps-1">Orang</span> -->
 
                                         </div>
                                     </div>
@@ -57,7 +57,7 @@
                                         </div>
                                         <div class="ps-3">
                                             <h6>Pembayaran Zakat Maal</h6>
-                                            <span class="text-success small pt-1 fw-bold"><? $maal ?></span> <span class="text-muted small pt-2 ps-1">Orang</span>
+                                            <!-- <span class="text-success small pt-1 fw-bold"><? $maal ?></span> <span class="text-muted small pt-2 ps-1">Orang</span> -->
 
                                         </div>
                                     </div>
