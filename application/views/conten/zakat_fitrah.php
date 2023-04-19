@@ -198,7 +198,11 @@ foreach ($get_fitrah->result() as $a) { ?>
                             <tr>
                                 <th scope="row" style="width: 40%;">pembelian Beras</th>
                                 <td style="width: 5%;">:</td>
-                                <td><?= 'Rp. ' . number_format($a->uang) . ',-' ?></td>
+                                <td><?php if ($a->uang == '') {
+                                        echo "Rp. 0,-";
+                                    } else {
+                                        echo 'Rp. ' . number_format($a->uang) . ',-';
+                                    } ?></td>
                             </tr>
                             <tr>
                                 <th scope="row" style="width: 40%;">Alamat</th>
