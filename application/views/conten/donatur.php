@@ -35,6 +35,7 @@
                                         <th scope="col">#</th>
                                         <th scope="col">Nama Donatur</th>
                                         <th scope="col">Nominal</th>
+                                        <th scope="col">Alamat</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Nama Petugas</th>
                                         <th scope="col">Validation</th>
@@ -50,6 +51,7 @@
                                             <th scope="row"><?= $x++; ?></th>
                                             <td><?= $row->nama_donatur ?></td>
                                             <td>Rp. <?= number_format($row->nominal, 2) ?>,-</td>
+                                            <td><?= $row->nama_master_alamat ?></td>
                                             <td>
                                                 <?php
                                                 if ($row->status == 1) { ?>

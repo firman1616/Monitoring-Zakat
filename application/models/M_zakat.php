@@ -17,7 +17,8 @@ class M_zakat extends CI_Model
         c.nama_petugas
         FROM tbl_zakat_fitrah as a
         JOIN tbl_master_alamat as b ON a.alamat = b.id_master_alamat
-        JOIN tbl_user_petugas as c ON a.petugas = c.id_user_petugas");
+        JOIN tbl_user_petugas as c ON a.petugas = c.id_user_petugas
+        ORDER BY a.tanggal DESC");
     }
 
     public function tampil_fitrah_filter()
@@ -38,6 +39,7 @@ class M_zakat extends CI_Model
         JOIN tbl_master_alamat as b ON a.alamat = b.id_master_alamat
         JOIN tbl_user_petugas as c ON a.petugas = c.id_user_petugas
         WHERE YEAR(a.tanggal) = YEAR(CURDATE())
+        ORDER BY a.tanggal DESC
         ");
     }
 
@@ -63,7 +65,8 @@ class M_zakat extends CI_Model
         tbl_zakat_maal AS a
         JOIN tbl_master_maal as b ON a.kategori_zakat = b.id_master_maal
         JOIN tbl_master_alamat as c ON a.alamat = c.id_master_alamat
-        JOIN tbl_user_petugas as d ON a.petugas1 = d.id_user_petugas");
+        JOIN tbl_user_petugas as d ON a.petugas1 = d.id_user_petugas
+        ORDER BY a.tanggal DESC");
     }
 
     public function tampil_maal_filter()
@@ -85,6 +88,7 @@ class M_zakat extends CI_Model
         JOIN tbl_master_alamat as c ON a.alamat = c.id_master_alamat
         JOIN tbl_user_petugas as d ON a.petugas1 = d.id_user_petugas
         WHERE YEAR(a.tanggal) = YEAR(CURDATE())
+        ORDER BY a.tanggal DESC
         ");
     }
 

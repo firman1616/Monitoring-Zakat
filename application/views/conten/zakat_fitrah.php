@@ -44,6 +44,7 @@
                                             <th scope="col">Total Beras</th>
                                             <th scope="col">Nominal Pembelian</th>
                                             <th scope="col">Petugas</th>
+                                            <th scope="col">Tanggal</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
@@ -65,6 +66,7 @@
                                                             echo "Rp. " . number_format($row->uang) . ',-';
                                                         } ?></td>
                                                     <td><?= $row->nama_petugas ?></td>
+                                                    <td><?= date('d M Y', strtotime($row->tanggal)) ?></td>
                                                     <td>
                                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DetailFitrah<?= $no++; ?>"><i class="bi bi-file-earmark-medical-fill"></i></button>
                                                         <a href="<?= site_url('Pembayaran/v_edit_fitrah/' . $row->id_zakat_fitrah) ?>" class="btn btn-warning" title="Edit Data"><i class="bi bi-pencil-square"></i></a>
@@ -82,12 +84,13 @@
                                                     <td><?= $row->nama_pemberi_zakat_fitrah ?></td>
                                                     <td><?= $row->besaran_jiwa ?></td>
                                                     <td><?= $row->total_beras ?></td>
-                                                    <td><?php if ($row->uang == 'NULL') {
+                                                    <td><?php if ($row->uang == '') {
                                                             echo "Rp. 0 ,-";
                                                         } else {
                                                             echo "Rp. " . number_format($row->uang) . ',-';
                                                         } ?></td>
                                                     <td><?= $row->nama_petugas ?></td>
+                                                    <td><?= date('d M Y', strtotime($row->tanggal)) ?></td>
                                                     <td>
                                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DetailFitrah<?= $no++; ?>"><i class="bi bi-file-earmark-medical-fill"></i></button>
                                                         <a href="<?= site_url('Pembayaran/v_edit_fitrah/' . $row->id_zakat_fitrah) ?>" class="btn btn-warning" title="Edit Data"><i class="bi bi-pencil-square"></i></a>
