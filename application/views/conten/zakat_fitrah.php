@@ -42,6 +42,7 @@
                                             <th scope="col">Nama</th>
                                             <th scope="col">Besaran Jiwa</th>
                                             <th scope="col">Total Beras</th>
+                                            <th scope="col">Nominal Pembelian</th>
                                             <th scope="col">Petugas</th>
                                             <th scope="col">Action</th>
                                         </tr>
@@ -58,6 +59,11 @@
                                                     <td><?= $row->nama_pemberi_zakat_fitrah ?></td>
                                                     <td><?= $row->besaran_jiwa ?></td>
                                                     <td><?= $row->total_beras ?></td>
+                                                    <td><?php if ($row->uang == '') {
+                                                            echo "Rp. 0 ,-";
+                                                        } else {
+                                                            echo "Rp. " . number_format($row->uang) . ',-';
+                                                        } ?></td>
                                                     <td><?= $row->nama_petugas ?></td>
                                                     <td>
                                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DetailFitrah<?= $no++; ?>"><i class="bi bi-file-earmark-medical-fill"></i></button>
@@ -76,6 +82,11 @@
                                                     <td><?= $row->nama_pemberi_zakat_fitrah ?></td>
                                                     <td><?= $row->besaran_jiwa ?></td>
                                                     <td><?= $row->total_beras ?></td>
+                                                    <td><?php if ($row->uang == 'NULL') {
+                                                            echo "Rp. 0 ,-";
+                                                        } else {
+                                                            echo "Rp. " . number_format($row->uang) . ',-';
+                                                        } ?></td>
                                                     <td><?= $row->nama_petugas ?></td>
                                                     <td>
                                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DetailFitrah<?= $no++; ?>"><i class="bi bi-file-earmark-medical-fill"></i></button>
