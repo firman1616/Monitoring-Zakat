@@ -85,7 +85,7 @@ class M_dashboard extends CI_Model
 
     public function bar_fitrah()
     {
-        return $this->db->query("SELECT YEAR(tanggal) as tahun, SUM(berat_beras) as total FROM `tbl_zakat_fitrah` GROUP BY YEAR(tanggal)")->result();
+        return $this->db->query("SELECT YEAR(tanggal) as tahun, SUM(total_beras) as total FROM `tbl_zakat_fitrah` GROUP BY YEAR(tanggal)")->result();
     }
 
     public function bar_maal()

@@ -64,7 +64,7 @@
                       <h6><?php if ($jumlah_beras->total_beras == 0) {
                             echo "0 Kg";
                           } else {
-                            echo $jumlah_beras->total_beras . " Kg";
+                            echo number_format($jumlah_beras->total_beras) . " Kg";
                           } ?></h6>
                       <span class="text-success small pt-1 fw-bold"><?php if ($jumlah_uang_beras->total_uang_fitrah != 0) {
                                                                       echo "Rp. " . number_format($jumlah_uang_beras->total_uang_fitrah, 0, ',', '.');
