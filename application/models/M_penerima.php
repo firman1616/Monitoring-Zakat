@@ -78,21 +78,23 @@ class M_penerima extends CI_Model
     public function print_data($id)
     {
         return $this->db->query("SELECT
-        a.nama_penerima,
-        a.status_penerima,
-        a.validation_data,
-        b.id_ket,
-        b.nama_ket,
-        c.nama_petugas,
-        c.alamat_petugas,
-        d.nama_master_alamat 
-    FROM
-        tbl_penerima as a
-    JOIN tbl_master_penerima as b ON a.ket_penerima = b.id_ket
-    JOIN tbl_user_petugas as c ON a.koor = c.id_user_petugas
-    JOIN tbl_master_alamat as d ON c.alamat_petugas = d.id_master_alamat
-    WHERE a.status_penerima = 0 AND c.alamat_petugas = $id
-        ");
+            a.seq_no,
+            a.nama_penerima,
+            a.status_penerima,
+            a.validation_data,
+            b.id_ket,
+            b.nama_ket,
+            c.nama_petugas,
+            c.alamat_petugas,
+            d.nama_master_alamat 
+        FROM
+            tbl_penerima as a
+        JOIN tbl_master_penerima as b ON a.ket_penerima = b.id_ket
+        JOIN tbl_user_petugas as c ON a.koor = c.id_user_petugas
+        JOIN tbl_master_alamat as d ON c.alamat_petugas = d.id_master_alamat
+        WHERE a.status_penerima = 0 AND c.alamat_petugas = $id
+        ORDER BY a.seq_no asc
+            ");
     }
 
     public function count_kategori($id)
