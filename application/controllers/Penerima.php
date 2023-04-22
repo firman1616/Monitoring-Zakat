@@ -163,7 +163,7 @@ class Penerima extends CI_Controller
     {
         $id = $this->input->post('alamat');
         $this->data['title_pdf'] = 'Data Penerima RT';
-        $file_pdf = 'data_penduduk_rt';
+        $file_pdf = 'data_penduduk_rt' . $id;
         $paper = 'A4';
         $orientation = "portrait";
         $this->data['data_penduduk'] = $this->penerima->print_data($id);
